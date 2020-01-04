@@ -1,9 +1,9 @@
-# <center> THE MUSICAL DICE</center>
+<h1><center><strong>THE MUSICAL DICE</strong></center></h1>
 
 ![this](assets/images/rules-original-edition.png)
 
-## <center><strong> The Idea
-## Historical Background</strong> 
+## The Original Idea
+### Historical Background
 
 A <em>Musikalisches Würfelspiel</em> (German for "musical dice game") was a system for using dice to randomly 'generate' music from precomposed options. These 'games' were quite popular throughout Western Europe in the 18th century. Several different games were devised, some that did not require dice, but merely 'choosing a random number.'
 
@@ -11,7 +11,7 @@ The earliest example is Johann Philipp Kirnberger's Der allezeit fertige Menuett
 
 In the early 20th century the Kaleidacousticon System, using arbitrarily combinable playing cards, was unsuccessfully marketed in the Boston area as a parlour game.
 
-## Aesthetics
+### Aesthetics
 
 According to Lawrence Zbikowski, "In truth, chance played little part in the success of the music produced by such games. Instead, what was required of the compilers was a little knowledge about how to put the game together and an understanding of the formal design of waltzes, etc."
 
@@ -28,7 +28,7 @@ n | A | B | C | D
 
 One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 1 2 3 1 2 3 one is given, "The pig ran past the marsh." Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
-## Mozart
+### Mozart
 
 The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K. 294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been authenticated. The dice rolls randomly selected small sections of music, which would be patched together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161 different yet similar waltzes.
 Some measures have only one possibility no matter what the roll of the dice (measures 8/16) while other measures have a different possibility for each roll (measures 1/16).
@@ -40,10 +40,38 @@ The titles of the supposed Mozart compositions are:
 * <em>Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne etwas von der Musik oder Composition zu verstehen</em> ("Instructions for the composition of as many waltzes as one desires with two dice, without understanding anything about music or composition")
 * <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of polonaises")
 
-## Other Versions
+### Other Versions
 
 Robert Xavier Rodríguez composed his Musical Dice Game for string orchestra based on Mozart's K. 516f.
 
 The attribution of Joseph Haydn's Gioco filarmonico o sia maniera facile per comporre un infinito numero de minuetti e trio anche senza sapere il contrappunto (Italian for "The game of harmony, or an easy method for composing an infinite number of minuet-trios, without any knowledge of counterpoint") has also not been authenticated.[1]
 
+## My Idea
 
+### Ideal Outcome
+
+Ideally my version would have:
+* A landing page, containing:
+    * Presentation and Historical Background
+    * Explanation of the game
+* The game page, containing:
+    * The game itself, including:
+        * A button to randomize the result
+        * If possible, the option for the user to freely choose the musical fragments
+        * A button to download the resulting MP3 file using an API to merge the selected MP3 fragments (and perhaps some fallback format) or
+        * A button to download the resulting MIDI file using an API to merge the selected MIDI fragments
+        * A button to download the resulting music score using an api to merge different PDF files into one file OR
+        * A button to download the resulting music score using Lilypond as the on-the-fly compiler
+* A contact page
+    * A form to get in touch and send comments or requests
+
+I plan to make some alterations to the original game and they might include:
+* Fragments will be 2 bars long rather than 1
+* Music will be composed and performed (in case of managing to use an MP3 merger API) by me as well.
+
+### Loose Ideas and resources to investigate
+* [Lilypond](http://lilypond.org/index.html) could be use to dynamically create the score. Lilypond is opensource and compiles a music score by entering text.
+* Midi [API]('https://www.keithmcmillen.com/blog/making-music-in-the-browser-web-midi-api/')
+* MP3 merger [API]('https://github.com/jackedgson/crunker')
+* Music Programming [Language]('https://chuck.cs.princeton.edu/')
+* PDF mergers: [1]('https://www.convertapi.com/pdf-to-merge'), [2]('https://cloudconvert.com/api/v1/mergepdf'), [3]('https://pdfmerge.smartsfile.com/api.html')
