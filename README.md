@@ -1,4 +1,4 @@
-# <center> THE MUSICAL DICE
+# <center> THE MUSICAL DICE</center>
 
 ![this](assets/images/rules-original-edition.png)
 
@@ -20,7 +20,7 @@ According to Stephen Hedges, "The 'galant' middle class in Europe was playing wi
 
 The way these games work may be understood in analogy to sentence construction.
 
-# | A | B | C | D
+n | A | B | C | D
 --- | --- | --- | --- | ---
 1 | The cow | ran | past | the field. |
 2 | The pig | walked | through | the yard. |
