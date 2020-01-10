@@ -60,9 +60,9 @@ Ideally my version would have:
   - The game itself, including:
     - A button to randomize the result
     - If possible, the option for the user to freely choose the musical fragments
-    - A button to download the resulting MP3 file using an API to merge the selected MP3 fragments (and perhaps some fallback format) or
-    - A button to download the resulting MIDI file using an API to merge the selected MIDI fragments
-    - A button to download the resulting music score using an api to merge different PDF files into one file OR
+    - A button to download the resulting MP3 file using an API to merge the selected MP3 fragments (and perhaps some fallback format) **OR**
+    - A button to download the resulting MIDI file using an API to merge the selected MIDI fragments.
+    - A button to download the resulting music score using an api to merge different PDF files into one file **OR**
     - A button to download the resulting music score using Lilypond as the on-the-fly compiler
 - A contact page
   - A form to get in touch and send comments or requests
@@ -71,6 +71,12 @@ I plan to make some alterations to the original game and they might include:
 
 - Fragments will be 2 bars long rather than 1
 - Music will be composed and performed (in case of managing to use an MP3 merger API) by me as well.
+
+![table](./assets/imgsREADME/table.png)
+
+(Selected  in blue an example of a possible outcome)
+
+Any end of any of the columns works well with the beginning of the following column musically, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
 
 ### Loose Ideas and resources to investigate
 
