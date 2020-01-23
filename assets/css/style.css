@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.fill {
+  height: 50vh;
+}
+
+.page-footer {
+  background-color: #4e5d6c;
+}
