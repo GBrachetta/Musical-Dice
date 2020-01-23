@@ -1,12 +1,33 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .fill {
-  height: 50vh;
+  height: 30vh;
 }
 
 .page-footer {
   background-color: #4e5d6c;
+}
+
+#music {
+  display: block;
+}
+
+#table {
+  margin: 0 auto;
+}
+
+.bar {
+  width: 75px;
+  height: 70px;
+}
+
+.bar {
+  background-color: #2b3e50;
+}
+
+.bar:hover {
+  background-color: #4E5D6C;
 }
