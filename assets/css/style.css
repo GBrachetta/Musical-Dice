@@ -29,5 +29,9 @@ body {
 }
 
 .bar:hover {
-  background-color: #4E5D6C;
+  background-color: #4e5d6c;
+}
+
+#form{
+  margin: 0 10vw;
 }
