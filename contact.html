@@ -8,13 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
-        })();
-    </script>
+
     <title>Title</title>
 </head>
 
@@ -53,23 +47,21 @@
 
     <div class="row">
         <div class="col-12">
-            <form id="form" onsubmit="return sendMail(this);" method="POST">
+            <form id="myform">
                 <fieldset>
                     <div class="row justify-content-between">
                         <div class="col-md-6 form-group">
 
                             <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp"
-                                placeholder="Enter Name" data-kwimpalastatus="alive" data-kwimpalaid="1579822174261-4"
-                                required>
+                            <input type="text" class="form-control" name="from_name" id="inputName"
+                                placeholder="Enter Name">
 
                         </div>
                         <div class="col-md-6">
 
                             <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" id="inputEmail"
-                                aria-describedby="emailHelp" placeholder="Enter email" data-kwimpalastatus="alive"
-                                data-kwimpalaid="1579822174261-4" required>
+                            <input type="email" name="from_email" class="form-control" id="inputEmail"
+                                aria-describedby="emailHelp" placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone
                                 else.</small>
                         </div>
@@ -78,9 +70,8 @@
 
                     <div class="form-group">
                         <label for="textArea">Leave your message here</label>
-                        <textarea class="form-control" id="textArea" rows="5"></textarea>
+                        <textarea name="info_request" class="form-control" id="textArea" rows="5"></textarea>
                     </div>
-
 
                     <fieldset class="form-group">
                         <legend>Subscribe</legend>
@@ -100,6 +91,7 @@
                     </div>
                 </fieldset>
             </form>
+
         </div>
     </div>
 
@@ -180,6 +172,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
+        })();
+    </script>
     <script src="./assets/js/sendEmail.js"></script>
     <script src="./assets/js/scripts.js"></script>
 </body>
