@@ -9,6 +9,9 @@ body {
 
 .page-footer {
   background-color: #4e5d6c;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
 #music {

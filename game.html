@@ -318,42 +318,8 @@
                         </li>
                         <li>
                             <p>
-                                <a href="#!" data-toggle="modal" data-target="#exampleModal">ABOUT ME</a>
+                                <a href="#" data-toggle="modal" data-target="#modal">ABOUT ME</a>
                             </p>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">About me</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h3>Guillermo Brachetta</h3>
-                                            <hr class="my-3">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati
-                                                aliquam voluptatem maxime rerum ipsum esse, laborum dicta numquam id
-                                                laudantium at quo quae. Labore deserunt ratione inventore accusamus
-                                                quasi itaque debitis totam ex suscipit, atque et nisi laboriosam
-                                                veritatis error a soluta nam assumenda, neque id natus? Asperiores,
-                                                architecto.</p>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-                                                laudantium, reprehenderit sequi distinctio omnis perferendis. Velit,
-                                                perferendis iste voluptas vel fuga quam fugiat eligendi corrupti
-                                                excepturi sed debitis ratione architecto, ea vero reiciendis, id ex
-                                                molestias incidunt ipsa. Temporibus fugit placeat laudantium magnam
-                                                natus laborum adipisci tempore minus corrupti facere!</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary"
-                                                data-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </li>
                         <li>
                             <p><a href="https://www.brachetta.com/" target="_blank">WEBSITE</a></p>
@@ -403,7 +369,44 @@
         </div>
     </footer>
 
+    <!-- Modal-->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">About me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Guillermo Brachetta</h3>
+                    <hr class="my-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati
+                        aliquam voluptatem maxime rerum ipsum esse, laborum dicta numquam id
+                        laudantium at quo quae. Labore deserunt ratione inventore accusamus
+                        quasi itaque debitis totam ex suscipit, atque et nisi laboriosam
+                        veritatis error a soluta nam assumenda, neque id natus? Asperiores,
+                        architecto.</p>
+                    <div class="row my-3">
+                        <div class="col">
+                            <img src="./assets/images/avatar.png" alt="avatar" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+                        laudantium, reprehenderit sequi distinctio omnis perferendis. Velit,
+                        perferendis iste voluptas vel fuga quam fugiat eligendi corrupti
+                        excepturi sed debitis ratione architecto, ea vero reiciendis, id ex
+                        molestias incidunt ipsa. Temporibus fugit placeat laudantium magnam
+                        natus laborum adipisci tempore minus corrupti facere!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
