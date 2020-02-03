@@ -43,3 +43,28 @@ body {
   background-color: #4e5d6c;
   font-weight: 700;
 }
+
+.social a {
+  display: block;
+  line-height: 2em;
+}
+
+.fab {
+  font-size: 1.4em;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa-instagram {
+  color: #fb3958;
+}
+
+.fa-google-plus-g {
+  color: #d34836;
+}
