@@ -24,6 +24,9 @@ body {
 
 #table {
   margin: 0 auto;
+  overflow: auto;
+  display: block;
+  width: 100%;
 }
 
 .bar {
