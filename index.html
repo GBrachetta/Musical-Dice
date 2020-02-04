@@ -27,9 +27,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="game.html">Game</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
@@ -185,8 +185,7 @@
                 <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
                     <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam
-                        recusandae vel labore minus itaque.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam.</p>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
@@ -199,11 +198,14 @@
                         </li>
                         <li>
                             <p>
-                                <a href="#" data-toggle="modal" data-target="#modal">ABOUT ME</a>
+                                <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
                             </p>
                         </li>
                         <li>
                             <p><a href="https://www.brachetta.com/" target="_blank">WEBSITE</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a></p>
                         </li>
                     </ul>
 
@@ -250,8 +252,8 @@
         </div>
     </footer>
 
-    <!-- Modal-->
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <!-- Modal About Me-->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -263,12 +265,6 @@
                 <div class="modal-body">
                     <h3>Guillermo Brachetta</h3>
                     <hr class="my-3">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati
-                        aliquam voluptatem maxime rerum ipsum esse, laborum dicta numquam id
-                        laudantium at quo quae. Labore deserunt ratione inventore accusamus
-                        quasi itaque debitis totam ex suscipit, atque et nisi laboriosam
-                        veritatis error a soluta nam assumenda, neque id natus? Asperiores,
-                        architecto.</p>
                     <div class="row my-3">
                         <div class="col">
                             <img src="./assets/images/avatar.png" alt="avatar" class="img-fluid">
@@ -288,9 +284,65 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Form-->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-12 container">
+                        <form id="myform">
+                            <fieldset>
+                                <div class="row justify-content-between">
+                                    <div class="col-12 form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" name="from_name" id="inputName"
+                                            placeholder="Enter Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputEmail">Email address</label>
+                                        <input type="email" name="from_email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">I'll never share your email
+                                            with anyone
+                                            else.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea">Leave your message here</label>
+                                    <textarea name="info_request" class="form-control" id="textArea" rows="5"
+                                        required></textarea>
+                                </div>
+                                <div class="row my-5 text-center">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="messages"></div>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
+        })();
+    </script>
+    <script src="./assets/js/sendEmail.js"></script>
     <script src="./assets/js/scripts.js"></script>
 </body>
 
