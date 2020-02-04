@@ -14,7 +14,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
         <a class="navbar-brand" href="index.html">Navbar</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
             <h1 class="display-3">Musical Dice</h1>
             <p class="lead">A new take on Mozart's game</p>
             <hr class="my-2">
-            <p>Contact</p>
+            <h2>Contact</h2>
         </div>
     </div>
 
@@ -113,16 +113,17 @@
                     <ul class="list-unstyled">
                         <li>
                             <p>
-                                <a href="#!">PROJECTS</a>
+                                <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <a href="#!">ABOUT ME</a>
+                                <a href="#" data-toggle="modal" data-target="#modal">ABOUT ME</a>
                             </p>
+
                         </li>
                         <li>
-                            <p><a href="#!">WEBSITE</a></p>
+                            <p><a href="https://www.brachetta.com/" target="_blank">WEBSITE</a></p>
                         </li>
                     </ul>
 
@@ -147,7 +148,7 @@
 
                 </div>
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
                     <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
                     <a type="button" class="btn-floating btn-fb">
                         <i class="fab fa-facebook-f"></i>
@@ -168,6 +169,45 @@
             <a href='index.html'> Guillermo Brachetta</a>
         </div>
     </footer>
+
+    <!-- Modal-->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">About me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Guillermo Brachetta</h3>
+                    <hr class="my-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati
+                        aliquam voluptatem maxime rerum ipsum esse, laborum dicta numquam id
+                        laudantium at quo quae. Labore deserunt ratione inventore accusamus
+                        quasi itaque debitis totam ex suscipit, atque et nisi laboriosam
+                        veritatis error a soluta nam assumenda, neque id natus? Asperiores,
+                        architecto.</p>
+                    <div class="row my-3">
+                        <div class="col">
+                            <img src="./assets/images/avatar.png" alt="avatar" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+                        laudantium, reprehenderit sequi distinctio omnis perferendis. Velit,
+                        perferendis iste voluptas vel fuga quam fugiat eligendi corrupti
+                        excepturi sed debitis ratione architecto, ea vero reiciendis, id ex
+                        molestias incidunt ipsa. Temporibus fugit placeat laudantium magnam
+                        natus laborum adipisci tempore minus corrupti facere!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

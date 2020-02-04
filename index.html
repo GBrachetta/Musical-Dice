@@ -8,30 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Title</title>
+    <title>Musical Dice</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
-        <a class="navbar-brand" href="index.html">Navbar</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="game.html">Game</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
+        <a class="navbar-brand" href="#">Back to top</a>
     </nav>
 
     <div class="jumbotron jumbotron-fluid">
@@ -41,11 +24,401 @@
             <hr class="my-2">
 
             <p class="mt-4 lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Play the game!</a>
+                <a class="btn btn-primary btn-lg" href="#game" role="button">Play the game!</a>
             </p>
         </div>
     </div>
-    <div class="fill"></div>
+
+    <!-- History -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="my-4">
+                    The Original Game
+                </h2>
+                <p class="text-justify">
+                    A <em>Musikalisches Würfelspiel</em> ("musical dice game") was a system for using dice to
+                    randomly 'generate' music from precomposed options. These 'games' were quite popular throughout
+                    Western
+                    Europe in the 18th century. Several different games were devised, some that did not require dice,
+                    but merely 'choosing a random number.'
+                </p>
+                <p class="text-justify">The earliest example is Johann Philipp Kirnberger's <em>Der allezeit fertige
+                        Menuetten- und Polonaisencomponist</em> ("The Ever-Ready Minuet and Polonaise Composer") (1757
+                    [1st edition; revised 2nd 1783]). Examples by well known composers include C. P. E. Bach's
+                    <em>Einfall, einen
+                        doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu
+                        wissen</em> ("A method for making six bars of double counterpoint at the octave
+                    without knowing the rules") (1758) and Maximilian Stadler's <em>Table pour composer des minuets et
+                        des Trios à la infinie; avec deux dez à jouer</em> ("A table for composing minuets and trios to
+                    infinity, by playing
+                    with two dice") (1780).
+                </p>
+                <p>The way these games work may be understood in analogy to sentence construction:
+                </p>
+                <div class="row justify-content-center mt-5 mb-4">
+                    <div class="col-8">
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">A</th>
+                                    <th scope="col">B</th>
+                                    <th scope="col">C</th>
+                                    <th scope="col">D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>The cow</td>
+                                    <td>ran</td>
+                                    <td>past</td>
+                                    <td>the field.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>The pig</td>
+                                    <td>walked</td>
+                                    <td>through</td>
+                                    <td>the yard.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>The sheep</td>
+                                    <td>ran</td>
+                                    <td>into</td>
+                                    <td>the marsh.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <p class="text-justify">
+                    One rolls one die for each word and selects the word from the appropriate column according to the
+                    number. Thus if one rolls 1 2 3 1 2 3 one is given, "The pig ran past the marsh." Each progression
+                    is essentially the same, there may be more or less choices for different slots, and the choices
+                    offered for each slot are slight variations rather than being entirely different.
+                </p>
+                <h2 class="my-4">
+                    Mozart's version
+                </h2>
+                <p class="text-justify">
+                    The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K.
+                    294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been
+                    authenticated. The dice rolls randomly selected small sections of music, which would be patched
+                    together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161
+                    different yet similar waltzes. Some measures have only one possibility no matter what the roll of
+                    the dice (measures 8/16) while other measures have a different possibility for each roll (measures
+                    1/16).
+                </p>
+                <img src="./assets/images/mozart-game.png" alt="Original Rules" class="my-4 img-fluid">
+                <p class="text-justify">
+                    Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be
+                    some kind of game or system for constructing music out of two-bar fragments, but contains no
+                    instructions and there is no evidence that dice were involved.
+                </p>
+                <p>
+                    The titles of the supposed Mozart compositions are:
+                </p>
+                <ul>
+                    <li class="text-justify"><em>Anleitung zum Componieren von Walzern so viele man will vermittelst
+                            zweier
+                            Würfel, ohne etwas
+                            von der Musik oder Composition zu verstehen</em> ("Instructions for the composition of as
+                        many
+                        waltzes as one desires with two dice, without understanding anything about music or
+                        composition")
+                    </li>
+                    <li>
+                        <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of
+                        polonaises")
+                    </li>
+                </ul>
+                <h2 class="my-4">
+                    My version
+                </h2>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident porro quaerat rem possimus
+                    placeat veritatis ad perferendis, commodi et natus esse voluptatem unde quas quis assumenda quisquam
+                    qui vero nostrum maiores at! Voluptatibus quasi facilis repellendus mollitia non laboriosam
+                    veritatis omnis exercitationem, ducimus voluptates, quis inventore sint ut consequuntur tempore.
+                </p>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident porro quaerat rem possimus
+                    placeat veritatis ad perferendis, commodi et natus esse voluptatem unde quas quis assumenda quisquam
+                    qui vero nostrum maiores at! Voluptatibus quasi facilis repellendus mollitia non laboriosam
+                    veritatis omnis exercitationem, ducimus voluptates, quis inventore sint ut consequuntur tempore.
+                </p>
+                <p class="text-justify mb-5">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident porro quaerat rem possimus
+                    placeat veritatis ad perferendis, commodi et natus esse voluptatem unde quas quis assumenda quisquam
+                    qui vero nostrum maiores at! Voluptatibus quasi facilis repellendus mollitia non laboriosam
+                    veritatis omnis exercitationem, ducimus voluptates, quis inventore sint ut consequuntur tempore.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game -->
+    <div class="jumbotron jumbotron-fluid" id="game">
+        <div class="container">
+            <h2 class="display-4">The Game</h2>
+        </div>
+    </div>
+
+    <div id="music">
+        <div class="row text-center mt-5">
+            <div class="col-12">
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Randomise!</a>
+                </p>
+            </div>
+        </div>
+
+        <table id="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <button class="btn bar song">A1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">A12</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bar song">B1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">B12</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bar song">C1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">C12</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bar song">D1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">D12</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bar song">E1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">E12</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bar song">F1</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F2</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F3</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F4</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F5</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F6</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F7</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F8</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F9</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F10</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F11</button>
+                    </td>
+                    <td>
+                        <button class="btn bar song">F12</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="row text-center my-5">
+            <div class="col-12">
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Play Minuetto</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color lighten-3 pt-4">
@@ -54,8 +427,7 @@
                 <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
                     <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam
-                        recusandae vel labore minus itaque.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam.</p>
                 </div>
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
@@ -63,16 +435,19 @@
                     <ul class="list-unstyled">
                         <li>
                             <p>
-                                <a href="#!">PROJECTS</a>
+                                <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <a href="#!">ABOUT ME</a>
+                                <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
                             </p>
                         </li>
                         <li>
-                            <p><a href="#!">WEBSITE</a></p>
+                            <p><a href="https://www.brachetta.com/" target="_blank">WEBSITE</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a></p>
                         </li>
                     </ul>
 
@@ -97,32 +472,122 @@
 
                 </div>
                 <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
                     <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
-                    <a type="button" class="btn-floating btn-fb">
+                    <a type="button" class="btn-floating btn-fb" href="https://www.facebook.com/">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a type="button" class="btn-floating btn-tw">
+                    <a type="button" class="btn-floating btn-tw" href="https://www.twitter.com/">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a type="button" class="btn-floating btn-gplus">
+                    <a type="button" class="btn-floating btn-gplus" href="https://www.plus.google.com/">
                         <i class="fab fa-google-plus-g"></i>
                     </a>
-                    <a type="button" class="btn-floating btn-dribbble">
+                    <a type="button" class="btn-floating btn-dribbble" href="https://www.instagram.com/">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href='index.html'> Guillermo Brachetta</a>
+        <div class="footer-copyright text-center py-3">&copy; <script>
+                document.write(new Date().getFullYear());
+            </script> Copyright:
+            <a href="#"> Guillermo Brachetta</a>
         </div>
     </footer>
 
+    <!-- Modal About Me-->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">About me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Guillermo Brachetta</h3>
+                    <hr class="my-3">
+                    <div class="row my-3">
+                        <div class="col">
+                            <img src="./assets/images/avatar.png" alt="avatar" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+                        laudantium, reprehenderit sequi distinctio omnis perferendis. Velit,
+                        perferendis iste voluptas vel fuga quam fugiat eligendi corrupti
+                        excepturi sed debitis ratione architecto, ea vero reiciendis, id ex
+                        molestias incidunt ipsa. Temporibus fugit placeat laudantium magnam
+                        natus laborum adipisci tempore minus corrupti facere!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form-->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-12 container">
+                        <form id="myform">
+                            <h5 class="my-4">Please fill in the form to get in touch.</h5>
+                            <fieldset>
+                                <div class="row justify-content-between">
+                                    <div class="col-12 form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" name="from_name" id="inputName"
+                                            placeholder="Enter Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputEmail">Email address</label>
+                                        <input type="email" name="from_email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">I'll never share your email
+                                            with anyone
+                                            else.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea">Leave your message here</label>
+                                    <textarea name="info_request" class="form-control" id="textArea" rows="5"
+                                        required></textarea>
+                                </div>
+                                <div class="row my-5 text-center">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="messages"></div>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
+        })();
+    </script>
+    <script src="./assets/js/sendEmail.js"></script>
     <script src="./assets/js/scripts.js"></script>
 </body>
 

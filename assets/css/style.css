@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -33,7 +37,7 @@ body {
 }
 
 #myform {
-  margin: 0 10vw;
+  margin: 0 2vw;
 }
 
 .message-style {
@@ -42,4 +46,51 @@ body {
   margin-bottom: 2em;
   background-color: #4e5d6c;
   font-weight: 700;
+}
+
+.social a i {
+  color: #fff;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  font-size: 1em;
+  line-height: 2em;
+  text-align: center;
+  margin-top: 5px;
+  background: #2b3e50;
+  transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+}
+
+.social a i.fa-twitter:hover {
+  background: #1da1f2;
+}
+
+.social a i.fa-facebook-f:hover {
+  background: #3b5998;
+}
+
+.social a i.fa-google-plus-g:hover {
+  background: #d34836;
+}
+
+.social a i.fa-instagram:hover {
+  background: #8a3ab9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.jumbotron {
+  padding: 4rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .social a {
+    display: block;
+    line-height: 2em;
+  }
 }
