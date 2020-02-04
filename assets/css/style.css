@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
@@ -5,6 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 .fill {
