@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -45,6 +49,7 @@ body {
 }
 
 .social a i {
+  color: #fff;
   width: 2em;
   height: 2em;
   border-radius: 50%;
@@ -77,6 +82,10 @@ body {
 
 a:hover {
   text-decoration: none;
+}
+
+.jumbotron {
+  padding: 4rem 2rem;
 }
 
 @media (min-width: 768px) {
