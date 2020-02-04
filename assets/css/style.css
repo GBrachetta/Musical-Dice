@@ -24,17 +24,11 @@ body {
 
 #table {
   margin: 0 auto;
-  overflow: auto;
-  display: block;
-  width: 100%;
 }
 
 .bar {
   width: 75px;
   height: 70px;
-}
-
-.bar {
   background-color: #2b3e50;
 }
 
