@@ -72,12 +72,12 @@ body {
   background: #3b5998;
 }
 
-.social a i.fa-google-plus-g:hover {
-  background: #d34836;
+.social a i.fa-linkedin:hover {
+  background: #4875b4;
 }
 
 .social a i.fa-instagram:hover {
-  background: #8a3ab9;
+  background: #e95950;
 }
 
 a:hover {
