@@ -9,9 +9,6 @@ body {
 
 .page-footer {
   background-color: #4e5d6c;
-  /* bottom: 0; */
-  /* position: fixed; */
-  /* width: 100%; */
 }
 
 #music {
@@ -47,43 +44,6 @@ body {
   font-weight: 700;
 }
 
-.social a {
-  display: block;
-  line-height: 2em;
-}
-
-/* .fab {
-  font-size: 1.4em;
-}
-
-.fa-facebook {
-  color: #3b5998;
-}
-
-.fa-twitter {
-  color: #1da1f2;
-}
-
-.fa-instagram {
-  color: #fb3958;
-}
-
-.fa-google-plus-g {
-  color: #d34836;
-} */
-
-/* 
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #885253;
-  color: white;
-}
-.table-striped > tbody > tr:nth-child(even) > td,
-.table-striped > tbody > tr:nth-child(even) > th {
-  background-color: #4a6677;
-  color: rgb(0, 0, 0);
-} */
-
 .social a i {
   width: 2em;
   height: 2em;
@@ -98,10 +58,6 @@ body {
   -webkit-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
 }
-
-/* .social a i:hover {
-  background: #3b3c41;
-} */
 
 .social a i.fa-twitter:hover {
   background: #1da1f2;
@@ -121,4 +77,11 @@ body {
 
 a:hover {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .social a {
+    display: block;
+    line-height: 2em;
+  }
 }
