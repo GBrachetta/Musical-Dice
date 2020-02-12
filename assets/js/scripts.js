@@ -1,6 +1,3 @@
-// Context fow Webaudio API (Web Audio API not currently used here)
-// const context = new (window.AudioContext || window.webkitAudioContext)();
-
 // My files in an array
 const bars = [
   "assets/music/a1.mp3",
@@ -94,8 +91,10 @@ const fileName = [
 ];
 
 // Creates a flat array with a random file from each column
+// Function randomise() is called by onclick in HTML
+let randomSelection;
 function randomise() {
-  let randomSelection = [
+  randomSelection = [
     `assets/music/${fileName[0][Math.floor(Math.random() * 6)]}.mp3`,
     `assets/music/${fileName[1][Math.floor(Math.random() * 6)]}.mp3`,
     `assets/music/${fileName[2][Math.floor(Math.random() * 6)]}.mp3`,
@@ -109,27 +108,28 @@ function randomise() {
     `assets/music/${fileName[10][Math.floor(Math.random() * 6)]}.mp3`,
     `assets/music/${fileName[11][Math.floor(Math.random() * 6)]}.mp3`
   ];
-
+  // Currently only logging. Need to make variable available globally
+  // or execute function playSong within this scope.
   console.log(randomSelection);
 }
 
-// Plays one file on one button click from the grid
-const audio1 = new Audio("assets/music/a1.mp3");
-
-function playSound() {
-  audio1.play();
-}
-
 // Plays all indexes of array one after each other after a set timeout
-let interval;
+// Function playSong is called by 'onclick' in HTML
 function playSong() {
   i = -1;
   (function f() {
     i = (i + 1) % bars.length;
-    // console.log(bars[i]);
-    let menuet = bars[i];
+    let menuet = randomSelection[i];
     let audio = new Audio(menuet);
     audio.play();
     setTimeout(f, 2250);
   })();
+}
+
+// Plays one file on one button click from the grid
+// Need to make this dynamic
+const audio1 = new Audio("assets/music/a1.mp3");
+// Function playSound is called by onclick in HTML
+function playSound() {
+  audio1.play();
 }
