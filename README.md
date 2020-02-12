@@ -1,4 +1,5 @@
 # **THE MUSICAL DICE**
+
 ![Original Edition](assets/images/rules-original-edition.png)
 
 ## The Original Idea
@@ -85,10 +86,10 @@ Any end of any of the columns works well with the beginning of the following col
 - MP3 merger [API](https://github.com/jackedgson/crunker)
 - [Chuck](https://chuck.cs.princeton.edu/), music programming language.
 - PDF merger APIs:
-    - [Convertapi](https://www.convertapi.com/pdf-to-merge)
-    - [Cloudconvert](https://cloudconvert.com/api/v1/mergepdf)
-    - [PDFMerge](https://pdfmerge.smartsfile.com/api.html)
+  - [Convertapi](https://www.convertapi.com/pdf-to-merge)
+  - [Cloudconvert](https://cloudconvert.com/api/v1/mergepdf)
+  - [PDFMerge](https://pdfmerge.smartsfile.com/api.html)
 
 ### Wireframes (in progress and subject to change)
 
-![Index.html](./wireframes/index.png)
+![Index.html](./wireframes/index.png
