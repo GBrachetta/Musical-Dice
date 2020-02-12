@@ -92,26 +92,44 @@ const fileName = [
 
 // Creates a flat array with a random file from each column
 // Function randomise() is called by onclick in HTML
+// function randomise() {
+//   randomSelection = [
+//     `assets/music/${fileName[0][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[1][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[2][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[3][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[4][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[5][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[6][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[7][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[8][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[9][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[10][Math.floor(Math.random() * 6)]}.mp3`,
+//     `assets/music/${fileName[11][Math.floor(Math.random() * 6)]}.mp3`
+//   ];
+//   // Currently only logging. Need to make variable available globally
+//   // or execute function playSong within this scope.
+//   console.log(randomSelection);
+// }
+
 let randomSelection;
+let sequence;
+// Tip from Bim
 function randomise() {
-  randomSelection = [
-    `assets/music/${fileName[0][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[1][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[2][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[3][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[4][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[5][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[6][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[7][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[8][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[9][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[10][Math.floor(Math.random() * 6)]}.mp3`,
-    `assets/music/${fileName[11][Math.floor(Math.random() * 6)]}.mp3`
-  ];
-  // Currently only logging. Need to make variable available globally
-  // or execute function playSong within this scope.
+  sequence = fileName.map(option => {
+    const random = Math.floor(Math.random() * 6);
+    return option[random];
+  });
+  // console.log(sequence);
+
+  // try contruct new array
+  randomSelection = sequence.map(createURL);
+  function createURL(fileName) {
+    return `assets/music/${fileName}.mp3`;
+  }
   console.log(randomSelection);
 }
+// sequence should contain an array where each entry is a value selected at random form each set of chunks
 
 // Plays all indexes of array one after each other after a set timeout
 // Function playSong is called by 'onclick' in HTML
