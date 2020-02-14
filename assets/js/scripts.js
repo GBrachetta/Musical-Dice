@@ -14,21 +14,23 @@ const fileName = [
   ["a12", "b12", "c12", "d12", "e12", "f12"]
 ];
 
+// GOOD Randomise array
 let randomSelection;
 let sequence;
-// Tip from Bim
+// Tip from Bim to randomise through array 
 function randomise() {
   sequence = fileName.map(option => {
     const random = Math.floor(Math.random() * 6);
     return option[random];
   });
 
-  // try contruct new array
+  // Contructs new random array with path
   randomSelection = sequence.map(createURL);
   function createURL(fileName) {
     return `assets/music/${fileName}.mp3`;
   }
   console.log(randomSelection);
+  
 
   // var sounds = new Array(
   //   new Audio(randomSelection[0]),
@@ -67,6 +69,7 @@ function playSong() {
     i = (i + 1) % 72;
     let menuet = randomSelection[i];
     audio = new Audio(menuet);
+    audio.load();
     audio.play();
     setTimeout(f, 2250);
   })();
@@ -87,8 +90,7 @@ btnRandomise.addEventListener("click", randomise);
 const btnPlay = document.getElementById("play-minuetto");
 btnPlay.addEventListener("click", playSong);
 
-
-// // Experiment with short files and no timeout
+// NOTE: Dond't delete Experiment with short files and no timeout
 // var sounds = new Array(
 //   new Audio(randomSelection[0]),
 //   new Audio(randomSelection[1]),
@@ -113,58 +115,5 @@ btnPlay.addEventListener("click", playSong);
 //   sounds[i].play();
 // }
 
-//// This comes from https://stackoverflow.com/questions/31060642/preload-multiple-audio-files
+//// FIXME: This comes from https://stackoverflow.com/questions/31060642/preload-multiple-audio-files
 
-// var audioFiles = [
-//   "http://www.teanglann.ie/CanC/nua.mp3",
-//   "http://www.teanglann.ie/CanC/ag.mp3",
-//   "http://www.teanglann.ie/CanC/dul.mp3",
-//   "http://www.teanglann.ie/CanC/freisin.mp3"
-// ];
-
-// function preloadAudio(url) {
-//   var audio = new Audio();
-//   // once this file loads, it will call loadedAudio()
-//   // the file will be kept by the browser as cache
-//   audio.addEventListener("canplaythrough", loadedAudio, false);
-//   audio.src = url;
-// }
-
-// var loaded = 0;
-// function loadedAudio() {
-//   // this will be called every time an audio file is loaded
-//   // we keep track of the loaded files vs the requested files
-//   loaded++;
-//   if (loaded == audioFiles.length) {
-//     // all have loaded
-//     init();
-//   }
-// }
-
-// var player = document.getElementById("player");
-// function play(index) {
-//   player.src = audioFiles[index];
-//   player.play();
-// }
-
-// function init() {
-//   // do your stuff here, audio has been loaded
-//   // for example, play all files one after the other
-//   var i = 0;
-//   // once the player ends, play the next one
-//   player.onended = function() {
-//     i++;
-//     if (i >= audioFiles.length) {
-//       // end
-//       return;
-//     }
-//     play(i);
-//   };
-//   // play the first file
-//   play(i);
-// }
-
-// // we start preloading all the audio files
-// for (var i in audioFiles) {
-//   preloadAudio(audioFiles[i]);
-// }
