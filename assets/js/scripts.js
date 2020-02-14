@@ -26,10 +26,37 @@ function randomise() {
   // try contruct new array
   randomSelection = sequence.map(createURL);
   function createURL(fileName) {
-    return `assets/music/${fileName}.mp3`;
+    return `assets/audacity/${fileName}.mp3`;
   }
   console.log(randomSelection);
+
+  // var sounds = new Array(
+  //   new Audio(randomSelection[0]),
+  //   new Audio(randomSelection[1]),
+  //   new Audio(randomSelection[2]),
+  //   new Audio(randomSelection[3]),
+  //   new Audio(randomSelection[4]),
+  //   new Audio(randomSelection[5]),
+  //   new Audio(randomSelection[6]),
+  //   new Audio(randomSelection[7]),
+  //   new Audio(randomSelection[8]),
+  //   new Audio(randomSelection[9]),
+  //   new Audio(randomSelection[10]),
+  //   new Audio(randomSelection[11])
+  // );
+  // var i = -1;
+  // playSnd();
+
+  // function playSnd() {
+  //   i++;
+  //   if (i == sounds.length) return;
+  //   sounds[i].addEventListener("ended", playSnd);
+  //   sounds[i].play();
+  // }
 }
+// Calls randomise() on load to have a valid array in case
+// playSong() is called from the page before randomising
+randomise();
 
 // Plays all indexes of array one after each other after a set timeout
 // Function playSong is called by 'onclick' in HTML
@@ -51,3 +78,88 @@ const audio1 = new Audio("assets/music/a1.mp3");
 function playSound() {
   audio1.play();
 }
+
+// Experiment adding event listeners
+const btnRandomise = document.getElementById("btn-randomise");
+btnRandomise.addEventListener("click", () => {
+  randomise();
+});
+
+const btnPlay = document.getElementById("play-minuetto");
+btnPlay.addEventListener("click", () => {
+  playSong();
+});
+
+// // Experiment with short files and no timeout
+// var sounds = new Array(
+//   new Audio(randomSelection[0]),
+//   new Audio(randomSelection[1]),
+//   new Audio(randomSelection[2]),
+//   new Audio(randomSelection[3]),
+//   new Audio(randomSelection[4]),
+//   new Audio(randomSelection[5]),
+//   new Audio(randomSelection[6]),
+//   new Audio(randomSelection[7]),
+//   new Audio(randomSelection[8]),
+//   new Audio(randomSelection[9]),
+//   new Audio(randomSelection[10]),
+//   new Audio(randomSelection[11])
+// );
+// var i = -1;
+// playSnd();
+
+// function playSnd() {
+//   i++;
+//   if (i == sounds.length) return;
+//   sounds[i].addEventListener("ended", playSnd);
+//   sounds[i].play();
+// }
+
+//// This comes from https://stackoverflow.com/questions/31060642/preload-multiple-audio-files
+
+// function preloadAudio(url) {
+//   var audio = new Audio();
+//   // once this file loads, it will call loadedAudio()
+//   // the file will be kept by the browser as cache
+//   audio.addEventListener('canplaythrough', loadedAudio, false);
+//   audio.src = url;
+// }
+
+// var loaded = 0;
+// function loadedAudio() {
+//   // this will be called every time an audio file is loaded
+//   // we keep track of the loaded files vs the requested files
+//   loaded++;
+//   if (loaded == randomSelection.length){
+//     // all have loaded
+//     init();
+//   }
+// }
+
+// var player = document.getElementById('player');
+// function play(index) {
+//   player.src = randomSelection[index];
+//   player.play();
+// }
+
+// function init() {
+//   // do your stuff here, audio has been loaded
+//   // for example, play all files one after the other
+//   var i = 0;
+//   // once the player ends, play the next one
+//   player.onended = function() {
+//     i++;
+//       if (i >= randomSelection.length) {
+//           // end
+//           return;
+//       }
+//     play(i);
+//   };
+//   // play the first file
+//   play(i);
+// }
+
+// // we start preloading all the audio files
+// for (var i in randomSelection) {
+//   preloadAudio(randomSelection[i]);
+// }
