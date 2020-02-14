@@ -26,7 +26,7 @@ function randomise() {
   // try contruct new array
   randomSelection = sequence.map(createURL);
   function createURL(fileName) {
-    return `assets/audacity/${fileName}.mp3`;
+    return `assets/music/${fileName}.mp3`;
   }
   console.log(randomSelection);
 
@@ -60,35 +60,33 @@ randomise();
 
 // Plays all indexes of array one after each other after a set timeout
 // Function playSong is called by 'onclick' in HTML
+let audio;
 function playSong() {
   i = -1;
   (function f() {
     i = (i + 1) % 72;
     let menuet = randomSelection[i];
-    let audio = new Audio(menuet);
+    audio = new Audio(menuet);
     audio.play();
     setTimeout(f, 2250);
   })();
 }
 
-// Plays one file on one button click from the grid
-// Need to make this dynamic
-const audio1 = new Audio("assets/music/a1.mp3");
-// Function playSound is called by onclick in HTML
-function playSound() {
-  audio1.play();
-}
-
-// Experiment adding event listeners
-const btnRandomise = document.getElementById("btn-randomise");
-btnRandomise.addEventListener("click", () => {
-  randomise();
+// Allow each button on the grid to play their corresponding bar
+$(".bar").click(function() {
+  let id = this.id;
+  let barPath = `assets/music/${id}.mp3`;
+  let bar = new Audio(barPath);
+  bar.play();
 });
+
+// Event listeners
+const btnRandomise = document.getElementById("btn-randomise");
+btnRandomise.addEventListener("click", randomise);
 
 const btnPlay = document.getElementById("play-minuetto");
-btnPlay.addEventListener("click", () => {
-  playSong();
-});
+btnPlay.addEventListener("click", playSong);
+
 
 // // Experiment with short files and no timeout
 // var sounds = new Array(
@@ -117,11 +115,18 @@ btnPlay.addEventListener("click", () => {
 
 //// This comes from https://stackoverflow.com/questions/31060642/preload-multiple-audio-files
 
+// var audioFiles = [
+//   "http://www.teanglann.ie/CanC/nua.mp3",
+//   "http://www.teanglann.ie/CanC/ag.mp3",
+//   "http://www.teanglann.ie/CanC/dul.mp3",
+//   "http://www.teanglann.ie/CanC/freisin.mp3"
+// ];
+
 // function preloadAudio(url) {
 //   var audio = new Audio();
 //   // once this file loads, it will call loadedAudio()
 //   // the file will be kept by the browser as cache
-//   audio.addEventListener('canplaythrough', loadedAudio, false);
+//   audio.addEventListener("canplaythrough", loadedAudio, false);
 //   audio.src = url;
 // }
 
@@ -130,15 +135,15 @@ btnPlay.addEventListener("click", () => {
 //   // this will be called every time an audio file is loaded
 //   // we keep track of the loaded files vs the requested files
 //   loaded++;
-//   if (loaded == randomSelection.length){
+//   if (loaded == audioFiles.length) {
 //     // all have loaded
 //     init();
 //   }
 // }
 
-// var player = document.getElementById('player');
+// var player = document.getElementById("player");
 // function play(index) {
-//   player.src = randomSelection[index];
+//   player.src = audioFiles[index];
 //   player.play();
 // }
 
@@ -149,10 +154,10 @@ btnPlay.addEventListener("click", () => {
 //   // once the player ends, play the next one
 //   player.onended = function() {
 //     i++;
-//       if (i >= randomSelection.length) {
-//           // end
-//           return;
-//       }
+//     if (i >= audioFiles.length) {
+//       // end
+//       return;
+//     }
 //     play(i);
 //   };
 //   // play the first file
@@ -160,6 +165,6 @@ btnPlay.addEventListener("click", () => {
 // }
 
 // // we start preloading all the audio files
-// for (var i in randomSelection) {
-//   preloadAudio(randomSelection[i]);
+// for (var i in audioFiles) {
+//   preloadAudio(audioFiles[i]);
 // }
