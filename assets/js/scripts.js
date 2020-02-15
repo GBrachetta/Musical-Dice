@@ -63,17 +63,17 @@ randomise();
 // FIXME Plays all indexes of array one after each other after a set timeout
 // Function playSong is called by 'onclick' in HTML
 let audio;
-function playSong() {
-  i = -1;
-  (function f() {
-    i = (i + 1) % 72;
-    let menuet = randomSelection[i];
-    audio = new Audio(menuet);
-    audio.load();
-    audio.play();
-    setTimeout(f, 2250);
-  })();
-}
+// function playSong() {
+//   i = -1;
+//   (function f() {
+//     i = (i + 1) % 72;
+//     let menuet = randomSelection[i];
+//     audio = new Audio(menuet);
+//     audio.load();
+//     audio.play();
+//     setTimeout(f, 2250);
+//   })();
+// }
 
 // GOOD Allow each button on the grid to play their corresponding bar
 $(".bar").click(function() {
@@ -90,6 +90,136 @@ btnRandomise.addEventListener("click", randomise);
 const btnPlay = document.getElementById("play-minuetto");
 btnPlay.addEventListener("click", playSong);
 
+//
+// TRY Async
+function playSong() {
+  async.waterfall(
+    [bar1, bar2, bar3, bar4, bar5, bar6, bar7, bar8, bar9, bar10, bar11, bar12],
+    function() {
+      console.log("tasks done!");
+    }
+  );
+  function bar1(cb) {
+    console.log("task1:started");
+    setTimeout(function() {
+      let menuet = randomSelection[0];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task1:finished");
+      cb();
+    }, 1000);
+  }
+  function bar2(cb) {
+    console.log("task2:started");
+    setTimeout(function() {
+      let menuet = randomSelection[1];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task2:finished");
+      cb();
+    }, 2250);
+  }
+  function bar3(cb) {
+    console.log("task3:started");
+    setTimeout(function() {
+      let menuet = randomSelection[2];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task3:finished");
+      cb();
+    }, 2250);
+  }
+  function bar4(cb) {
+    console.log("task4:started");
+    setTimeout(function() {
+      let menuet = randomSelection[3];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task4:finished");
+      cb();
+    }, 2250);
+  }
+  function bar5(cb) {
+    console.log("task5:started");
+    setTimeout(function() {
+      let menuet = randomSelection[4];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task5:finished");
+      cb();
+    }, 2250);
+  }
+  function bar6(cb) {
+    console.log("task6:started");
+    setTimeout(function() {
+      let menuet = randomSelection[5];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task6:finished");
+      cb();
+    }, 2250);
+  }
+  function bar7(cb) {
+    console.log("task7:started");
+    setTimeout(function() {
+      let menuet = randomSelection[6];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task7:finished");
+      cb();
+    }, 2250);
+  }
+  function bar8(cb) {
+    console.log("task8:started");
+    setTimeout(function() {
+      let menuet = randomSelection[7];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task8:finished");
+      cb();
+    }, 2250);
+  }
+  function bar9(cb) {
+    console.log("task9:started");
+    setTimeout(function() {
+      let menuet = randomSelection[8];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task9:finished");
+      cb();
+    }, 2250);
+  }
+  function bar10(cb) {
+    console.log("task10:started");
+    setTimeout(function() {
+      let menuet = randomSelection[9];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task10:finished");
+      cb();
+    }, 2250);
+  }
+  function bar11(cb) {
+    console.log("task11:started");
+    setTimeout(function() {
+      let menuet = randomSelection[10];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task11:finished");
+      cb();
+    }, 2250);
+  }
+  function bar12(cb) {
+    console.log("task12:started");
+    setTimeout(function() {
+      let menuet = randomSelection[11];
+      audio = new Audio(menuet);
+      audio.play();
+      console.log("task12:finished");
+      cb();
+    }, 2250);
+  }
+}
 // NOTE: KEEP Dond't delete Experiment with short files and no timeout
 // var sounds = new Array(
 //   new Audio(randomSelection[0]),
