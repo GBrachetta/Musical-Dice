@@ -459,3 +459,24 @@ function playSong() {
 //     }
 //   }
 // }
+
+// TRY Howler
+function playSong() {
+  audio = new Howl({
+    src: ["assets/audacity/a1.mp3", "assets/audacity/a2.mp3"]
+  });
+  i = -1;
+  (function f() {
+    i = (i + 1) % 72;
+    let menuet = randomSelection[i];
+    audio = new Audio(menuet);
+    audio.play();
+    setTimeout(f, 2250);
+  })();
+}
+// Play returns a unique Sound ID that can be passed
+// into any method on Howl to control that specific sound.
+// var id1 = sound.play();
+// var id2 = sound.play();
+
+// Fade out the first sound and speed up the second.
