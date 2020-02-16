@@ -99,6 +99,13 @@ a:hover {
   padding: 4rem 2rem;
 }
 
+.selected{
+  background-color: #1da1f2;
+}
+
+.unselected{
+  background-color: #fff;
+}
 /* .my-grid div{
 align-self: auto;
 } */
