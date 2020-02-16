@@ -1,4 +1,4 @@
-// Multidimensional array with all (unique) filenames in their columns
+// GOOD Multidimensional array with all (unique) filenames in their columns
 const fileName = [
   ["a01", "b01", "c01", "d01", "e01", "f01"],
   ["a02", "b02", "c02", "d02", "e02", "f02"],
@@ -88,30 +88,25 @@ let audio;
 // }
 
 // GOOD Allows each button on the grid to play their corresponding bar
-$(".bar").click(function() {
+$(".bar").on("click", function() {
   let id = this.id;
   let barPath = `assets/music/${id}.mp3`;
   let bar = new Audio(barPath);
   bar.play();
 });
 
-// GOOD Event listeners
+// GOOD Event listeners Vanilla JS
 // const btnRandomise = document.getElementById("btn-randomise");
 // btnRandomise.addEventListener("click", randomise);
 
-// GOOD Same as above with jQ
-$("#btn-randomise").on("click", () => {
-  randomise();
-});
-
-// GOOD Event listener play
 // const btnPlay = document.getElementById("play-minuetto");
 // btnPlay.addEventListener("click", playSong);
 
-// GOOD Same as above w jQ
-$("#play-minuetto").on("click", () => {
-  playSong()
-});
+// GOOD Same as above with jQ
+// GOOD Randomise
+$("#btn-randomise").on("click", randomise);
+// GOOD Play array
+$("#play-minuetto").on("click", playSong);
 
 // TRY Preload audio
 // var loaded = 0;
@@ -154,7 +149,7 @@ $("#play-minuetto").on("click", () => {
 // }
 
 //
-// TRY Async
+// TRY Async Waterfall FIXME: Not working on mobile (iOS)
 function playSong() {
   async.waterfall(
     [bar1, bar2, bar3, bar4, bar5, bar6, bar7, bar8, bar9, bar10, bar11, bar12],
@@ -464,3 +459,24 @@ function playSong() {
 //     }
 //   }
 // }
+
+// TRY Howler
+function playSong() {
+  audio = new Howl({
+    src: ["assets/audacity/a1.mp3", "assets/audacity/a2.mp3"]
+  });
+  i = -1;
+  (function f() {
+    i = (i + 1) % 72;
+    let menuet = randomSelection[i];
+    audio = new Audio(menuet);
+    audio.play();
+    setTimeout(f, 2250);
+  })();
+}
+// Play returns a unique Sound ID that can be passed
+// into any method on Howl to control that specific sound.
+// var id1 = sound.play();
+// var id2 = sound.play();
+
+// Fade out the first sound and speed up the second.
