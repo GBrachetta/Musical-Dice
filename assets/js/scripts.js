@@ -28,20 +28,20 @@ function randomise() {
   // Contructs new random array with path
   randomSelection = sequence.map(createURL);
   function createURL(fileName) {
-    return `assets/music/${fileName}.mp3`;
+    return `assets/audacity/${fileName}.mp3`;
   }
   // FIXME: Calls addClass to highlight selection - NEEDS TO CLEAR CLASS ON NEW ARRAY
-  addClass();
+  // addClass();
   console.log(randomSelection);
 
   // FIXME: Highlight selected cells - NEEDS TO CLEAR CLASS ON NEW ARRAY
-  function addClass() {
-    for (let index = 0; index < randomSelection.length; index++) {
-      let selectedId = randomSelection[index].slice(13, 16);
-      element = document.getElementById(selectedId);
-      element.classList.add("selected");
-    }
-  }
+  // function addClass() {
+  //   for (let index = 0; index < randomSelection.length; index++) {
+  //     let selectedId = randomSelection[index].slice(13, 16);
+  //     element = document.getElementById(selectedId);
+  //     element.classList.add("selected");
+  //   }
+  // }
 
   // KEEP
   // var sounds = new Array(
@@ -278,6 +278,7 @@ function playSong() {
     }, 2250);
   }
 }
+
 // NOTE: KEEP Dond't delete Experiment with short files and no timeout
 // var sounds = new Array(
 //   new Audio(randomSelection[0]),
@@ -461,22 +462,94 @@ function playSong() {
 // }
 
 // TRY Howler
-function playSong() {
-  audio = new Howl({
-    src: ["assets/audacity/a1.mp3", "assets/audacity/a2.mp3"]
-  });
-  i = -1;
-  (function f() {
-    i = (i + 1) % 72;
-    let menuet = randomSelection[i];
-    audio = new Audio(menuet);
-    audio.play();
-    setTimeout(f, 2250);
-  })();
-}
-// Play returns a unique Sound ID that can be passed
-// into any method on Howl to control that specific sound.
-// var id1 = sound.play();
-// var id2 = sound.play();
+// var sound = new Howl({
+//   src: ["assets/audacity/a1.mp3", "assets/audacity/a2.mp3"],
+//   preload: true
+// });
+// console.log(sound);
+// sound.play();
 
-// Fade out the first sound and speed up the second.
+$(window).on("load", function() {
+  var isPlaying = false;
+  var sound_files = [
+    new Howl({
+      src: [randomSelection[0]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[1]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[2]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[3]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[4]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[5]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[6]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[7]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[8]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[9]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[10]],
+      loop: false
+    }),
+    new Howl({
+      src: [randomSelection[11]],
+      loop: false
+    })
+  ];
+  var play_button = $("#play-button"),
+    pause_button = $("#pause-button"),
+    shift_preset = $("#preset-changer");
+  for (var i = 0; i < sound_files.length - 1; ++i) {
+    sound_files[i].on(
+      "end",
+      (function(i) {
+        return function() {
+          sound_files[i + 1].play();
+        };
+      })(i)
+    );
+  }
+  sound_files[i].on("end", function() {
+    isPlaying = false;
+  });
+  play_button.click(function() {
+    if (!isPlaying) {
+      isPlaying = true;
+      sound_files[0].play();
+    }
+  });
+  function playTrack(index) {
+    console.log("playing " + index);
+    sound_files[index].play();
+    sound_files[index].once("end", function() {
+      if (index < sound_files.length - 1) playTrack(index + 1);
+      else isPlaying = false;
+    });
+  }
+  //});
+});
