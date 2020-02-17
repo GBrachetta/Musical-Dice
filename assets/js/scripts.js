@@ -34,6 +34,12 @@ function randomise() {
   }
   defineSong();
   console.log(randomSelection);
+  // Clears and adds class 'selected' to selected cells
+  $(".selected").removeClass("selected");
+  randomSelection.forEach(element => {
+    let item = [`${element.slice(16, 19)}`];
+    $(`#${item}`).addClass("selected");
+  });
 }
 
 // GOOD Play array
@@ -41,13 +47,16 @@ function randomise() {
 
 function createSequence(bars) {
   let allHowls = [];
+  let howl;
   for (var i = 0; i <= bars; i++) {
-    let howl = new Howl({
+    howl = new Howl({
       src: [randomSelection[i]],
       loop: false
     });
     allHowls.push(howl);
+    // howl.unload();
   }
+  // console.log(allHowls[1]);
   return allHowls;
 }
 
