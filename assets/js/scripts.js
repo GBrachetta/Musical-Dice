@@ -60,9 +60,9 @@ function createSequence(bars) {
   return allHowls;
 }
 
+let soundFiles = [];
 function defineSong() {
   let isPlaying = false;
-  let soundFiles = [];
   if (soundFiles.length) {
     soundFiles.forEach(sound => {
       sound.unload();
