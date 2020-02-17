@@ -1,3 +1,4 @@
+// Constants
 // GOOD Multidimensional array with all (unique) filenames in their columns
 const fileName = [
   ["a01", "b01", "c01", "d01", "e01", "f01"],
@@ -14,9 +15,13 @@ const fileName = [
   ["a12", "b12", "c12", "d12", "e12", "f12"]
 ];
 
-// GOOD Randomise array
+// Variables
 let randomSelection = [];
 let sequence = [];
+let i;
+
+// Functions
+// GOOD Randomise array
 // Tip from Bim to randomise through array
 function randomise() {
   sequence = fileName.map(option => {
@@ -28,22 +33,9 @@ function randomise() {
     return `assets/audacity/${fileName}.mp3`;
   }
   defineSong();
+  console.log(randomSelection);
 }
 
-// KEEP Calls randomise() on load to have a valid array in case
-// playSong() is called from the page before randomising
-randomise();
-
-// GOOD Allows each button on the grid to play their corresponding bar
-$(".bar").on("click", function() {
-  let id = this.id;
-  let barPath = `assets/music/${id}.mp3`;
-  let bar = new Audio(barPath);
-  bar.play();
-});
-
-// GOOD Randomise
-$("#btn-randomise").on("click", randomise);
 // GOOD Play array
 // $("#play-minuetto").on("click", playSong);
 
@@ -68,8 +60,7 @@ function defineSong() {
     });
   }
   soundFiles = createSequence(12);
-  // using var because let isn't in scope
-  for (var i = 0; i < soundFiles.length - 1; ++i) {
+  for (i = 0; i < soundFiles.length - 1; ++i) {
     soundFiles[i].on(
       "end",
       (function(i) {
@@ -85,21 +76,36 @@ function defineSong() {
   handlers(isPlaying, soundFiles);
 }
 
+// Event Listeners
+// Randomise event
+$("#btn-randomise").on("click", randomise);
+// Play & Pause event
 function handlers(playing, soundFiles) {
   let playButton = $("#play-minuetto"),
     pauseButton = $("#pause-button");
-  playButton.click(function() {
+  playButton.on("click", function() {
     if (!playing) {
       isPlaying = true;
       soundFiles[0].play();
     }
   });
-  pauseButton.click(function() {
+  pauseButton.on("click", function() {
     if (playing) {
       isPlaying = false;
       soundFiles[0].stop();
     }
   });
+  // Grid play event
+  $(".bar").on("click", function() {
+    let id = this.id;
+    let barPath = `assets/music/${id}.mp3`;
+    let bar = new Audio(barPath);
+    bar.play();
+  });
 }
+
+// Calls randomise() on load to have a valid array in case
+// playSong() is called from the page before randomising
+randomise();
 
 $(window).on("load", defineSong);
