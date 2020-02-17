@@ -24,6 +24,8 @@ let i;
 // GOOD Randomise array
 // Tip from Bim to randomise through array
 function randomise() {
+  $("#play-minuetto").attr("disabled", false);
+
   sequence = fileName.map(option => {
     const random = Math.floor(Math.random() * 6);
     return option[random];
@@ -85,24 +87,36 @@ function defineSong() {
   handlers(isPlaying, soundFiles);
 }
 
+// btnPlayText.text("Stop");
+// btnPlayText.text("Play Minuetto");
+
 // Event Listeners
 // Randomise event
 $("#btn-randomise").on("click", randomise);
 // Play & Pause event
-function handlers(playing, soundFiles) {
+function handlers(isPlaying, soundFiles) {
   let playButton = $("#play-minuetto"),
     pauseButton = $("#pause-button");
   playButton.on("click", function() {
-    if (!playing) {
+    if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
+      // playButton.html("Stop");
+      // console.log(playing);
+      console.log(`Is playing? ${isPlaying}`);
     }
+    $("#play-minuetto").attr("disabled", true);
+    // $("#play-minuetto").attr("id", 'pause-button');
   });
   pauseButton.on("click", function() {
-    if (playing) {
+    if (isPlaying) {
       isPlaying = false;
-      soundFiles[0].stop();
+      soundFiles.forEach(bar => {
+        bar.stop();
+      });
+      $("#play-minuetto").attr("disabled", false);
     }
+    console.log(`Is playing? ${isPlaying}`);
   });
   // Grid play event
   $(".bar").on("click", function() {

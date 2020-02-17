@@ -99,16 +99,32 @@ a:hover {
   padding: 4rem 2rem;
 }
 
-.selected{
+.selected {
   background-color: #1da1f2;
 }
 
-.unselected{
+.unselected {
   background-color: #fff;
 }
 /* .my-grid div{
 align-self: auto;
 } */
+button#btn-randomise:active,
+button#play-minuetto:active,
+button#pause-button:active,
+button#pause-button:focus,
+button#playminuetto:focus,
+button#btn-randomise:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #df691a;
+}
+
+button#pause-button:hover,
+button#playminuetto:hover,
+button#btn-randomise:hover {
+  background-color: #bd5916;
+}
 
 @media (min-width: 768px) {
   .social a {
