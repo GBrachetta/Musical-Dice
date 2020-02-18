@@ -50,15 +50,13 @@ function randomise() {
 function createSequence(bars) {
   let allHowls = [];
   let howl;
-  for (var i = 0; i <= bars; i++) {
+  for (i = 0; i <= bars; i++) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false
     });
     allHowls.push(howl);
-    // howl.unload();
   }
-  // console.log(allHowls[1]);
   return allHowls;
 }
 
@@ -106,6 +104,11 @@ function handlers(isPlaying, soundFiles) {
       console.log(`Is playing? ${isPlaying}`);
     }
     $("#play-minuetto").attr("disabled", true);
+    // Restores the play button after finishing song
+    let length = soundFiles.length - 2;
+    soundFiles[length].on("end", function() {
+      $("#play-minuetto").attr("disabled", false);
+    });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
   pauseButton.on("click", function() {
@@ -122,10 +125,20 @@ function handlers(isPlaying, soundFiles) {
   $(".bar").on("click", function() {
     let id = this.id;
     let barPath = `assets/music/${id}.mp3`;
-    let bar = new Audio(barPath);
-    bar.play();
+    let cell = new Howl({
+      src: [barPath],
+      volume: 0.4
+    });
+    cell.play();
   });
 }
+// Previous method to play cells in grid with Audio
+// $(".bar").on("click", function() {
+//   let id = this.id;
+//   let barPath = `assets/music/${id}.mp3`;
+//   let bar = new Audio(barPath);
+//   bar.play();
+// });
 
 // Calls randomise() on load to have a valid array in case
 // playSong() is called from the page before randomising
