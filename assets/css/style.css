@@ -126,6 +126,12 @@ button#btn-randomise:hover {
   background-color: #bd5916;
 }
 
+button.btn:active,
+button.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 @media (min-width: 768px) {
   .social a {
     display: block;
