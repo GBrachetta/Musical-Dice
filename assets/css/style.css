@@ -36,6 +36,10 @@ button.bar {
   padding: 0;
 }
 
+a.bar {
+  padding: 1em;
+}
+
 .bar {
   width: 100%;
   height: 3.5em;
@@ -50,6 +54,12 @@ button.bar {
 #myform {
   margin: 0 2vw;
 }
+
+.display-3, .display-4 {
+  font-size: 2.5rem;
+}
+
+
 
 .message-style {
   color: #ebebeb;
@@ -151,6 +161,14 @@ button.btn:focus {
 
   .bar {
     font-size: 1em;
+  }
+
+  .display-3 {
+    font-size: 4.5rem;
+  }
+
+  .display-4 {
+    font-size: 4rem;
   }
 }
 

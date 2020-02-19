@@ -1,54 +1,63 @@
 // Constants
 // GOOD Multidimensional array with all (unique) filenames in their columns
 const fileName = [
-  ["a01", "b01", "c01", "d01", "e01", "f01", "g01", "h01", "i01", "j01",'k01'],
-  ["a02", "b02", "c02", "d02", "e02", "f02", "g02", "h02", "i02", "j02",'k02'],
-  ["a03", "b03", "c03", "d03", "e03", "f03", "g03", "h03", "i03", "j03",'k03'],
-  ["a04", "b04", "c04", "d04", "e04", "f04", "g04", "h04", "i04", "j04",'k04'],
-  ["a05", "b05", "c05", "d05", "e05", "f05", "g05", "h05", "i05", "j05",'k05'],
-  ["a06", "b06", "c06", "d06", "e06", "f06", "g06", "h06", "i06", "j06",'k06'],
-  ["a07", "b07", "c07", "d07", "e07", "f07", "g07", "h07", "i07", "j07",'k07'],
-  ["a08", "b08", "c08", "d08", "e08", "f08", "g08", "h08", "i08", "j08",'k08'],
-  ["a09", "b09", "c09", "d09", "e09", "f09", "g09", "h09", "i09", "j09",'k09'],
-  ["a10", "b10", "c10", "d10", "e10", "f10", "g10", "h10", "i10", "j10",'k10'],
-  ["a11", "b11", "c11", "d11", "e11", "f11", "g11", "h11", "i11", "j11",'k11'],
-  ["a12", "b12", "c12", "d12", "e12", "f12", "g12", "h12", "i12", "j12",'k12']
+  ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12"],
+  ["b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", "b11", "b12"],
+  ["c01", "c02", "c03", "c04", "c05", "c06", "c07", "c08", "c09", "c10", "c11", "c12"],
+  ["d01", "d02", "d03", "d04", "d05", "d06", "d07", "d08", "d09", "d10", "d11", "d12"],
+  ["e01", "e02", "e03", "e04", "e05", "e06", "e07", "e08", "e09", "e10", "e11", "e12"],
+  ["f01", "f02", "f03", "f04", "f05", "f06", "f07", "f08", "f09", "f10", "f11", "f12"],
+  ["g01", "g02", "g03", "g04", "g05", "g06", "g07", "g08", "g09", "g10", "g11", "g12"],
+  ["h01", "h02", "h03", "h04", "h05", "h06", "h07", "h08", "h09", "h10", "h11", "h12"],
+  ["i01", "i02", "i03", "i04", "i05", "i06", "i07", "i08", "i09", "i10", "i11", "i12"],
+  ["j01", "j02", "j03", "j04", "j05", "j06", "j07", "j08", "j09", "j10", "j11", "j12"],
+  ["k01", "k02", "k03", "k04", "k05", "k06", "k07", "k08", "k09", "k10", "k11", "k12"],
+  ["l01", "l02", "l03", "l04", "l05", "l06", "l07", "l08", "l09", "l10", "l11", "l12"]
 ];
+const playButton = $("#play-minuetto"),
+  pauseButton = $("#pause-button");
 
 // Variables
 let randomSelection = [];
 let sequence = [];
 let i;
 let soundFiles = [];
+let pickedValues = [];
 
-
-// Functions
-// GOOD Randomise array
-// Tip from Bim to randomise through array
 function randomise() {
-  $("#play-minuetto").attr("disabled", false);
+  // $("#play-minuetto").attr("disabled", false);
 
-  sequence = fileName.map(option => {
-    const random = Math.floor(Math.random() * 11);
-    return option[random];
-  });
-  randomSelection = sequence.map(createURL);
-  function createURL(fileName) {
-    return `assets/music/${fileName}.mp3`;
+  for (i = 0; i < fileName.length; i++) {
+    let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
+    pickedValues[i] = fileName[index][i];
+    randomSelection = pickedValues.map(createURL);
+    function createURL(fileName) {
+      randomSelection = [];
+      return `assets/music/${fileName}.mp3`;
+    }
   }
   defineSong();
-  console.log(randomSelection);
-  // Clears and adds class 'selected' to selected cells
   $(".selected").removeClass("selected");
+
   randomSelection.forEach(element => {
     let item = [`${element.slice(13, 16)}`];
     $(`#${item}`).addClass("selected");
   });
+  console.log(randomSelection);
 }
+
+// Populate Grid
+fileName.forEach(row => {
+  $("#music-grid").append(`<div id="music-row-${row.slice(0, 1)}" class="row no-gutters"></div>`);
+  row.forEach(col => {
+    $(`#music-row-${row.slice(0, 1)}`).append(
+      `<div class="col-1"><button id="${col}" class="btn bar song">${col.toUpperCase()}</button></div>`
+    );
+  });
+});
 
 // GOOD Play array
 // $("#play-minuetto").on("click", playSong);
-
 function createSequence(bars) {
   let allHowls = [];
   let howl;
@@ -56,6 +65,7 @@ function createSequence(bars) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false
+      // Add here onplay and onend
     });
     allHowls.push(howl);
   }
@@ -96,8 +106,6 @@ function defineSong() {
 $("#btn-randomise").on("click", randomise);
 // Play & Pause event
 function handlers(isPlaying, soundFiles) {
-  let playButton = $("#play-minuetto"),
-    pauseButton = $("#pause-button");
   playButton.on("click", function() {
     if (!isPlaying) {
       isPlaying = true;
@@ -108,7 +116,7 @@ function handlers(isPlaying, soundFiles) {
       });
       // playButton.html("Stop");
       // console.log(`Is playing? ${isPlaying}`);
-      console.count(isPlaying);
+      // console.count(isPlaying);
     }
     $("#play-minuetto").attr("disabled", true);
     // Restores the play button after finishing song
@@ -134,18 +142,22 @@ function handlers(isPlaying, soundFiles) {
     let barPath = `assets/music/${id}.mp3`;
     let cell = new Howl({
       src: [barPath],
-      volume: 0.3
+      volume: 0.3,
+      onplay: function() {
+        $(`#${id}`).addClass("playing");
+      },
+      onend: function() {
+        $(`#${id}`).removeClass("playing");
+      }
     });
+
     cell.play();
+    // cell.on("play", () => {
+    //   $(".bar").attr("dissabled", true);
+    // });
+    // cell.unload()
   });
 }
-// Previous method to play cells in grid with Audio
-// $(".bar").on("click", function() {
-//   let id = this.id;
-//   let barPath = `assets/music/${id}.mp3`;
-//   let bar = new Audio(barPath);
-//   bar.play();
-// });
 
 // Calls randomise() on load to have a valid array in case
 // playSong() is called from the page before randomising
