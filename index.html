@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <title>Musical Dice</title>
 </head>
 
@@ -22,11 +22,9 @@
     <div class="container">
       <h1 class="display-3">Musical Dice</h1>
       <p class="lead">A new take on Mozart's game</p>
-      <hr class="my-2">
-
-      <p class="mt-4 lead">
-        <a class="btn btn-primary btn-lg" href="#game" role="button">Play the game!</a>
-      </p>
+      <div class="my-2 hr"></div>
+      <a class="mt-4 btn btn-primary btn-lg" href="#game" role="button">Play the game!</a>
+      <div id="guille"></div>
     </div>
   </div>
 
@@ -182,160 +180,6 @@
 
   <!-- Game grid -->
   <section class="my-grid container" id="music-grid">
-    <div class="row no-gutters">
-      <div class="col-1"><button id="a01" class="btn bar song">A1</button></div>
-      <div class="col-1"><button id="a02" class="btn bar song">A2</button></div>
-      <div class="col-1"><button id="a03" class="btn bar song">A3</button></div>
-      <div class="col-1"><button id="a04" class="btn bar song">A4</button></div>
-      <div class="col-1"><button id="a05" class="btn bar song">A5</button></div>
-      <div class="col-1"><button id="a06" class="btn bar song">A6</button></div>
-      <div class="col-1"><button id="a07" class="btn bar song">A7</button></div>
-      <div class="col-1"><button id="a08" class="btn bar song">A8</button></div>
-      <div class="col-1"><button id="a09" class="btn bar song">A9</button></div>
-      <div class="col-1"><button id="a10" class="btn bar song">A10</button></div>
-      <div class="col-1"><button id="a11" class="btn bar song">A11</button></div>
-      <div class="col-1"><button id="a12" class="btn bar song">A12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="b01" class="btn bar song">B1</button></div>
-      <div class="col-1"><button id="b02" class="btn bar song">B2</button></div>
-      <div class="col-1"><button id="b03" class="btn bar song">B3</button></div>
-      <div class="col-1"><button id="b04" class="btn bar song">B4</button></div>
-      <div class="col-1"><button id="b05" class="btn bar song">B5</button></div>
-      <div class="col-1"><button id="b06" class="btn bar song">B6</button></div>
-      <div class="col-1"><button id="b07" class="btn bar song">B7</button></div>
-      <div class="col-1"><button id="b08" class="btn bar song">B8</button></div>
-      <div class="col-1"><button id="b09" class="btn bar song">B9</button></div>
-      <div class="col-1"><button id="b10" class="btn bar song">B10</button></div>
-      <div class="col-1"><button id="b11" class="btn bar song">B11</button></div>
-      <div class="col-1"><button id="b12" class="btn bar song">B12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="c01" class="btn bar song">C1</button></div>
-      <div class="col-1"><button id="c02" class="btn bar song">C2</button></div>
-      <div class="col-1"><button id="c03" class="btn bar song">C3</button></div>
-      <div class="col-1"><button id="c04" class="btn bar song">C4</button></div>
-      <div class="col-1"><button id="c05" class="btn bar song">C5</button></div>
-      <div class="col-1"><button id="c06" class="btn bar song">C6</button></div>
-      <div class="col-1"><button id="c07" class="btn bar song">C7</button></div>
-      <div class="col-1"><button id="c08" class="btn bar song">C8</button></div>
-      <div class="col-1"><button id="c09" class="btn bar song">C9</button></div>
-      <div class="col-1"><button id="c10" class="btn bar song">C10</button></div>
-      <div class="col-1"><button id="c11" class="btn bar song">C11</button></div>
-      <div class="col-1"><button id="c12" class="btn bar song">C12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="d01" class="btn bar song">D1</button></div>
-      <div class="col-1"><button id="d02" class="btn bar song">D2</button></div>
-      <div class="col-1"><button id="d03" class="btn bar song">D3</button></div>
-      <div class="col-1"><button id="d04" class="btn bar song">D4</button></div>
-      <div class="col-1"><button id="d05" class="btn bar song">D5</button></div>
-      <div class="col-1"><button id="d06" class="btn bar song">D6</button></div>
-      <div class="col-1"><button id="d07" class="btn bar song">D7</button></div>
-      <div class="col-1"><button id="d08" class="btn bar song">D8</button></div>
-      <div class="col-1"><button id="d09" class="btn bar song">D9</button></div>
-      <div class="col-1"><button id="d10" class="btn bar song">D10</button></div>
-      <div class="col-1"><button id="d11" class="btn bar song">D11</button></div>
-      <div class="col-1"><button id="d12" class="btn bar song">D12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="e01" class="btn bar song">E1</button></div>
-      <div class="col-1"><button id="e02" class="btn bar song">E2</button></div>
-      <div class="col-1"><button id="e03" class="btn bar song">E3</button></div>
-      <div class="col-1"><button id="e04" class="btn bar song">E4</button></div>
-      <div class="col-1"><button id="e05" class="btn bar song">E5</button></div>
-      <div class="col-1"><button id="e06" class="btn bar song">E6</button></div>
-      <div class="col-1"><button id="e07" class="btn bar song">E7</button></div>
-      <div class="col-1"><button id="e08" class="btn bar song">E8</button></div>
-      <div class="col-1"><button id="e09" class="btn bar song">E9</button></div>
-      <div class="col-1"><button id="e10" class="btn bar song">E10</button></div>
-      <div class="col-1"><button id="e11" class="btn bar song">E11</button></div>
-      <div class="col-1"><button id="e12" class="btn bar song">E12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="f01" class="btn bar song">F1</button></div>
-      <div class="col-1"><button id="f02" class="btn bar song">F2</button></div>
-      <div class="col-1"><button id="f03" class="btn bar song">F3</button></div>
-      <div class="col-1"><button id="f04" class="btn bar song">F4</button></div>
-      <div class="col-1"><button id="f05" class="btn bar song">F5</button></div>
-      <div class="col-1"><button id="f06" class="btn bar song">F6</button></div>
-      <div class="col-1"><button id="f07" class="btn bar song">F7</button></div>
-      <div class="col-1"><button id="f08" class="btn bar song">F8</button></div>
-      <div class="col-1"><button id="f09" class="btn bar song">F9</button></div>
-      <div class="col-1"><button id="f10" class="btn bar song">F10</button></div>
-      <div class="col-1"><button id="f11" class="btn bar song">F11</button></div>
-      <div class="col-1"><button id="f12" class="btn bar song">F12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="g01" class="btn bar song">G1</button></div>
-      <div class="col-1"><button id="g02" class="btn bar song">G2</button></div>
-      <div class="col-1"><button id="g03" class="btn bar song">G3</button></div>
-      <div class="col-1"><button id="g04" class="btn bar song">G4</button></div>
-      <div class="col-1"><button id="g05" class="btn bar song">G5</button></div>
-      <div class="col-1"><button id="g06" class="btn bar song">G6</button></div>
-      <div class="col-1"><button id="g07" class="btn bar song">G7</button></div>
-      <div class="col-1"><button id="g08" class="btn bar song">G8</button></div>
-      <div class="col-1"><button id="g09" class="btn bar song">G9</button></div>
-      <div class="col-1"><button id="g10" class="btn bar song">G10</button></div>
-      <div class="col-1"><button id="g11" class="btn bar song">G11</button></div>
-      <div class="col-1"><button id="g12" class="btn bar song">G12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="h01" class="btn bar song">H1</button></div>
-      <div class="col-1"><button id="h02" class="btn bar song">H2</button></div>
-      <div class="col-1"><button id="h03" class="btn bar song">H3</button></div>
-      <div class="col-1"><button id="h04" class="btn bar song">H4</button></div>
-      <div class="col-1"><button id="h05" class="btn bar song">H5</button></div>
-      <div class="col-1"><button id="h06" class="btn bar song">H6</button></div>
-      <div class="col-1"><button id="h07" class="btn bar song">H7</button></div>
-      <div class="col-1"><button id="h08" class="btn bar song">H8</button></div>
-      <div class="col-1"><button id="h09" class="btn bar song">H9</button></div>
-      <div class="col-1"><button id="h10" class="btn bar song">H10</button></div>
-      <div class="col-1"><button id="h11" class="btn bar song">H11</button></div>
-      <div class="col-1"><button id="h12" class="btn bar song">H12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="i01" class="btn bar song">I1</button></div>
-      <div class="col-1"><button id="i02" class="btn bar song">I2</button></div>
-      <div class="col-1"><button id="i03" class="btn bar song">I3</button></div>
-      <div class="col-1"><button id="i04" class="btn bar song">I4</button></div>
-      <div class="col-1"><button id="i05" class="btn bar song">I5</button></div>
-      <div class="col-1"><button id="i06" class="btn bar song">I6</button></div>
-      <div class="col-1"><button id="i07" class="btn bar song">I7</button></div>
-      <div class="col-1"><button id="i08" class="btn bar song">I8</button></div>
-      <div class="col-1"><button id="i09" class="btn bar song">I9</button></div>
-      <div class="col-1"><button id="i10" class="btn bar song">I10</button></div>
-      <div class="col-1"><button id="i11" class="btn bar song">I11</button></div>
-      <div class="col-1"><button id="i12" class="btn bar song">I12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="j01" class="btn bar song">J1</button></div>
-      <div class="col-1"><button id="j02" class="btn bar song">J2</button></div>
-      <div class="col-1"><button id="j03" class="btn bar song">J3</button></div>
-      <div class="col-1"><button id="j04" class="btn bar song">J4</button></div>
-      <div class="col-1"><button id="j05" class="btn bar song">J5</button></div>
-      <div class="col-1"><button id="j06" class="btn bar song">J6</button></div>
-      <div class="col-1"><button id="j07" class="btn bar song">J7</button></div>
-      <div class="col-1"><button id="j08" class="btn bar song">J8</button></div>
-      <div class="col-1"><button id="j09" class="btn bar song">J9</button></div>
-      <div class="col-1"><button id="j10" class="btn bar song">J10</button></div>
-      <div class="col-1"><button id="j11" class="btn bar song">J11</button></div>
-      <div class="col-1"><button id="j12" class="btn bar song">J12</button></div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-1"><button id="k01" class="btn bar song">K1</button></div>
-      <div class="col-1"><button id="k02" class="btn bar song">K2</button></div>
-      <div class="col-1"><button id="k03" class="btn bar song">K3</button></div>
-      <div class="col-1"><button id="k04" class="btn bar song">K4</button></div>
-      <div class="col-1"><button id="k05" class="btn bar song">K5</button></div>
-      <div class="col-1"><button id="k06" class="btn bar song">K6</button></div>
-      <div class="col-1"><button id="k07" class="btn bar song">K7</button></div>
-      <div class="col-1"><button id="k08" class="btn bar song">K8</button></div>
-      <div class="col-1"><button id="k09" class="btn bar song">K9</button></div>
-      <div class="col-1"><button id="k10" class="btn bar song">K10</button></div>
-      <div class="col-1"><button id="k11" class="btn bar song">K11</button></div>
-      <div class="col-1"><button id="k12" class="btn bar song">K12</button></div>
-    </div>
   </section>
   <div class="container">
     <div class="row text-center my-5">
@@ -359,7 +203,7 @@
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam.</p>
         </div>
-        <hr class="clearfix w-100 d-md-none">
+        <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
           <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
           <ul class="list-unstyled">
@@ -382,7 +226,7 @@
           </ul>
 
         </div>
-        <hr class="clearfix w-100 d-md-none">
+        <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
           <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
           <ul class="list-unstyled">
@@ -401,7 +245,7 @@
           </ul>
 
         </div>
-        <hr class="clearfix w-100 d-md-none">
+        <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
           <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
           <a type="button" class="btn-floating btn-fb" href="https://www.facebook.com/">
@@ -471,7 +315,7 @@
         </div>
         <div class="row">
           <div class="col-12 container">
-            <form id="myform">
+            <form id="form-contact">
               <h5 class="my-4">Please fill in the form to get in touch.</h5>
               <fieldset>
                 <div class="row justify-content-between">
@@ -513,17 +357,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
-    })();
-  </script>
-  <script src="./assets/js/sendEmail.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.6.0/async.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"
-    integrity="sha256-FNAKr1U+8W8E3zROGSYO2dQKFHIpoGU/TVm8aGpGWUY=" crossorigin="anonymous"></script>
-  <script src="./assets/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script src="assets/js/sendEmail.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
