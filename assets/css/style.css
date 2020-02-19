@@ -100,7 +100,11 @@ a:hover {
 }
 
 .selected {
-  background-color: #1da1f2;
+  background-color: rgba(29, 161, 242, 0.2);
+}
+
+.playing {
+  background-color: rgba(29, 161, 242, 0.4);
 }
 
 .unselected {
