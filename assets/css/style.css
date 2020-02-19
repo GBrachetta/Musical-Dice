@@ -51,7 +51,7 @@ a.bar {
   background-color: #4e5d6c;
 }
 
-#myform {
+#form-contact {
   margin: 0 2vw;
 }
 
@@ -89,6 +89,10 @@ a.bar {
   background: #1da1f2;
 }
 
+.hr{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .social a i.fa-facebook-f:hover {
   background: #3b5998;
 }
@@ -99,6 +103,10 @@ a.bar {
 
 .social a i.fa-instagram:hover {
   background: #e95950;
+}
+
+.list-unstyled li{
+  margin-bottom: 1rem;
 }
 
 a:hover {
