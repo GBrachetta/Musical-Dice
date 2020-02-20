@@ -28,6 +28,7 @@ function randomise() {
   $("#play-minuetto")
     .attr("disabled", false)
     .text("Play Minuetto");
+  $(".bar").removeClass("playing");
 
   for (i = 0; i < fileName.length; i++) {
     let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
@@ -69,11 +70,12 @@ function createSequence(bars) {
       loop: false,
       // Add here onplay and onend
       onplay: function() {
-        console.log(randomSelection[0]);
-        // console.count(ran)
+        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
+        $(`#${cleanPath}`).addClass("playing");
       },
       onend: function() {
-        console.log();
+        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
+        $(`#${cleanPath}`).removeClass("playing");
       }
     });
     allHowls.push(howl);
@@ -143,6 +145,7 @@ function handlers(isPlaying, soundFiles) {
       isPlaying = false;
       soundFiles.forEach(bar => {
         bar.stop();
+        $(".bar").removeClass("playing");
       });
       $("#play-minuetto").attr("disabled", false);
     }
