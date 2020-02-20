@@ -122,6 +122,10 @@ function handlers(isPlaying, soundFiles) {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
+      $(".bar")
+        .attr("disabled", true)
+        .css({ cursor: "default", opacity: "1" });
+
       let lengthSong = soundFiles.length - 2;
       soundFiles[lengthSong].on("end", function() {
         isPlaying = false;
@@ -130,7 +134,9 @@ function handlers(isPlaying, soundFiles) {
       // console.log(`Is playing? ${isPlaying}`);
       // console.count(isPlaying);
     }
-    $("#play-minuetto").attr("disabled", true);
+    $("#play-minuetto")
+      .attr("disabled", true)
+      .css({ cursor: "default"});
     // Restores the play button after finishing song
     let length = soundFiles.length - 2;
     soundFiles[length].on("end", function() {
@@ -145,7 +151,10 @@ function handlers(isPlaying, soundFiles) {
       isPlaying = false;
       soundFiles.forEach(bar => {
         bar.stop();
-        $(".bar").removeClass("playing");
+        $(".bar")
+          .removeClass("playing")
+          .attr("disabled", false)
+          .css({ cursor: "pointer", opacity: "1" });
       });
       $("#play-minuetto").attr("disabled", false);
     }
