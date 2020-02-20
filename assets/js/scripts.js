@@ -68,7 +68,6 @@ function createSequence(bars) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false,
-      rate:4, // remove this
       // Add here onplay and onend
       onplay: function() {
         let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
