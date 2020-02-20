@@ -68,6 +68,7 @@ function createSequence(bars) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false,
+      rate:4, // remove this
       // Add here onplay and onend
       onplay: function() {
         let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
@@ -122,10 +123,10 @@ function handlers(isPlaying, soundFiles) {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
-      $(".bar")
-        .attr("disabled", true)
-        .css({ cursor: "default", opacity: "1" });
-
+      // $(".bar")
+      //   .attr("disabled", true)
+      //   .css({ cursor: "default", opacity: "1" });
+        $(".bar").attr("disabled", true).addClass("disabled");
       let lengthSong = soundFiles.length - 2;
       soundFiles[lengthSong].on("end", function() {
         isPlaying = false;
@@ -136,13 +137,14 @@ function handlers(isPlaying, soundFiles) {
     }
     $("#play-minuetto")
       .attr("disabled", true)
-      .css({ cursor: "default"});
+      .css({ cursor: "default" });
     // Restores the play button after finishing song
     let length = soundFiles.length - 2;
     soundFiles[length].on("end", function() {
       $("#play-minuetto")
         .attr("disabled", false)
         .text("Play Again");
+        $(".bar").attr("disabled", false).removeClass("disabled");
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
@@ -151,10 +153,11 @@ function handlers(isPlaying, soundFiles) {
       isPlaying = false;
       soundFiles.forEach(bar => {
         bar.stop();
-        $(".bar")
-          .removeClass("playing")
-          .attr("disabled", false)
-          .css({ cursor: "pointer", opacity: "1" });
+        $(".bar").removeClass("playing");
+        $(".bar").attr("disabled", false).removeClass("disabled");
+        // $(".bar")
+        //   .attr("disabled", false)
+        //   .css({ cursor: "pointer", opacity: "1" });
       });
       $("#play-minuetto").attr("disabled", false);
     }
