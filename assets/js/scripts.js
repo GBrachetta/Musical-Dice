@@ -25,7 +25,7 @@ let soundFiles = [];
 let pickedValues = [];
 
 function randomise() {
-  // $("#play-minuetto").attr("disabled", false);
+  $("#play-minuetto").attr("disabled", false);
 
   for (i = 0; i < fileName.length; i++) {
     let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
@@ -43,7 +43,7 @@ function randomise() {
     let item = [`${element.slice(13, 16)}`];
     $(`#${item}`).addClass("selected");
   });
-  console.log(randomSelection);
+  // console.log(randomSelection);
 }
 
 // Populate Grid
@@ -64,11 +64,19 @@ function createSequence(bars) {
   for (i = 0; i <= bars; i++) {
     howl = new Howl({
       src: [randomSelection[i]],
-      loop: false
+      loop: false,
       // Add here onplay and onend
+      onplay: function() {
+        console.log(randomSelection[0]);
+        console.count(ran)
+      },
+      onend: function() {
+        console.log();
+      }
     });
     allHowls.push(howl);
   }
+
   return allHowls;
 }
 
@@ -139,7 +147,7 @@ function handlers(isPlaying, soundFiles) {
   // Grid play event
   $(".bar").on("click", function() {
     let id = this.id;
-    let barPath = `assets/music/${id}.mp3`;
+    let barPath = `assets/bars/${id}.mp3`;
     let cell = new Howl({
       src: [barPath],
       volume: 0.3,
