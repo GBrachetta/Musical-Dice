@@ -25,7 +25,9 @@ let soundFiles = [];
 let pickedValues = [];
 
 function randomise() {
-  $("#play-minuetto").attr("disabled", false);
+  $("#play-minuetto")
+    .attr("disabled", false)
+    .text("Play Minuetto");
 
   for (i = 0; i < fileName.length; i++) {
     let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
@@ -68,7 +70,7 @@ function createSequence(bars) {
       // Add here onplay and onend
       onplay: function() {
         console.log(randomSelection[0]);
-        console.count(ran)
+        // console.count(ran)
       },
       onend: function() {
         console.log();
@@ -130,7 +132,9 @@ function handlers(isPlaying, soundFiles) {
     // Restores the play button after finishing song
     let length = soundFiles.length - 2;
     soundFiles[length].on("end", function() {
-      $("#play-minuetto").attr("disabled", false);
+      $("#play-minuetto")
+        .attr("disabled", false)
+        .text("Play Again");
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
