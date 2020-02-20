@@ -171,9 +171,7 @@
   <div id="music" class="container">
     <div class="row text-center pt-3 mt-5 mb-5">
       <div class="col-12">
-        <p class="lead mb-0">
-          <button id="btn-randomise" class="btn btn-primary btn-lg" role="button">Randomise!</button>
-        </p>
+        <a id="btn-randomise" class="btn btn-primary btn-lg mb-1">Randomise!</a>
       </div>
     </div>
   </div>
@@ -183,13 +181,10 @@
   </section>
   <div class="container">
     <div class="row text-center my-5">
-      <div class="col-12">
-        <p class="lead">
-          <button id='play-minuetto' class="btn btn-primary btn-lg" role="button"><span class="btn-play-text">Play
-              Minuetto</span></button>
-          <button id="pause-button" class="btn btn-primary btn-lg" role="button"><span
-              class="btn-play-text">Stop</span></button>
-        </p>
+      <div id="main-button" class="col-12 mb-3">
+        <button id='play-minuetto' class="btn btn-primary btn-lg"><span class="btn-play-text">Play
+            Minuetto</span></button>
+        <a id="pause-button" class="btn btn-primary btn-lg"><span class="btn-play-text">Stop</span></a>
       </div>
     </div>
   </div>
@@ -208,20 +203,16 @@
           <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
           <ul class="list-unstyled">
             <li>
-              <p>
-                <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
-              </p>
+              <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
             </li>
             <li>
-              <p>
-                <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
-              </p>
+              <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
             </li>
             <li>
-              <p><a href="https://www.brachetta.com/" target="_blank">WEBSITE</a></p>
+              <a href="https://www.brachetta.com/" target="_blank">WEBSITE</a>
             </li>
             <li>
-              <p><a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a></p>
+              <a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a>
             </li>
           </ul>
 
@@ -248,16 +239,16 @@
         <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
           <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
-          <a type="button" class="btn-floating btn-fb" href="https://www.facebook.com/">
+          <a class="btn-floating btn-fb" href="https://www.facebook.com/">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a type="button" class="btn-floating btn-tw" href="https://www.twitter.com/">
+          <a class="btn-floating btn-tw" href="https://www.twitter.com/">
             <i class="fab fa-twitter"></i>
           </a>
-          <a type="button" class="btn-floating btn-gplus" href="https://www.linkedin.com/">
+          <a class="btn-floating btn-gplus" href="https://www.linkedin.com/">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a type="button" class="btn-floating btn-dribbble" href="https://www.instagram.com/">
+          <a class="btn-floating btn-dribbble" href="https://www.instagram.com/">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
@@ -282,10 +273,9 @@
         </div>
         <div class="modal-body">
           <h3>Guillermo Brachetta</h3>
-          <hr class="my-3">
           <div class="row my-3">
             <div class="col">
-              <img src="./assets/images/avatar.png" alt="avatar" class="img-fluid">
+              <img src="assets/images/avatar.png" alt="avatar" class="img-fluid">
             </div>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
@@ -328,8 +318,7 @@
                     <label for="inputEmail">Email address</label>
                     <input type="email" name="from_email" class="form-control" id="inputEmail"
                       aria-describedby="emailHelp" placeholder="Enter email" required>
-                    <small id="emailHelp" class="form-text text-muted">I'll never share your email
-                      with anyone
+                    <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone
                       else.</small>
                   </div>
                 </div>
