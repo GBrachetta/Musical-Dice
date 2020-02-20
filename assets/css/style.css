@@ -36,6 +36,10 @@ button.bar {
   padding: 0;
 }
 
+a.bar {
+  padding: 1em;
+}
+
 .bar {
   width: 100%;
   height: 3.5em;
@@ -47,9 +51,15 @@ button.bar {
   background-color: #4e5d6c;
 }
 
-#myform {
+#form-contact {
   margin: 0 2vw;
 }
+
+.display-3, .display-4 {
+  font-size: 2.5rem;
+}
+
+
 
 .message-style {
   color: #ebebeb;
@@ -79,6 +89,10 @@ button.bar {
   background: #1da1f2;
 }
 
+.hr{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .social a i.fa-facebook-f:hover {
   background: #3b5998;
 }
@@ -91,6 +105,10 @@ button.bar {
   background: #e95950;
 }
 
+.list-unstyled li{
+  margin-bottom: 1rem;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -100,7 +118,11 @@ a:hover {
 }
 
 .selected {
-  background-color: #1da1f2;
+  background-color: rgba(29, 161, 242, 0.2);
+}
+
+.playing {
+  background-color: rgba(29, 161, 242, 0.4);
 }
 
 .unselected {
@@ -147,6 +169,14 @@ button.btn:focus {
 
   .bar {
     font-size: 1em;
+  }
+
+  .display-3 {
+    font-size: 4.5rem;
+  }
+
+  .display-4 {
+    font-size: 4rem;
   }
 }
 

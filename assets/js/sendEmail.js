@@ -1,4 +1,7 @@
-let myform = $("form#myform");
+(function () {
+  emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
+})();
+let myform = $("form#form-contact");
 myform.submit(function(event) {
   event.preventDefault();
 
