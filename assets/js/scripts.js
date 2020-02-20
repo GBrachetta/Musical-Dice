@@ -28,6 +28,7 @@ function randomise() {
   $("#play-minuetto")
     .attr("disabled", false)
     .text("Play Minuetto");
+  $(".bar").removeClass("playing");
 
   for (i = 0; i < fileName.length; i++) {
     let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
@@ -67,13 +68,15 @@ function createSequence(bars) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false,
+      rate:4, // remove this
       // Add here onplay and onend
       onplay: function() {
-        console.log(randomSelection[0]);
-        // console.count(ran)
+        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
+        $(`#${cleanPath}`).addClass("playing");
       },
       onend: function() {
-        console.log();
+        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
+        $(`#${cleanPath}`).removeClass("playing");
       }
     });
     allHowls.push(howl);
@@ -120,6 +123,10 @@ function handlers(isPlaying, soundFiles) {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
+      // $(".bar")
+      //   .attr("disabled", true)
+      //   .css({ cursor: "default", opacity: "1" });
+        $(".bar").attr("disabled", true).addClass("disabled");
       let lengthSong = soundFiles.length - 2;
       soundFiles[lengthSong].on("end", function() {
         isPlaying = false;
@@ -128,13 +135,16 @@ function handlers(isPlaying, soundFiles) {
       // console.log(`Is playing? ${isPlaying}`);
       // console.count(isPlaying);
     }
-    $("#play-minuetto").attr("disabled", true);
+    $("#play-minuetto")
+      .attr("disabled", true)
+      .css({ cursor: "default" });
     // Restores the play button after finishing song
     let length = soundFiles.length - 2;
     soundFiles[length].on("end", function() {
       $("#play-minuetto")
         .attr("disabled", false)
         .text("Play Again");
+        $(".bar").attr("disabled", false).removeClass("disabled");
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
@@ -143,6 +153,11 @@ function handlers(isPlaying, soundFiles) {
       isPlaying = false;
       soundFiles.forEach(bar => {
         bar.stop();
+        $(".bar").removeClass("playing");
+        $(".bar").attr("disabled", false).removeClass("disabled");
+        // $(".bar")
+        //   .attr("disabled", false)
+        //   .css({ cursor: "pointer", opacity: "1" });
       });
       $("#play-minuetto").attr("disabled", false);
     }
