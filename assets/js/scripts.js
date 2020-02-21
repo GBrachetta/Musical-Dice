@@ -127,7 +127,6 @@ function handlers(isPlaying, soundFiles) {
         isPlaying = false;
       });
       // playButton.html("Stop");
-
     }
     $("#play-minuetto")
       .attr("disabled", true)
@@ -175,7 +174,25 @@ function handlers(isPlaying, soundFiles) {
   });
 }
 
-
 randomise(); // Runs to have a valid array on load
 
 $(window).on("load", defineSong);
+
+// Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+$(document).ready(function() {
+  $("a").on("click", function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      let hash = this.hash;
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top
+        },
+        800,
+        function() {
+          window.location.hash = hash;
+        }
+      );
+    }
+  });
+});
