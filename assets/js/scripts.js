@@ -19,11 +19,11 @@ function randomise() {
     .attr("disabled", false)
     .removeClass("disabled"); // Restores clickalability of grid
 
-  // This uses randojs to simplify randomisation. 
+  // This uses randojs to simplify randomisation.
   // With thanks to this answer: https://stackoverflow.com/questions/60301319/
   for (let i = 1; i <= 12; i++) {
-    let index = `assets/music/${rando(letters)}${i < 10 ? "0" : ""}${i}.mp3`;
-    randomSelection.push(index);
+    let valueAtIndex = `assets/music/${rando(letters)}${i < 10 ? "0" : ""}${i}.mp3`;
+    randomSelection[i - 1] = valueAtIndex;
   }
   console.log(randomSelection);
   defineSong();
