@@ -1,5 +1,5 @@
 // Constants
-// GOOD Multidimensional array with all (unique) filenames in their columns
+// Multidimensional array with all (unique) filenames in their columns
 const fileName = [
   ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12"],
   ["b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", "b11", "b12"],
@@ -27,8 +27,11 @@ let pickedValues = [];
 function randomise() {
   $("#play-minuetto")
     .attr("disabled", false)
-    .text("Play Minuetto");
-  $(".bar").removeClass("playing");
+    .text("Play Minuetto"); // Restores play button after new randomisation
+  $(".bar")
+    .removeClass("playing")
+    .attr("disabled", false)
+    .removeClass("disabled"); // Restores clickalability of grid
 
   for (i = 0; i < fileName.length; i++) {
     let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
@@ -46,7 +49,6 @@ function randomise() {
     let item = [`${element.slice(13, 16)}`];
     $(`#${item}`).addClass("selected");
   });
-  // console.log(randomSelection);
 }
 
 // Populate Grid
@@ -59,7 +61,7 @@ fileName.forEach(row => {
   });
 });
 
-// GOOD Play array
+// Play array of files
 // $("#play-minuetto").on("click", playSong);
 function createSequence(bars) {
   let allHowls = [];
@@ -68,20 +70,17 @@ function createSequence(bars) {
     howl = new Howl({
       src: [randomSelection[i]],
       loop: false,
-      rate:4, // remove this
-      // Add here onplay and onend
       onplay: function() {
         let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).addClass("playing");
+        $(`#${cleanPath}`).addClass("playing"); // Adds class to bar currently playing
       },
       onend: function() {
         let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).removeClass("playing");
+        $(`#${cleanPath}`).removeClass("playing"); // Removes class of bar just played
       }
     });
     allHowls.push(howl);
   }
-
   return allHowls;
 }
 
@@ -99,8 +98,6 @@ function defineSong() {
       (function(i) {
         return function() {
           soundFiles[i + 1].play();
-          // Is this the place to highlight each cell as they play
-          // console.log(soundFiles[i]);
         };
       })(i)
     );
@@ -115,36 +112,34 @@ function defineSong() {
 // btnPlayText.text("Play Minuetto");
 
 // Event Listeners
-// Randomise event
-$("#btn-randomise").on("click", randomise);
+$("#btn-randomise").on("click", randomise); // Randomise new array of files
 // Play & Pause event
 function handlers(isPlaying, soundFiles) {
   playButton.on("click", function() {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
-      // $(".bar")
-      //   .attr("disabled", true)
-      //   .css({ cursor: "default", opacity: "1" });
-        $(".bar").attr("disabled", true).addClass("disabled");
+      $(".bar")
+        .attr("disabled", true)
+        .addClass("disabled"); // Disables grid while playing
       let lengthSong = soundFiles.length - 2;
       soundFiles[lengthSong].on("end", function() {
         isPlaying = false;
       });
       // playButton.html("Stop");
-      // console.log(`Is playing? ${isPlaying}`);
-      // console.count(isPlaying);
+
     }
     $("#play-minuetto")
       .attr("disabled", true)
-      .css({ cursor: "default" });
-    // Restores the play button after finishing song
+      .css({ cursor: "default" }); // Disables play button while playing
     let length = soundFiles.length - 2;
     soundFiles[length].on("end", function() {
       $("#play-minuetto")
         .attr("disabled", false)
-        .text("Play Again");
-        $(".bar").attr("disabled", false).removeClass("disabled");
+        .text("Play Again"); // Restores play button after song
+      $(".bar")
+        .attr("disabled", false)
+        .removeClass("disabled"); // Restores grid after song
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
@@ -153,15 +148,13 @@ function handlers(isPlaying, soundFiles) {
       isPlaying = false;
       soundFiles.forEach(bar => {
         bar.stop();
-        $(".bar").removeClass("playing");
-        $(".bar").attr("disabled", false).removeClass("disabled");
-        // $(".bar")
-        //   .attr("disabled", false)
-        //   .css({ cursor: "pointer", opacity: "1" });
+        $(".bar")
+          .removeClass("playing")
+          .attr("disabled", false)
+          .removeClass("disabled"); // Restores grid when clicked stop
       });
       $("#play-minuetto").attr("disabled", false);
     }
-    // console.log(`Is playing? ${isPlaying}`);
   });
   // Grid play event
   $(".bar").on("click", function() {
@@ -171,23 +164,18 @@ function handlers(isPlaying, soundFiles) {
       src: [barPath],
       volume: 0.3,
       onplay: function() {
-        $(`#${id}`).addClass("playing");
+        $(`#${id}`).addClass("playing"); // Adds class to show which bit is playing
       },
       onend: function() {
-        $(`#${id}`).removeClass("playing");
+        $(`#${id}`).removeClass("playing"); // Removes class of bit just played
       }
     });
-
     cell.play();
-    // cell.on("play", () => {
-    //   $(".bar").attr("dissabled", true);
-    // });
     // cell.unload()
   });
 }
 
-// Calls randomise() on load to have a valid array in case
-// playSong() is called from the page before randomising
-randomise();
+
+randomise(); // Runs to have a valid array on load
 
 $(window).on("load", defineSong);

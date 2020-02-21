@@ -26,9 +26,13 @@ body {
   margin: 0 auto;
 }
 
+.table-responsive {
+  display: inline-table;
+}
+
 .table-dark td {
-  padding-left: 6px;
-  padding-right: 6px;
+  /* padding-left: 6px;
+  padding-right: 6px; */
   font-size: 0.8em;
 }
 
@@ -65,12 +69,18 @@ a.bar {
   font-size: 2.5rem;
 }
 
+/* .titles {
+  font-size: 1.5rem;
+  color: rgba(223, 105, 26, 1);
+  text-shadow: 1px 1px 2px rgba(223, 105, 26, 0.5);
+} */
+
 .disabled {
   opacity: 1 !important;
   cursor: default;
 }
 .disabled.selected:not(.playing) {
-  background-color:rgba(29, 161, 242, 0.2) !important;
+  background-color: rgba(29, 161, 242, 0.2) !important;
 }
 .disabled:not(.selected),
 .disabled:not(.selected):hover {
@@ -142,7 +152,7 @@ a:hover {
   background-color: rgba(29, 161, 242, 0.6);
   font-weight: bolder;
   height: 100%;
-  font-size: 1.5em !important;
+  font-size: 0.8em !important;
   text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
 }
 
@@ -181,6 +191,11 @@ button.btn:focus {
     line-height: 2em;
   }
 
+  /* .titles {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+  } */
+
   .table-dark td {
     padding-left: 12px;
     padding-right: 12px;
@@ -198,6 +213,10 @@ button.btn:focus {
 
   .display-4 {
     font-size: 4rem;
+  }
+
+  .playing {
+    font-size: 1.5em !important;
   }
 }
 
