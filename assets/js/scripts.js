@@ -1,21 +1,7 @@
 // Constants
-// Multidimensional array with all (unique) filenames in their columns
-const fileName = [
-  ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12"],
-  ["b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", "b11", "b12"],
-  ["c01", "c02", "c03", "c04", "c05", "c06", "c07", "c08", "c09", "c10", "c11", "c12"],
-  ["d01", "d02", "d03", "d04", "d05", "d06", "d07", "d08", "d09", "d10", "d11", "d12"],
-  ["e01", "e02", "e03", "e04", "e05", "e06", "e07", "e08", "e09", "e10", "e11", "e12"],
-  ["f01", "f02", "f03", "f04", "f05", "f06", "f07", "f08", "f09", "f10", "f11", "f12"],
-  ["g01", "g02", "g03", "g04", "g05", "g06", "g07", "g08", "g09", "g10", "g11", "g12"],
-  ["h01", "h02", "h03", "h04", "h05", "h06", "h07", "h08", "h09", "h10", "h11", "h12"],
-  ["i01", "i02", "i03", "i04", "i05", "i06", "i07", "i08", "i09", "i10", "i11", "i12"],
-  ["j01", "j02", "j03", "j04", "j05", "j06", "j07", "j08", "j09", "j10", "j11", "j12"],
-  ["k01", "k02", "k03", "k04", "k05", "k06", "k07", "k08", "k09", "k10", "k11", "k12"],
-  ["l01", "l02", "l03", "l04", "l05", "l06", "l07", "l08", "l09", "l10", "l11", "l12"]
-];
 const playButton = $("#play-minuetto"),
   pauseButton = $("#pause-button");
+const letters = "abcdefghijkl"; // For randomising array and creating grid
 
 // Variables
 let randomSelection = [];
@@ -33,15 +19,13 @@ function randomise() {
     .attr("disabled", false)
     .removeClass("disabled"); // Restores clickalability of grid
 
-  for (i = 0; i < fileName.length; i++) {
-    let index = Math.floor(Math.random() * (fileName.length - 1 - 0 + 1));
-    pickedValues[i] = fileName[index][i];
-    randomSelection = pickedValues.map(createURL);
-    function createURL(fileName) {
-      randomSelection = [];
-      return `assets/music/${fileName}.mp3`;
-    }
+  // This uses randojs to simplify randomisation.
+  // With thanks to this answer: https://stackoverflow.com/questions/60301319/
+  for (let i = 1; i <= 12; i++) {
+    let valueAtIndex = `assets/music/${rando(letters)}${i < 10 ? "0" : ""}${i}.mp3`;
+    randomSelection[i - 1] = valueAtIndex;
   }
+  console.log(randomSelection);
   defineSong();
   $(".selected").removeClass("selected");
 
@@ -51,15 +35,18 @@ function randomise() {
   });
 }
 
-// Populate Grid
-fileName.forEach(row => {
-  $("#music-grid").append(`<div id="music-row-${row.slice(0, 1)}" class="row no-gutters"></div>`);
-  row.forEach(col => {
-    $(`#music-row-${row.slice(0, 1)}`).append(
-      `<div class="col-1"><button id="${col}" class="btn bar song">${col.toUpperCase()}</button></div>`
+// Populate Grid - Used in combination with variable letters
+for (let i = 0; i < letters.length; i++) {
+  var musicRowID = letters.charAt(i) + "01";
+  $("#music-grid").append(`<div id="music-row-${musicRowID}" class="row no-gutters"></div>`);
+
+  for (let j = 1; j <= 12; j++) {
+    var columnID = letters.charAt(i) + (j < 10 ? "0" : "") + j;
+    $(`#music-row-${musicRowID}`).append(
+      `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`
     );
-  });
-});
+  }
+}
 
 // Play array of files
 // $("#play-minuetto").on("click", playSong);
