@@ -22,6 +22,11 @@ body {
   margin: 0 auto;
 }
 
+#minuetti button{
+  width: 100%;
+  font-size: 1em;
+}
+
 .table-responsive {
   display: inline-table;
 }
