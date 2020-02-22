@@ -10,6 +10,12 @@ body {
   height: 30vh;
 }
 
+.individual-minuetto{
+  /* padding: 0 .1rem; */
+  border: 2px solid #2b3e50;
+  font-size: 1rem;
+}
+
 .page-footer {
   background-color: #4e5d6c;
 }

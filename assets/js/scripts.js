@@ -11,11 +11,11 @@ let soundFiles = [];
 let pickedValues = [];
 
 // Prepare buttons to play individual minuetti
-for (let i = 1; i <= 12; i++) {
-  $("#minuetti").append(
-    `<div class="col-6 col-md-3"> <button id="minuetto${i}" class="minuetto btn btn-primary btn-lg mb-1">Minuetto ${i}</button></div>`
-  );
-}
+// for (let i = 1; i <= 12; i++) {
+//   $("#minuetti").append(
+//     `<div class="col-6 col-md-3"> <button id="minuetto${i}" class="minuetto btn btn-primary btn-lg mb-1">Minuetto ${i}</button></div>`
+//   );
+// }
 
 function randomise() {
   $("#play-minuetto")
@@ -113,6 +113,7 @@ function handlers(isPlaying, soundFiles) {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
+      console.log(isPlaying);
       $(".bar")
         .attr("disabled", true)
         .addClass("disabled"); // Disables grid while playing
@@ -158,6 +159,7 @@ function handlers(isPlaying, soundFiles) {
     let cell = new Howl({
       src: [barPath],
       volume: 0.3,
+      onload: function() {},
       onplay: function() {
         $(`#${id}`).addClass("playing"); // Adds class to show which bit is playing
       },
@@ -193,45 +195,128 @@ $(document).ready(function() {
   });
 });
 
-// TRY playing full Minuetti
+// TRY playing full Minuetti DON'T DELETE YET!
 // for (let index = 1; index <= 12; index++) {}
 
-$(".minuetto").on("click", function() {
-  let id = this.id;
-  let minuettoPath = `assets/music/${id}.mp3`;
-  let minuetto = new Howl({
-    src: [minuettoPath],
-    // volume: 0.3,
-    // rate: 8,
-    onload: function() {
-      // $(`#${id}`).removeClass("minuetto");
-    },
-    onplay: function() {
-      // $(`#${id}`).text("Stop");
-      // $(`#${id}`).attr("id", "stop-minuetto");
+// $(".minuetto").on("click", function() {
+//   let id = this.id;
+//   let minuettoPath = `assets/music/${id}.mp3`;
+//   let minuetto = new Howl({
+//     src: [minuettoPath],
+//     // volume: 0.3,
+//     // rate: 8,
+//     onload: function() {
+//       // $(`#${id}`).removeClass("minuetto");
+//     },
+//     onplay: function() {
+//       // $(`#${id}`).text("Stop");
+//       // $(`#${id}`).attr("id", "stop-minuetto");
 
-      $(".minuetto")
-        .attr("disabled", true)
-        .css("cursor", "default");
-      $("#stop-minuetto").on("click", function() {
-        minuetto.stop();
-        $(".minuetto").attr("disabled", false);
-      });
-      // $(`#${id}`).attr("disabled", false);
-      // $("#stop-minuetto").on("click", function() {
-      //   console.log("minuettoPath");
-      // });
-    },
-    onend: function() {
-      console.log(`#${id}`);
-      // $("#stop-minuetto").attr("id", `${id}`);
-      $(".minuetto")
-        .attr("disabled", false)
-        .css("cursor", "pointer");
-      // $(`#${id}`).text(`Minuetto ${id.slice(8)}`);
-      // $(`#${id}`).addClass("minuetto");
-      minuetto.unload();
+//       $(".minuetto")
+//         .attr("disabled", true)
+//         .css("cursor", "default");
+//       $("#stop-minuetto").on("click", function() {
+//         minuetto.stop();
+//         $(".minuetto").attr("disabled", false);
+//       });
+//       // $(`#${id}`).attr("disabled", false);
+//       // $("#stop-minuetto").on("click", function() {
+//       //   console.log("minuettoPath");
+//       // });
+//     },
+//     onend: function() {
+//       console.log(`#${id}`);
+//       // $("#stop-minuetto").attr("id", `${id}`);
+//       $(".minuetto")
+//         .attr("disabled", false)
+//         .css("cursor", "pointer");
+//       // $(`#${id}`).text(`Minuetto ${id.slice(8)}`);
+//       // $(`#${id}`).addClass("minuetto");
+//       minuetto.unload();
+//     }
+//   });
+//   minuetto.play();
+// });
+
+
+// Buttons to preview full minuetti before randomisation
+const mp3list = [
+  {
+    name: "Minuetto 1",
+    path: "assets/music/minuetto1.mp3"
+  },
+  {
+    name: "Minuetto 2",
+    path: "assets/music/minuetto2.mp3"
+  },
+  {
+    name: "Minuetto 3",
+    path: "assets/music/minuetto3.mp3"
+  },
+  {
+    name: "Minuetto 4",
+    path: "assets/music/minuetto4.mp3"
+  },
+  {
+    name: "Minuetto 5",
+    path: "assets/music/minuetto5.mp3"
+  },
+  {
+    name: "Minuetto 6",
+    path: "assets/music/minuetto6.mp3"
+  },
+  {
+    name: "Minuetto 7",
+    path: "assets/music/minuetto7.mp3"
+  },
+  {
+    name: "Minuetto 8",
+    path: "assets/music/minuetto8.mp3"
+  },
+  {
+    name: "Minuetto 9",
+    path: "assets/music/minuetto9.mp3"
+  },
+  {
+    name: "Minuetto 10",
+    path: "assets/music/minuetto10.mp3"
+  },
+  {
+    name: "Minuetto 11",
+    path: "assets/music/minuetto11.mp3"
+  },
+  {
+    name: "Minuetto 12",
+    path: "assets/music/minuetto12.mp3"
+  }
+];
+
+let $allMP3 = [];
+
+const $newMP3 = mp3 => {
+  // HOWL
+  const sound = new Howl({ src: mp3.path });
+
+  // $ ELEMENT
+  return $(`<div>${mp3.name}`, {
+    class: "btn col-4 col-md-3 individual-minuetto btn-primary btn-lg ",
+    text: mp3.name,
+    on: {
+      click() {
+        $allMP3.forEach($el => $el.not(this).trigger("stop"));
+        $(this).trigger(sound.playing() ? "stop" : "play");
+      },
+      play() {
+        $(this).text("Stop");
+        sound.play();
+      },
+      stop() {
+        $(this).text(mp3.name);
+        sound.stop();
+      }
     }
   });
-  minuetto.play();
-});
+};
+
+$allMP3 = mp3list.map($newMP3); // Populate array of $ elements
+$("#minuetti").append($allMP3); // Append once!
