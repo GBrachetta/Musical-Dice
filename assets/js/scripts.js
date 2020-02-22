@@ -1,7 +1,7 @@
 // Constants
 const playButton = $("#play-minuetto"),
   pauseButton = $("#pause-button");
-const letters = "abcdefghijkl"; // For randomising array and creating grid
+let letters = "abcdefghijkl"; // For randomising array and creating grid
 
 // Variables
 let randomSelection = [];
@@ -9,6 +9,13 @@ let sequence = [];
 let i;
 let soundFiles = [];
 let pickedValues = [];
+
+// Prepare buttons to play individual minuetti
+for (let i = 1; i <= 12; i++) {
+  $("#minuetti").append(
+    `<div class="col-6 col-md-3"> <button id="minuetto${i}" class="minuetto btn btn-primary btn-lg mb-1">Minuetto ${i}</button></div>`
+  );
+}
 
 function randomise() {
   $("#play-minuetto")
@@ -37,7 +44,7 @@ function randomise() {
 
 // Populate Grid - Used in combination with variable letters
 for (let i = 0; i < letters.length; i++) {
-  var musicRowID = letters.charAt(i) + "01";
+  var musicRowID = `${letters.charAt(i)}01`;
   $("#music-grid").append(`<div id="music-row-${musicRowID}" class="row no-gutters"></div>`);
 
   for (let j = 1; j <= 12; j++) {
@@ -114,6 +121,7 @@ function handlers(isPlaying, soundFiles) {
         isPlaying = false;
       });
       // playButton.html("Stop");
+      console.log(isPlaying);
     }
     $("#play-minuetto")
       .attr("disabled", true)
@@ -142,6 +150,7 @@ function handlers(isPlaying, soundFiles) {
       $("#play-minuetto").attr("disabled", false);
     }
   });
+  // TRY to place minuetti here
   // Grid play event
   $(".bar").on("click", function() {
     let id = this.id;
@@ -182,4 +191,47 @@ $(document).ready(function() {
       );
     }
   });
+});
+
+// TRY playing full Minuetti
+// for (let index = 1; index <= 12; index++) {}
+
+$(".minuetto").on("click", function() {
+  let id = this.id;
+  let minuettoPath = `assets/music/${id}.mp3`;
+  let minuetto = new Howl({
+    src: [minuettoPath],
+    // volume: 0.3,
+    // rate: 8,
+    onload: function() {
+      // $(`#${id}`).removeClass("minuetto");
+    },
+    onplay: function() {
+      // $(`#${id}`).text("Stop");
+      // $(`#${id}`).attr("id", "stop-minuetto");
+
+      $(".minuetto")
+        .attr("disabled", true)
+        .css("cursor", "default");
+      $("#stop-minuetto").on("click", function() {
+        minuetto.stop();
+        $(".minuetto").attr("disabled", false);
+      });
+      // $(`#${id}`).attr("disabled", false);
+      // $("#stop-minuetto").on("click", function() {
+      //   console.log("minuettoPath");
+      // });
+    },
+    onend: function() {
+      console.log(`#${id}`);
+      // $("#stop-minuetto").attr("id", `${id}`);
+      $(".minuetto")
+        .attr("disabled", false)
+        .css("cursor", "pointer");
+      // $(`#${id}`).text(`Minuetto ${id.slice(8)}`);
+      // $(`#${id}`).addClass("minuetto");
+      minuetto.unload();
+    }
+  });
+  minuetto.play();
 });
