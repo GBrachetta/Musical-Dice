@@ -90,8 +90,9 @@ function randomise() {
   });
 }
 
-// TRY: Attempting to generate grid from user-selected values
+// Generates grid from user-selected values
 // This gives me a string alphabetically ordered from the values in the checkboxes
+// BUG: When all minuetti have been deselected, the variable 'letters' needs to revert to 'abcdefghijkl'
 $(".list-checkbox-item").change(function() {
   let chosenLetters = $(this).val();
   if ($(this).is(":checked")) {
@@ -116,6 +117,7 @@ $(".list-checkbox-item").change(function() {
     html += "</div>";
   }
   $("#music-grid").html(html);
+  randomise(); // Calls randomise to allow loading MP3 files
 });
 
 // Play array of files
@@ -169,9 +171,13 @@ function defineSong() {
 // btnPlayText.text("Play Minuetto");
 
 // Event Listeners
+// FIXME: Need to disable button until the user has selected his minuetti
 $("#btn-randomise").on("click", randomise); // Randomise new array of files
 // Play & Pause event
-// FIXME: There's something wrong here, on each randomise the howls pile up
+// BUG:  There's something wrong here, on each randomise the howls pile up
+// FIXME: Have to make PLAY and STOP buttons just one button dynamically changing
+// FIXME: Currently PLAY is able to play the first randomisation based on the variable declared in line 54
+// FIXME: Need to prevent that, and disable button until the user has selected his minuetti
 function handlers(isPlaying, soundFiles) {
   playButton.on("click", function() {
     if (!isPlaying) {
