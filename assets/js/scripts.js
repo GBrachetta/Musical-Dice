@@ -100,7 +100,7 @@ function randomise() {
 // FIXME: Currently on each selection of checkbox a new string is generated,
 // FIXME: messing the grid up.
 
-$(".input-letters").change(function() {
+$(".list-checkbox-item").change(function() {
   let chosenLetters = $(this).val();
   if ($(this).is(":checked")) {
     arrayOfChoices.push(chosenLetters);
