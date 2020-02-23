@@ -92,10 +92,6 @@ function randomise() {
 
 // TRY: Attempting to generate grid from user-selected values
 // This gives me a string alphabetically ordered from the values in the checkboxes
-// FIXME: need to incorporate variable letters into grid dynamically
-// FIXME: Currently on each selection of checkbox a new string is generated,
-// FIXME: messing the grid up.
-// This is not yet functional => Have to incorporate it in the process of grid creation
 $(".list-checkbox-item").change(function() {
   let chosenLetters = $(this).val();
   if ($(this).is(":checked")) {
@@ -108,21 +104,19 @@ $(".list-checkbox-item").change(function() {
     `This is my string in var 'letters' ordered alphabetically (Need to clear grid after each instantiation or append after the loop): %c${letters}`,
     "color: red; font-weight: bold; font-size: 16px"
   );
-});
-
-// GOOD Creates the grid outside of the nested loops
-let html = "";
-
-for (let i = 0; i < letters.length; i++) {
-  var musicRowID = `${letters.charAt(i)}01`;
-  html += `<div id="music-row-${musicRowID}" class="row no-gutters">`; // *** No `</div>` yet
-  for (let j = 1; j <= 12; j++) {
-    var columnID = letters.charAt(i) + (j < 10 ? "0" : "") + j;
-    html += `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`;
+  let html = ""; // Needs to stay in function scope
+  
+  for (let i = 0; i < letters.length; i++) {
+    var musicRowID = `${letters.charAt(i)}01`;
+    html += `<div id="music-row-${musicRowID}" class="row no-gutters">`; // *** No `</div>` yet
+    for (let j = 1; j <= 12; j++) {
+      var columnID = letters.charAt(i) + (j < 10 ? "0" : "") + j;
+      html += `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`;
+    }
+    html += "</div>";
   }
-  html += "</div>";
-}
-$("#music-grid").html(html);
+  $("#music-grid").html(html);
+});
 
 // Play array of files
 // $("#play-minuetto").on("click", playSong);
@@ -208,6 +202,7 @@ function handlers(isPlaying, soundFiles) {
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
+  
   pauseButton.on("click", function() {
     if (isPlaying) {
       isPlaying = false;
@@ -221,6 +216,7 @@ function handlers(isPlaying, soundFiles) {
       $("#play-minuetto").attr("disabled", false);
     }
   });
+
   // Grid play individual cells 
   // FIXME: Not sure this is the best way!
   $(".bar").on("click", function() {
@@ -238,7 +234,6 @@ function handlers(isPlaying, soundFiles) {
       }
     });
     cell.play();
-    // cell.unload()
   });
 }
 
