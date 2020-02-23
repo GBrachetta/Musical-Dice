@@ -1,54 +1,13 @@
 // Constants
-const mp3list = [
-  {
-    name: "Minuetto A",
-    path: "assets/music/minuetto1.mp3"
-  },
-  {
-    name: "Minuetto B",
-    path: "assets/music/minuetto2.mp3"
-  },
-  {
-    name: "Minuetto C",
-    path: "assets/music/minuetto3.mp3"
-  },
-  {
-    name: "Minuetto D",
-    path: "assets/music/minuetto4.mp3"
-  },
-  {
-    name: "Minuetto E",
-    path: "assets/music/minuetto5.mp3"
-  },
-  {
-    name: "Minuetto F",
-    path: "assets/music/minuetto6.mp3"
-  },
-  {
-    name: "Minuetto G",
-    path: "assets/music/minuetto7.mp3"
-  },
-  {
-    name: "Minuetto H",
-    path: "assets/music/minuetto8.mp3"
-  },
-  {
-    name: "Minuetto I",
-    path: "assets/music/minuetto9.mp3"
-  },
-  {
-    name: "Minuetto J",
-    path: "assets/music/minuetto10.mp3"
-  },
-  {
-    name: "Minuetto K",
-    path: "assets/music/minuetto11.mp3"
-  },
-  {
-    name: "Minuetto L",
-    path: "assets/music/minuetto12.mp3"
-  }
-];
+// Defines the array of objects containing all full minuetti
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]; // and so on
+const mp3list = alphabet.map(item => {
+  return {
+    name: `Minuetto ${item}`,
+    path: `assets/music/minuetto${item}.mp3`
+  };
+});
+
 const playButton = $("#play-minuetto"),
   pauseButton = $("#pause-button");
 let letters = "abcdefghijkl"; // For randomising array and creating grid
@@ -106,7 +65,7 @@ $(".list-checkbox-item").change(function() {
     "color: red; font-weight: bold; font-size: 16px"
   );
   let html = ""; // Needs to stay in function scope
-  
+
   for (let i = 0; i < letters.length; i++) {
     var musicRowID = `${letters.charAt(i)}01`;
     html += `<div id="music-row-${musicRowID}" class="row no-gutters">`; // *** No `</div>` yet
@@ -208,7 +167,7 @@ function handlers(isPlaying, soundFiles) {
     });
     // $("#play-minuetto").attr("id", 'pause-button');
   });
-  
+
   pauseButton.on("click", function() {
     if (isPlaying) {
       isPlaying = false;
@@ -223,7 +182,7 @@ function handlers(isPlaying, soundFiles) {
     }
   });
 
-  // Grid play individual cells 
+  // Grid play individual cells
   // FIXME: Not sure this is the best way!
   $(".bar").on("click", function() {
     let id = this.id;
