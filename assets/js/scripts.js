@@ -1,51 +1,51 @@
 // Constants
 const mp3list = [
   {
-    name: "Minuetto 1",
+    name: "Minuetto A",
     path: "assets/music/minuetto1.mp3"
   },
   {
-    name: "Minuetto 2",
+    name: "Minuetto B",
     path: "assets/music/minuetto2.mp3"
   },
   {
-    name: "Minuetto 3",
+    name: "Minuetto C",
     path: "assets/music/minuetto3.mp3"
   },
   {
-    name: "Minuetto 4",
+    name: "Minuetto D",
     path: "assets/music/minuetto4.mp3"
   },
   {
-    name: "Minuetto 5",
+    name: "Minuetto E",
     path: "assets/music/minuetto5.mp3"
   },
   {
-    name: "Minuetto 6",
+    name: "Minuetto F",
     path: "assets/music/minuetto6.mp3"
   },
   {
-    name: "Minuetto 7",
+    name: "Minuetto G",
     path: "assets/music/minuetto7.mp3"
   },
   {
-    name: "Minuetto 8",
+    name: "Minuetto H",
     path: "assets/music/minuetto8.mp3"
   },
   {
-    name: "Minuetto 9",
+    name: "Minuetto I",
     path: "assets/music/minuetto9.mp3"
   },
   {
-    name: "Minuetto 10",
+    name: "Minuetto J",
     path: "assets/music/minuetto10.mp3"
   },
   {
-    name: "Minuetto 11",
+    name: "Minuetto K",
     path: "assets/music/minuetto11.mp3"
   },
   {
-    name: "Minuetto 12",
+    name: "Minuetto L",
     path: "assets/music/minuetto12.mp3"
   }
 ];
