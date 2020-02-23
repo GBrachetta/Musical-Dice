@@ -1,4 +1,54 @@
 // Constants
+const mp3list = [
+  {
+    name: "Minuetto 1",
+    path: "assets/music/minuetto1.mp3"
+  },
+  {
+    name: "Minuetto 2",
+    path: "assets/music/minuetto2.mp3"
+  },
+  {
+    name: "Minuetto 3",
+    path: "assets/music/minuetto3.mp3"
+  },
+  {
+    name: "Minuetto 4",
+    path: "assets/music/minuetto4.mp3"
+  },
+  {
+    name: "Minuetto 5",
+    path: "assets/music/minuetto5.mp3"
+  },
+  {
+    name: "Minuetto 6",
+    path: "assets/music/minuetto6.mp3"
+  },
+  {
+    name: "Minuetto 7",
+    path: "assets/music/minuetto7.mp3"
+  },
+  {
+    name: "Minuetto 8",
+    path: "assets/music/minuetto8.mp3"
+  },
+  {
+    name: "Minuetto 9",
+    path: "assets/music/minuetto9.mp3"
+  },
+  {
+    name: "Minuetto 10",
+    path: "assets/music/minuetto10.mp3"
+  },
+  {
+    name: "Minuetto 11",
+    path: "assets/music/minuetto11.mp3"
+  },
+  {
+    name: "Minuetto 12",
+    path: "assets/music/minuetto12.mp3"
+  }
+];
 const playButton = $("#play-minuetto"),
   pauseButton = $("#pause-button");
 let letters = "abcdefghijkl"; // For randomising array and creating grid
@@ -9,6 +59,8 @@ let sequence = [];
 let i;
 let soundFiles = [];
 let pickedValues = [];
+let arrayOfChoices = [];
+let $allMP3 = [];
 
 // Prepare buttons to play individual minuetti
 // for (let i = 1; i <= 12; i++) {
@@ -41,6 +93,23 @@ function randomise() {
     $(`#${item}`).addClass("selected");
   });
 }
+
+// TRY: Attempting to generate grid from user-selected values
+// This gives me a string alphabetically ordered from the values in the checkboxes
+// FIXME: need to incorporate variable letters into grid dynamically
+// FIXME: Currently on each selection of checkbox a new string is generated,
+// FIXME: messing the grid up.
+
+$(".input-letters").change(function() {
+  let chosenLetters = $(this).val();
+  if ($(this).is(":checked")) {
+    arrayOfChoices.push(chosenLetters);
+  } else {
+    arrayOfChoices.splice($.inArray(chosenLetters, arrayOfChoices), 1);
+  }
+  letters = arrayOfChoices.sort().join(""); // Gives me a string with chosen letters ordered alphabetically
+  console.log(letters);
+});
 
 // Populate Grid - Used in combination with variable letters
 for (let i = 0; i < letters.length; i++) {
@@ -108,21 +177,22 @@ function defineSong() {
 // Event Listeners
 $("#btn-randomise").on("click", randomise); // Randomise new array of files
 // Play & Pause event
+// FIXME: There's something wrong here, on each randomise the howls pile up
 function handlers(isPlaying, soundFiles) {
   playButton.on("click", function() {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
-      console.log(isPlaying);
+      console.count(`Variable isPlaying (value and count): ${isPlaying}`);
       $(".bar")
         .attr("disabled", true)
         .addClass("disabled"); // Disables grid while playing
       let lengthSong = soundFiles.length - 2;
       soundFiles[lengthSong].on("end", function() {
         isPlaying = false;
+        console.count(`Variable isPlaying (value and count): ${isPlaying}`);
       });
       // playButton.html("Stop");
-      console.log(isPlaying);
     }
     $("#play-minuetto")
       .attr("disabled", true)
@@ -195,103 +265,7 @@ $(document).ready(function() {
   });
 });
 
-// TRY playing full Minuetti DON'T DELETE YET!
-// for (let index = 1; index <= 12; index++) {}
-
-// $(".minuetto").on("click", function() {
-//   let id = this.id;
-//   let minuettoPath = `assets/music/${id}.mp3`;
-//   let minuetto = new Howl({
-//     src: [minuettoPath],
-//     // volume: 0.3,
-//     // rate: 8,
-//     onload: function() {
-//       // $(`#${id}`).removeClass("minuetto");
-//     },
-//     onplay: function() {
-//       // $(`#${id}`).text("Stop");
-//       // $(`#${id}`).attr("id", "stop-minuetto");
-
-//       $(".minuetto")
-//         .attr("disabled", true)
-//         .css("cursor", "default");
-//       $("#stop-minuetto").on("click", function() {
-//         minuetto.stop();
-//         $(".minuetto").attr("disabled", false);
-//       });
-//       // $(`#${id}`).attr("disabled", false);
-//       // $("#stop-minuetto").on("click", function() {
-//       //   console.log("minuettoPath");
-//       // });
-//     },
-//     onend: function() {
-//       console.log(`#${id}`);
-//       // $("#stop-minuetto").attr("id", `${id}`);
-//       $(".minuetto")
-//         .attr("disabled", false)
-//         .css("cursor", "pointer");
-//       // $(`#${id}`).text(`Minuetto ${id.slice(8)}`);
-//       // $(`#${id}`).addClass("minuetto");
-//       minuetto.unload();
-//     }
-//   });
-//   minuetto.play();
-// });
-
-
 // Buttons to preview full minuetti before randomisation
-const mp3list = [
-  {
-    name: "Minuetto 1",
-    path: "assets/music/minuetto1.mp3"
-  },
-  {
-    name: "Minuetto 2",
-    path: "assets/music/minuetto2.mp3"
-  },
-  {
-    name: "Minuetto 3",
-    path: "assets/music/minuetto3.mp3"
-  },
-  {
-    name: "Minuetto 4",
-    path: "assets/music/minuetto4.mp3"
-  },
-  {
-    name: "Minuetto 5",
-    path: "assets/music/minuetto5.mp3"
-  },
-  {
-    name: "Minuetto 6",
-    path: "assets/music/minuetto6.mp3"
-  },
-  {
-    name: "Minuetto 7",
-    path: "assets/music/minuetto7.mp3"
-  },
-  {
-    name: "Minuetto 8",
-    path: "assets/music/minuetto8.mp3"
-  },
-  {
-    name: "Minuetto 9",
-    path: "assets/music/minuetto9.mp3"
-  },
-  {
-    name: "Minuetto 10",
-    path: "assets/music/minuetto10.mp3"
-  },
-  {
-    name: "Minuetto 11",
-    path: "assets/music/minuetto11.mp3"
-  },
-  {
-    name: "Minuetto 12",
-    path: "assets/music/minuetto12.mp3"
-  }
-];
-
-let $allMP3 = [];
 
 const $newMP3 = mp3 => {
   // HOWL
@@ -299,7 +273,7 @@ const $newMP3 = mp3 => {
 
   // $ ELEMENT
   return $(`<div>${mp3.name}`, {
-    class: "btn col-4 col-md-3 individual-minuetto btn-primary btn-lg ",
+    class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
     text: mp3.name,
     on: {
       click() {
