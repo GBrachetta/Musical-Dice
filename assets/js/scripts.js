@@ -62,12 +62,8 @@ let pickedValues = [];
 let arrayOfChoices = [];
 let $allMP3 = [];
 
-// Prepare buttons to play individual minuetti
-// for (let i = 1; i <= 12; i++) {
-//   $("#minuetti").append(
-//     `<div class="col-6 col-md-3"> <button id="minuetto${i}" class="minuetto btn btn-primary btn-lg mb-1">Minuetto ${i}</button></div>`
-//   );
-// }
+randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
+$(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
 
 function randomise() {
   $("#play-minuetto")
@@ -225,8 +221,8 @@ function handlers(isPlaying, soundFiles) {
       $("#play-minuetto").attr("disabled", false);
     }
   });
-  // TRY to place minuetti here
-  // Grid play event
+  // Grid play individual cells 
+  // FIXME: Not sure this is the best way!
   $(".bar").on("click", function() {
     let id = this.id;
     let barPath = `assets/bars/${id}.mp3`;
@@ -245,10 +241,6 @@ function handlers(isPlaying, soundFiles) {
     // cell.unload()
   });
 }
-
-randomise(); // Runs to have a valid array on load
-
-$(window).on("load", defineSong);
 
 // Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
 $(document).ready(function() {
@@ -269,12 +261,9 @@ $(document).ready(function() {
   });
 });
 
-// Buttons to preview full minuetti before randomisation
-
+// Buttons to preview full minuetti
 const $newMP3 = mp3 => {
-  // HOWL
-  const sound = new Howl({ src: mp3.path });
-
+  const sound = new Howl({ src: mp3.path }); // Howl
   // $ ELEMENT
   return $(`<div>${mp3.name}`, {
     class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
@@ -297,4 +286,4 @@ const $newMP3 = mp3 => {
 };
 
 $allMP3 = mp3list.map($newMP3); // Populate array of $ elements
-$("#minuetti").append($allMP3); // Append once!
+$("#minuetti").append($allMP3); // Append to div
