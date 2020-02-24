@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <title>Musical Dice</title>
 </head>
 
@@ -111,7 +111,7 @@
           the dice (measures 8/16) while other measures have a different possibility for each roll (measures
           1/16).
         </p>
-        <img src="./assets/images/mozart-game.png" alt="Original Rules" class="my-4 img-fluid">
+        <img src="assets/images/mozart-game.png" alt="Original Rules" class="my-4 img-fluid" />
         <p class="text-justify">
           Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be
           some kind of game or system for constructing music out of two-bar fragments, but contains no
@@ -121,13 +121,10 @@
           The titles of the supposed Mozart compositions are:
         </p>
         <ul>
-          <li class="text-justify"><em>Anleitung zum Componieren von Walzern so viele man will vermittelst
-              zweier
-              Würfel, ohne etwas
-              von der Musik oder Composition zu verstehen</em> ("Instructions for the composition of as
-            many
-            waltzes as one desires with two dice, without understanding anything about music or
-            composition")
+          <li class="text-justify">
+            <em>Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne etwas von der
+              Musik oder Composition zu verstehen</em> ("Instructions for the composition of as many waltzes as one
+            desires with two dice, without understanding anything about music or composition")
           </li>
           <li>
             <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of
@@ -169,84 +166,29 @@
 
   <!-- Game Grid -->
   <div class="container">
-    <!-- <p>Listen to the original, unscrambled minuetti</p> -->
     <p><em> Click the buttons to preview each one of the 12 original minuetti</em></p>
     <div id="minuetti" class="row text-center py-3 mb-3">
     </div>
 
-    <!-- <div class="row my-5 text-center">
-      <div class="col-12"><a id="stop-minuetto" class="btn btn-primary btn-lg mb-1">Stop</a></div>
-    </div> -->
-
-    <p class="mb-4"><em>Choose here which minuetti you would like to include to randomise from (none: all selected)</em></p>
+    <p class="mb-4"><em>Choose here which minuetti you would like to include to randomise from.</em>
+    </p>
     <div id="checkboxes-minuetti" class="row checkbox-tags justify-content-center form-group">
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-1" value="a">
-        <label class="list-checkbox-item" for="checkbox-1">A</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-2" value="b">
-        <label class="list-checkbox-item" for="checkbox-2">B</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-3" value="c">
-        <label class="list-checkbox-item" for="checkbox-3">C</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-4" value="d">
-        <label class="list-checkbox-item" for="checkbox-4">D</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-5" value="e">
-        <label class="list-checkbox-item" for="checkbox-5">E</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-6" value="f">
-        <label class="list-checkbox-item" for="checkbox-6">F</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-7" value="g">
-        <label class="list-checkbox-item" for="checkbox-7">G</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-8" value="h">
-        <label class="list-checkbox-item" for="checkbox-8">H</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-9" value="i">
-        <label class="list-checkbox-item" for="checkbox-9">I</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-10" value="j">
-        <label class="list-checkbox-item" for="checkbox-10">J</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-11" value="k">
-        <label class="list-checkbox-item" for="checkbox-11">K</label>
-      </div>
-      <div class="col-3 col-md-2 col-lg-1 ">
-        <input class="list-checkbox-item" type="checkbox" id="checkbox-12" value="l">
-        <label class="list-checkbox-item" for="checkbox-12">L</label>
-      </div>
     </div>
   </div>
 
   <div id="music" class="container">
     <div class="row text-center pt-3 mt-4 mb-5">
       <div class="col-12">
-        <a id="btn-randomise" class="btn btn-primary btn-lg mb-1">Randomise!</a>
+        <button id="btn-randomise" class="btn btn-primary btn-lg mb-1">Randomise!</button>
       </div>
     </div>
   </div>
 
-  <section class="my-grid container" id="music-grid">
-  </section>
+  <section class="my-grid container" id="music-grid"></section>
   <div class="container">
     <div class="row text-center my-5">
       <div id="main-button" class="col-12 mb-3">
-        <button id='play-minuetto' class="btn btn-primary btn-lg"><span class="btn-play-text">Play
-            Minuetto</span></button>
-        <a id="pause-button" class="btn btn-primary btn-lg"><span class="btn-play-text">Stop</span></a>
+        <button id="play-minuetto" class="btn btn-primary btn-lg">Play Minuetto</button>
       </div>
     </div>
   </div>
@@ -277,26 +219,21 @@
               <a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a>
             </li>
           </ul>
-
         </div>
         <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
           <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
           <ul class="list-unstyled">
             <li>
-              <p>
-                <i class="fas fa-home mr-3"></i> Waddenweg 149, 2134XL Hoofddorp, The Netherlands</p>
+              <p><i class="fas fa-home mr-3"></i> Waddenweg 149, 2134XL Hoofddorp, The Netherlands</p>
             </li>
             <li>
-              <p>
-                <i class="fas fa-envelope mr-3"></i> brachetta@me.com</p>
+              <p><i class="fas fa-envelope mr-3"></i> brachetta@me.com</p>
             </li>
             <li>
-              <p>
-                <i class="fas fa-phone mr-3"></i> + 31 6 51 06 30 02</p>
+              <p><i class="fas fa-phone mr-3"></i> + 31 6 51 06 30 02</p>
             </li>
           </ul>
-
         </div>
         <div class="clearfix w-100 d-md-none hr"></div>
         <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
@@ -316,10 +253,12 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright text-center py-3">&copy; <script>
+    <div class="footer-copyright text-center py-3">
+      &copy;
+      <script>
         document.write(new Date().getFullYear());
-      </script> Copyright:
-      <a href="#"> Guillermo Brachetta</a>
+      </script>
+      Copyright: <span class="my-name"> Guillermo Brachetta</span>
     </div>
   </footer>
 
@@ -337,7 +276,7 @@
           <h3>Guillermo Brachetta</h3>
           <div class="row my-3">
             <div class="col">
-              <img src="assets/images/avatar.png" alt="avatar" class="img-fluid">
+              <img src="assets/images/avatar.png" alt="avatar" class="img-fluid" />
             </div>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
@@ -373,12 +312,12 @@
                   <div class="col-12 form-group">
                     <label for="inputName">Name</label>
                     <input type="text" class="form-control" name="from_name" id="inputName" placeholder="Enter Name"
-                      required>
+                      required />
                   </div>
                   <div class="col-12">
                     <label for="inputEmail">Email address</label>
                     <input type="email" name="from_email" class="form-control" id="inputEmail"
-                      aria-describedby="emailHelp" placeholder="Enter email" required>
+                      aria-describedby="emailHelp" placeholder="Enter email" required />
                     <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone
                       else.</small>
                   </div>
@@ -395,14 +334,12 @@
                 <div id="messages"></div>
               </fieldset>
             </form>
-
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- Scripts -->
-  <script src="https://randojs.com/1.0.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
