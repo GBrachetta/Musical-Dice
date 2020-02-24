@@ -1,19 +1,24 @@
 // Constants
 // Defines the array of objects containing all full minuetti
-const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]; // and so on
-const mp3list = alphabet.map(item => {
-  return {
-    name: `Minuetto ${item}`,
-    path: `assets/music/minuetto${item}.mp3`
-  };
-});
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]; // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
+$musicGrid = $("#music-grid"),
+$playButton = $("#play-minuetto"),
+$pauseButton = $("#pause-button"),
+$randomiseButton = $("#btn-randomise"),
+$checkboxes = $("#checkboxes-minuetti");
+// By getting rid of Rando.js we needed an array to get the index in randomisation
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and 
 
-const playButton = $("#play-minuetto"),
-  pauseButton = $("#pause-button");
-let letters = "abcdefghijkl"; // For randomising array and creating grid
+
+const mp3list = alphabet.map(item => ({
+  name: `Minuetto ${item}`,
+  path: `assets/music/minuetto${item}.mp3`
+}));
+
+// let letters = "abcdefghijkl"; // For randomising array and creating grid // FIXME: This needs perhaps to be rescoped
 
 // Variables
-let randomSelection = [];
+let randomID = [];
 let sequence = [];
 let i;
 let soundFiles = [];
@@ -25,28 +30,22 @@ randomise(); // Runs to have a valid array on load in case the user clicks "Play
 $(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
 
 function randomise() {
-  $("#play-minuetto")
-    .attr("disabled", false)
-    .text("Play Minuetto"); // Restores play button after new randomisation
+  $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
+  $musicGrid.find(".selected").removeClass("selected");
   $(".bar")
-    .removeClass("playing")
-    .attr("disabled", false)
-    .removeClass("disabled"); // Restores clickalability of grid
+    .removeClass("playing disabled")
+    .prop("disabled", false); // Restores clickalability of grid
 
-  // This uses randojs to simplify randomisation.
-  // With thanks to this answer: https://stackoverflow.com/questions/60301319/
   for (let i = 1; i <= 12; i++) {
-    let valueAtIndex = `assets/music/${rando(letters)}${i < 10 ? "0" : ""}${i}.mp3`;
-    randomSelection[i - 1] = valueAtIndex;
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
   }
-  console.log(randomSelection);
-  defineSong();
-  $(".selected").removeClass("selected");
+  console.log(randomIDs);
 
-  randomSelection.forEach(element => {
-    let item = [`${element.slice(13, 16)}`];
-    $(`#${item}`).addClass("selected");
-  });
+  // Make grid cells selected
+  randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
+
+ defineSong();
 }
 
 // Generates grid from user-selected values
@@ -86,7 +85,7 @@ function createSequence(bars) {
   let howl;
   for (i = 0; i <= bars; i++) {
     howl = new Howl({
-      src: [randomSelection[i]],
+      src: [randomID[i]],
       loop: false,
       onplay: function() {
         let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
@@ -138,7 +137,7 @@ $("#btn-randomise").on("click", randomise); // Randomise new array of files
 // FIXME: Currently PLAY is able to play the first randomisation based on the variable declared in line 54
 // FIXME: Need to prevent that, and disable button until the user has selected his minuetti
 function handlers(isPlaying, soundFiles) {
-  playButton.on("click", function() {
+  $playButton.on("click", function() {
     if (!isPlaying) {
       isPlaying = true;
       soundFiles[0].play();
@@ -168,7 +167,7 @@ function handlers(isPlaying, soundFiles) {
     // $("#play-minuetto").attr("id", 'pause-button');
   });
 
-  pauseButton.on("click", function() {
+  $pauseButton.on("click", function() {
     if (isPlaying) {
       isPlaying = false;
       soundFiles.forEach(bar => {
