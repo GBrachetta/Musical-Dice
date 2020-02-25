@@ -1,32 +1,24 @@
 // Constants
 // Defines the array of objects containing all full minuetti
 const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
-  alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
+  alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // For randomising array and creating grid
   $musicGrid = $("#music-grid"),
   $playButton = $("#play-minuetto"),
   $pauseButton = $("#pause-button"),
   $randomiseButton = $("#btn-randomise"),
   $checkboxes = $("#checkboxes-minuetti");
 // By getting rid of Rando.js we needed an array to get the index in randomisation
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and creating grid
+let randomIDs = [];
+let sequence = [];
+let $allMP3 = [];
+let isPlaying = false; // Made global to get rid of handlers
+let single = null; // Will handle a single Howler sound on cell click
 
 const mp3list = alphabet.map(item => ({
   name: `Minuetto ${item}`,
-  path: `assets/music/minuetto${item}.mp3`
+  path: `assets/music/minuetto${item.toUpperCase()}.mp3`
 }));
-
-// let letters = "abcdefghijkl"; // For randomising array and creating grid // FIXME: This needs perhaps to be rescoped
-
-// Variables
-let randomID = [];
-let sequence = [];
-let i;
-let soundFiles = [];
-let pickedValues = [];
-let arrayOfChoices = [];
-let $allMP3 = [];
-let randomIDs = [];
-let isPlaying = false; // Made global to get rid of handlers
 
 randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
 // $(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
