@@ -1,4 +1,3 @@
-// Constants
 // Defines the array of objects containing all full minuetti
 const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
   alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // For randomising array and creating grid
@@ -20,6 +19,9 @@ const mp3list = alphabet.map(item => ({
   path: `assets/music/minuetto${item.toUpperCase()}.mp3`
 }));
 
+/**
+ * Generates random selections from selected letters
+ */
 function randomise() {
   $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
   $musicGrid.find(".selected").removeClass("selected");
@@ -39,6 +41,9 @@ function randomise() {
   createSequence();
 }
 
+/**
+ * Generates grid from user-selected values
+ */
 function buildGrid() {
   // Rebuilds the array of letters only from checked checkboxes
   letters = $checkboxes
@@ -54,7 +59,7 @@ function buildGrid() {
   $musicGrid.toggle(!noSelection);
 
   // Do nothing if no ckeckbox was selected (no letters)
-  if (noSelection) return;
+  if (noSelection) return; // EXIT FUNCTION HERE!
 
   // else...
   let html = "";
@@ -71,8 +76,10 @@ function buildGrid() {
   randomise(); // Calls randomise to allow loading MP3 files
 }
 
-// Play array of files
-
+/**
+ * Creates a song from random bars
+ * Populates sequence variable with Howler Objects
+ */
 function createSequence() {
   isPlaying = false;
 
@@ -104,10 +111,12 @@ function createSequence() {
   });
 }
 
-// Event Listeners
-
+/**
+ * Togglessequence play / sop state
+ * Toggles UI elements accordingly
+ */
 function togglePlaySequence() {
-  isPlaying = !isPlaying; // Toggles isPlaying
+  isPlaying = !isPlaying; // Toggle isPlaying flag
 
   if (isPlaying) {
     sequence[0].play();
@@ -127,12 +136,16 @@ function togglePlaySequence() {
   }
 }
 
+/**
+ * EVENTS
+ */
 // Rebuild grid on user-selection
 $checkboxes.on("change", ":checkbox", buildGrid);
 $randomiseButton.on("click", randomise); // Randomise new array of files
 $playButton.on("click", togglePlaySequence); // Play / Stop sequence
 
 // Grid play individual cells
+// jQuery .on() method with dynamic handler for .bar elements
 // Delegates listeners to parent element
 $musicGrid.on("click", ".bar", function() {
   const $this = $(this);
@@ -192,6 +205,9 @@ const $newMP3 = mp3 => {
   });
 };
 
+/**
+ *  INIT APP
+ */
 $allMP3 = mp3list.map($newMP3); // Populate array of $ elements
 $("#minuetti").append($allMP3); // Append to div
 
