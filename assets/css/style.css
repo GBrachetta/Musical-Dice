@@ -6,16 +6,18 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-
-/* Checkboxes selection of Minuetti */
+/* Checkboxes selection of Minuetti up to line 81*/
+/* Checkboxes styling addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 
 div.checkbox-tags {
   list-style: none;
   padding: 1rem;
 }
+
 div.checkbox-tags div {
   display: inline;
 }
+
 div.checkbox-tags div label {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.1);
@@ -58,7 +60,8 @@ div.checkbox-tags div input[type="checkbox"]:checked + label::before {
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
-  background-color: #12bbd4;
+  /* background-color: #12bbd4; */
+  background-color: rgba(29, 161, 242, 1);
   color: #fff;
   transition: all 0.2s;
 }
@@ -66,37 +69,34 @@ div.checkbox-tags div input[type="checkbox"]:checked + label {
 div.checkbox-tags div input[type="checkbox"] {
   display: absolute;
 }
+
 div.checkbox-tags div input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
+
 div.checkbox-tags div input[type="checkbox"]:hover + label {
   background-color: rgba(0, 0, 0, 0.1);
   color: #6b6464;
 }
 
+#checkboxes-minuetti label {
+  padding-left: 0.7em;
+  font-size: 1em;
+}
+
+/*  */
 .list-checkbox-item {
   width: 100%;
 }
 
-.individual-minuetto {
-  /* padding: 0 .1rem; */
-  border: 2px solid #2b3e50;
-  font-size: 1rem;
-  transition: all 0.35s ease-in-out;
-}
-
-#checkboxes-minuetti label {
-  padding-left: .7em;
-  font-size: 1em;
-}
-
+/* Footer */
 .page-footer {
   background-color: #4e5d6c;
 }
 
-.page-footer p{
-  font-size: .9em;
+.page-footer p {
+  font-size: 0.9em;
 }
 
 #music {
@@ -107,11 +107,20 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
   margin: 0 auto;
 }
 
+/* Buttons */
+.individual-minuetto {
+  /* padding: 0 .1rem; */
+  border: 2px solid #2b3e50;
+  font-size: 1rem;
+  transition: all 0.35s ease-in-out;
+}
+
 #minuetti button {
   width: 100%;
   font-size: 1em;
 }
 
+/* Grids and Tables */
 .table-responsive {
   display: inline-table;
 }
@@ -154,27 +163,24 @@ a.bar {
   margin: 0 2vw;
 }
 
+/* Text */
 .display-3,
 .display-4 {
   font-size: 2.5rem;
 }
 
-/* .titles {
-  font-size: 1.5rem;
-  color: rgba(223, 105, 26, 1);
-  text-shadow: 1px 1px 2px rgba(223, 105, 26, 0.5);
-} */
-
 .disabled {
-  opacity: 1 !important;
+  opacity: 1;
   cursor: default;
 }
+
 .disabled.selected:not(.playing) {
-  background-color: rgba(29, 161, 242, 0.2) !important;
+  background-color: rgba(29, 161, 242, 0.2);
 }
+
 .disabled:not(.selected),
 .disabled:not(.selected):hover {
-  background-color: #2b3e50 !important;
+  background-color: #2b3e50;
 }
 
 .message-style {
@@ -238,23 +244,27 @@ a:hover {
 }
 
 .playing {
-  background-color: rgba(29, 161, 242, 0.6);
+  /* background-color: #12bbd4; */
+  background-color: rgba(29, 161, 242, 1);
   font-weight: bolder;
   height: 100%;
-  font-size: 0.8em !important;
+  font-size: 0.8em;
   text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
 }
 
 .minuetto-playing {
-  background-color: rgba(29, 161, 242, 0.2);
+  /* background-color: rgba(29, 161, 242, 0.2); */
+  background-color: rgba(29, 161, 242, 1);
 }
 
 .unselected {
   background-color: #fff;
 }
+
 /* .my-grid div{
 align-self: auto;
 } */
+
 button#btn-randomise:active,
 button#play-minuetto:active,
 button#playminuetto:focus,
@@ -284,19 +294,19 @@ button.btn:focus {
   box-shadow: none;
 }
 
-.lead{
+.lead {
   font-size: 1em;
 }
 
-.footer-copyright{
-  font-size: .7em;
+.footer-copyright {
+  font-size: 0.7em;
 }
 
-.footer-copyright .my-name{
+.footer-copyright .my-name {
   color: #12bbd4;
 }
 
-/* NOTE
+/*
 Media queries
 */
 @media (min-width: 768px) {
@@ -329,12 +339,12 @@ Media queries
     font-size: 4rem;
   }
 
-  .lead{
+  .lead {
     font-size: 1.25em;
   }
 
   .playing {
-    font-size: 1.5em !important;
+    font-size: 1.5em;
   }
 
   #checkboxes-minuetti label {
@@ -342,11 +352,11 @@ Media queries
     font-size: 1em;
   }
 
-  .page-footer p{
+  .page-footer p {
     font-size: 1em;
   }
 
-  .footer-copyright{
+  .footer-copyright {
     font-size: 1em;
   }
 }
