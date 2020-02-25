@@ -1,6 +1,7 @@
 // Constants
 // Defines the array of objects containing all full minuetti
-const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
+const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
+alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
 $musicGrid = $("#music-grid"),
 $playButton = $("#play-minuetto"),
 $pauseButton = $("#pause-button"),
@@ -26,6 +27,7 @@ let pickedValues = [];
 let arrayOfChoices = [];
 let $allMP3 = [];
 let randomIDs = [];
+let isPlaying = false; // Made global to get rid of handlers
 
 randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
 // $(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
@@ -80,26 +82,36 @@ $(".list-checkbox-item").change(function() {
 });
 
 // Play array of files
-// $("#play-minuetto").on("click", playSong);
-function createSequence(bars) {
-  let allHowls = [];
-  let howl;
-  for (i = 0; i <= bars; i++) {
-    howl = new Howl({
-      src: [randomID[i]],
-      loop: false,
+
+function createSequence() {
+  isPlaying = false;
+
+  if (sequence.length) {
+    sequence.forEach(sound => sound.unload());
+  }
+
+  // Rebuild sequence array with Howler objects
+  sequence = randomIDs.map((id, i) => {
+    return new Howl({
+      src: `assets/music/${id}.mp3`,
       onplay: function() {
-        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).addClass("playing"); // Adds class to bar currently playing
+        $(`#${id}`).addClass("playing"); // Adds class to bar currently playing
       },
       onend: function() {
-        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).removeClass("playing"); // Removes class of bar just played
+        $(`#${id}`).removeClass("playing"); // Removes class of bar just played
+        // Handle all bars but the last one
+        if (i < randomIDs.length - 1) {
+          sequence[i + 1].play(); // Play next bar
+        } else {
+          isPlaying = false;
+          $playButton.text("Play Again"); // Restores play button after song
+          $(".bar")
+            .prop("disabled", false)
+            .removeClass("playing disabled"); // Restores grid after song
+        }
       }
     });
-    allHowls.push(howl);
-  }
-  return allHowls;
+  });
 }
 
 // function defineSong() {
