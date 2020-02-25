@@ -43,11 +43,23 @@ function randomise() {
 
 
 function buildGrid() {
+  // Rebuilds the array of letters only from checked checkboxes
   letters = $checkboxes
     .find(":checkbox:checked")
     .get()
     .map(el => el.value);
 
+  const noSelection = letters.length === 0;
+
+  // Hide elements if no letters selected
+  $playButton.prop("disabled", noSelection);
+  $randomiseButton.prop("disabled", letters.length < 2);
+  $musicGrid.toggle(!noSelection);
+
+  // Do nothing if no ckeckbox was selected (no letters)
+  if (noSelection) return;
+
+  // else...
   let html = "";
   for (let i = 0; i < letters.length; i++) {
     html += `<div id="music-row-${letters[i]}" class="row no-gutters">`;
