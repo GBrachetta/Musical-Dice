@@ -195,21 +195,12 @@ function handlers(isPlaying, soundFiles) {
 }
 
 // Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-$(document).ready(function() {
-  $("a").on("click", function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      let hash = this.hash;
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top
-        },
-        800,
-        function() {
-          window.location.hash = hash;
-        }
-      );
-    }
+$("a").on("click", function(event) {
+  let hash = this.hash;
+  if (!hash) return; // Do nothing if no hash. Else... animate
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, function() {
+    window.location.hash = hash;
   });
 });
 
