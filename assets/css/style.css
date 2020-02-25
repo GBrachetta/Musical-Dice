@@ -167,7 +167,7 @@ a.bar {
 .bar:hover:not(.selected) {
   /* background-color: #4e5d6c; */
   background-color: rgba(0, 0, 0, 0.2);
-  color: #6b6464;
+  /* color: #6b6464; */
 }
 
 .bar.active:hover {
@@ -208,6 +208,10 @@ a.bar {
   margin-bottom: 2em;
   background-color: #4e5d6c;
   font-weight: 700;
+}
+
+.rulebook {
+  padding-left: 0;
 }
 
 .social a i {
@@ -265,7 +269,7 @@ a:hover {
 .playing {
   /* background-color: #12bbd4; */
   background-color: rgba(29, 161, 242, 1);
-  font-weight: bolder;
+  /* font-weight: bolder; */
   height: 100%;
   font-size: 0.8em;
   text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
