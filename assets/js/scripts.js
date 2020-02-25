@@ -20,7 +20,6 @@ const mp3list = alphabet.map(item => ({
   path: `assets/music/minuetto${item.toUpperCase()}.mp3`
 }));
 
-randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
 
 function randomise() {
   $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
@@ -41,35 +40,7 @@ function randomise() {
   createSequence();
 }
 
-// Generates grid from user-selected values
-// This gives me a string alphabetically ordered from the values in the checkboxes
-// BUG: When all minuetti have been deselected, the variable 'letters' needs to revert to 'abcdefghijkl'
-$(".list-checkbox-item").change(function() {
-  let chosenLetters = $(this).val();
-  if ($(this).is(":checked")) {
-    arrayOfChoices.push(chosenLetters);
-  } else {
-    arrayOfChoices.splice($.inArray(chosenLetters, arrayOfChoices), 1);
-  }
-  letters = arrayOfChoices.sort().join(""); // Gives me a string with chosen letters ordered alphabetically
-  console.log(
-    `This is my string in var 'letters' ordered alphabetically (Need to clear grid after each instantiation or append after the loop): %c${letters}`,
-    "color: red; font-weight: bold; font-size: 16px"
-  );
-  let html = ""; // Needs to stay in function scope
 
-  for (let i = 0; i < letters.length; i++) {
-    var musicRowID = `${letters.charAt(i)}01`;
-    html += `<div id="music-row-${musicRowID}" class="row no-gutters">`; // *** No `</div>` yet
-    for (let j = 1; j <= 12; j++) {
-      var columnID = letters.charAt(i) + (j < 10 ? "0" : "") + j;
-      html += `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`;
-    }
-    html += "</div>";
-  }
-  $("#music-grid").html(html);
-  randomise(); // Calls randomise to allow loading MP3 files
-});
 
 function buildGrid() {
   letters = $checkboxes
@@ -128,7 +99,6 @@ function createSequence() {
 // FIXME: Need to disable button until the user has selected his minuetti
 $("#btn-randomise").on("click", randomise); // Randomise new array of files
 
-// FIXME: Need to prevent that, and disable button until the user has selected his minuetti
 function togglePlaySequence() {
   isPlaying = !isPlaying; // Toggles isPlaying 
 
