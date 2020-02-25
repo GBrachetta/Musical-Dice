@@ -1,185 +1,224 @@
-// Constants
-const playButton = $("#play-minuetto"),
-  pauseButton = $("#pause-button");
-const letters = "abcdefghijkl"; // For randomising array and creating grid
-
-// Variables
-let randomSelection = [];
+// Defines the array of objects containing all full minuetti
+const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
+  alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // For randomising array and creating grid
+  $musicGrid = $("#music-grid"),
+  $playButton = $("#play-minuetto"),
+  $pauseButton = $("#pause-button"),
+  $randomiseButton = $("#btn-randomise"),
+  $checkboxes = $("#checkboxes-minuetti");
+// By getting rid of Rando.js we needed an array to get the index in randomisation
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and creating grid
+let randomIDs = [];
 let sequence = [];
-let i;
-let soundFiles = [];
-let pickedValues = [];
+let $allMP3 = [];
+let isPlaying = false; // Made global to get rid of handlers
+let single = null; // Will handle a single Howler sound on cell click
 
+const mp3list = alphabet.map(item => ({
+  name: `Minuetto ${item}`,
+  path: `assets/music/minuetto${item.toUpperCase()}.mp3`
+}));
+
+/**
+ * Generates random selections from selected letters
+ */
 function randomise() {
-  $("#play-minuetto")
-    .attr("disabled", false)
-    .text("Play Minuetto"); // Restores play button after new randomisation
+  $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
+  $musicGrid.find(".selected").removeClass("selected");
   $(".bar")
-    .removeClass("playing")
-    .attr("disabled", false)
-    .removeClass("disabled"); // Restores clickalability of grid
+    .removeClass("playing disabled")
+    .prop("disabled", false); // Restores clickalability of grid
 
-  // This uses randojs to simplify randomisation.
-  // With thanks to this answer: https://stackoverflow.com/questions/60301319/
   for (let i = 1; i <= 12; i++) {
-    let valueAtIndex = `assets/music/${rando(letters)}${i < 10 ? "0" : ""}${i}.mp3`;
-    randomSelection[i - 1] = valueAtIndex;
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
   }
-  console.log(randomSelection);
-  defineSong();
-  $(".selected").removeClass("selected");
+  console.log(randomIDs);
 
-  randomSelection.forEach(element => {
-    let item = [`${element.slice(13, 16)}`];
-    $(`#${item}`).addClass("selected");
-  });
+  // Make grid cells selected
+  randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
+
+  createSequence();
 }
 
-// Populate Grid - Used in combination with variable letters
-for (let i = 0; i < letters.length; i++) {
-  var musicRowID = letters.charAt(i) + "01";
-  $("#music-grid").append(`<div id="music-row-${musicRowID}" class="row no-gutters"></div>`);
+/**
+ * Generates grid from user-selected values
+ */
+function buildGrid() {
+  // Rebuilds the array of letters only from checked checkboxes
+  letters = $checkboxes
+    .find(":checkbox:checked")
+    .get()
+    .map(el => el.value);
 
-  for (let j = 1; j <= 12; j++) {
-    var columnID = letters.charAt(i) + (j < 10 ? "0" : "") + j;
-    $(`#music-row-${musicRowID}`).append(
-      `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`
-    );
+  const noSelection = letters.length === 0;
+
+  // Hide elements if no letters selected
+  $playButton.prop("disabled", noSelection);
+  $randomiseButton.prop("disabled", letters.length < 2);
+  $musicGrid.toggle(!noSelection);
+
+  // Do nothing if no ckeckbox was selected (no letters)
+  if (noSelection) return; // EXIT FUNCTION HERE!
+
+  // else...
+  let html = "";
+  for (let i = 0; i < letters.length; i++) {
+    html += `<div id="music-row-${letters[i]}" class="row no-gutters">`;
+    for (let j = 1; j <= 12; j++) {
+      const columnID = letters[i] + zeroPadd(j);
+      html += `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`;
+    }
+    html += "</div>";
   }
+
+  $musicGrid.html(html);
+  randomise(); // Calls randomise to allow loading MP3 files
 }
 
-// Play array of files
-// $("#play-minuetto").on("click", playSong);
-function createSequence(bars) {
-  let allHowls = [];
-  let howl;
-  for (i = 0; i <= bars; i++) {
-    howl = new Howl({
-      src: [randomSelection[i]],
-      loop: false,
+/**
+ * Creates a song from random bars
+ * Populates sequence variable with Howler Objects
+ */
+function createSequence() {
+  isPlaying = false;
+
+  if (sequence.length) {
+    sequence.forEach(sound => sound.unload());
+  }
+
+  // Rebuild sequence array with Howler objects
+  sequence = randomIDs.map((id, i) => {
+    return new Howl({
+      src: `assets/music/${id}.mp3`,
       onplay: function() {
-        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).addClass("playing"); // Adds class to bar currently playing
+        $(`#${id}`).addClass("playing"); // Adds class to bar currently playing
       },
       onend: function() {
-        let cleanPath = this._src.replace("assets/music/", "").replace(".mp3", "");
-        $(`#${cleanPath}`).removeClass("playing"); // Removes class of bar just played
+        $(`#${id}`).removeClass("playing"); // Removes class of bar just played
+        // Handle all bars but the last one
+        if (i < randomIDs.length - 1) {
+          sequence[i + 1].play(); // Play next bar
+        } else {
+          isPlaying = false;
+          $playButton.text("Play Again"); // Restores play button after song
+          $(".bar")
+            .prop("disabled", false)
+            .removeClass("playing disabled"); // Restores grid after song
+        }
       }
     });
-    allHowls.push(howl);
-  }
-  return allHowls;
+  });
 }
 
-function defineSong() {
-  let isPlaying = false;
-  if (soundFiles.length) {
-    soundFiles.forEach(sound => {
-      sound.unload();
-    });
+/**
+ * Togglessequence play / sop state
+ * Toggles UI elements accordingly
+ */
+function togglePlaySequence() {
+  isPlaying = !isPlaying; // Toggle isPlaying flag
+
+  if (isPlaying) {
+    sequence[0].play();
+    $playButton.text("Stop minuetto");
+    // Disables grid while playing
+    $(".bar")
+      .removeClass("playing")
+      .addClass("disabled")
+      .prop("disabled", true);
+  } else {
+    sequence.forEach(bar => bar.stop());
+    $playButton.text("Play minuetto");
+    // Restores grid when clicked stop
+    $(".bar")
+      .removeClass("playing disabled")
+      .prop("disabled", false);
   }
-  soundFiles = createSequence(12);
-  for (i = 0; i < soundFiles.length - 1; ++i) {
-    soundFiles[i].on(
-      "end",
-      (function(i) {
-        return function() {
-          soundFiles[i + 1].play();
-        };
-      })(i)
-    );
-  }
-  soundFiles[i].on("end", function() {
-    isPlaying = false;
-  });
-  handlers(isPlaying, soundFiles);
 }
 
-// btnPlayText.text("Stop");
-// btnPlayText.text("Play Minuetto");
+/**
+ * EVENTS
+ */
+// Rebuild grid on user-selection
+$checkboxes.on("change", ":checkbox", buildGrid);
+$randomiseButton.on("click", randomise); // Randomise new array of files
+$playButton.on("click", togglePlaySequence); // Play / Stop sequence
 
-// Event Listeners
-$("#btn-randomise").on("click", randomise); // Randomise new array of files
-// Play & Pause event
-function handlers(isPlaying, soundFiles) {
-  playButton.on("click", function() {
-    if (!isPlaying) {
-      isPlaying = true;
-      soundFiles[0].play();
-      $(".bar")
-        .attr("disabled", true)
-        .addClass("disabled"); // Disables grid while playing
-      let lengthSong = soundFiles.length - 2;
-      soundFiles[lengthSong].on("end", function() {
-        isPlaying = false;
-      });
-      // playButton.html("Stop");
-    }
-    $("#play-minuetto")
-      .attr("disabled", true)
-      .css({ cursor: "default" }); // Disables play button while playing
-    let length = soundFiles.length - 2;
-    soundFiles[length].on("end", function() {
-      $("#play-minuetto")
-        .attr("disabled", false)
-        .text("Play Again"); // Restores play button after song
-      $(".bar")
-        .attr("disabled", false)
-        .removeClass("disabled"); // Restores grid after song
-    });
-    // $("#play-minuetto").attr("id", 'pause-button');
-  });
-  pauseButton.on("click", function() {
-    if (isPlaying) {
-      isPlaying = false;
-      soundFiles.forEach(bar => {
-        bar.stop();
-        $(".bar")
-          .removeClass("playing")
-          .attr("disabled", false)
-          .removeClass("disabled"); // Restores grid when clicked stop
-      });
-      $("#play-minuetto").attr("disabled", false);
+// Grid play individual cells
+// jQuery .on() method with dynamic handler for .bar elements
+// Delegates listeners to parent element
+$musicGrid.on("click", ".bar", function() {
+  const $this = $(this);
+
+  // Handle already playing single bar sound
+  if (single && single.playing()) {
+    single.stop();
+  }
+
+  // Set new sound and play it
+  single = new Howl({
+    src: [`assets/bars/${this.id}.mp3`],
+    onplay: function() {
+      $this.addClass("playing"); // Adds class to show which bit is playing
+    },
+    onstop: function() {
+      $this.removeClass("playing"); // Removes class of bit just played
+    },
+    onend: function() {
+      $this.removeClass("playing"); // Removes class of bit just played
     }
   });
-  // Grid play event
-  $(".bar").on("click", function() {
-    let id = this.id;
-    let barPath = `assets/bars/${id}.mp3`;
-    let cell = new Howl({
-      src: [barPath],
-      volume: 0.3,
-      onplay: function() {
-        $(`#${id}`).addClass("playing"); // Adds class to show which bit is playing
-      },
-      onend: function() {
-        $(`#${id}`).removeClass("playing"); // Removes class of bit just played
-      }
-    });
-    cell.play();
-    // cell.unload()
-  });
-}
-
-randomise(); // Runs to have a valid array on load
-
-$(window).on("load", defineSong);
+  single.play();
+});
 
 // Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-$(document).ready(function() {
-  $("a").on("click", function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      let hash = this.hash;
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top
-        },
-        800,
-        function() {
-          window.location.hash = hash;
-        }
-      );
-    }
+$("a").on("click", function(event) {
+  let hash = this.hash;
+  if (!hash) return; // Do nothing if no hash. Else... animate
+  event.preventDefault();
+  $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, function() {
+    window.location.hash = hash;
   });
 });
+
+// Buttons to preview full minuetti
+const $newMP3 = mp3 => {
+  const sound = new Howl({ src: mp3.path }); // Howl
+  // $ ELEMENT
+  return $(`<div/>`, {
+    class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
+    text: mp3.name,
+    on: {
+      click() {
+        $allMP3.forEach($el => $el.not(this).trigger("stop"));
+        $(this).trigger(sound.playing() ? "stop" : "play");
+      },
+      play() {
+        $(this).text("Stop").addClass("minuetto-playing");
+        sound.play();
+      },
+      stop() {
+        $(this).text(mp3.name).removeClass("minuetto-playing");
+        sound.stop();
+      }
+    }
+  });
+};
+
+/**
+ *  INIT APP
+ */
+$allMP3 = mp3list.map($newMP3); // Populate array of $ elements
+$("#minuetti").append($allMP3); // Append to div
+
+const checkboxesHTML = alphabet.reduce((_html, letter, i) => {
+  const checkboxID = `checkbox-${i + 1}`;
+  return (_html += `<div class = "col-3 col-md-2 col-lg-1">
+        <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
+        <label for="${checkboxID}">${letter}</label>
+    </div>`);
+}, "");
+
+$checkboxes.html(checkboxesHTML);
+
+buildGrid();

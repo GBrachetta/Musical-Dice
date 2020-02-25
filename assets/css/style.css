@@ -10,6 +10,90 @@ body {
   height: 30vh;
 }
 
+/* Checkboxes selection of Minuetti */
+div.checkbox-tags {
+  list-style: none;
+  padding: 1rem;
+}
+div.checkbox-tags div {
+  display: inline;
+}
+div.checkbox-tags div label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(139, 139, 139, .3); */
+  color: #2b3e50;
+  /* border-radius: 25px; */
+  white-space: nowrap;
+  margin: 3px 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s;
+}
+
+div.checkbox-tags div label {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+div.checkbox-tags div label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: "\f067";
+  transition: transform 0.3s ease-in-out;
+}
+
+div.checkbox-tags div input[type="checkbox"]:checked + label::before {
+  content: "\f00c";
+  /* transform: rotate(-360deg); */
+  transition: transform 0.3s ease-in-out;
+}
+
+div.checkbox-tags div input[type="checkbox"]:checked + label {
+  background-color: #12bbd4;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+div.checkbox-tags div input[type="checkbox"] {
+  display: absolute;
+}
+div.checkbox-tags div input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+div.checkbox-tags div input[type="checkbox"]:hover + label {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #6b6464;
+}
+
+.list-checkbox-item {
+  width: 100%;
+}
+
+.individual-minuetto {
+  /* padding: 0 .1rem; */
+  border: 2px solid #2b3e50;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#checkboxes-minuetti label {
+  padding-left: 1em;
+  font-size: 1em;
+}
+
 .page-footer {
   background-color: #4e5d6c;
 }
@@ -20,6 +104,11 @@ body {
 
 #table {
   margin: 0 auto;
+}
+
+#minuetti button {
+  width: 100%;
+  font-size: 1em;
 }
 
 .table-responsive {
@@ -144,12 +233,15 @@ a:hover {
 }
 
 .playing {
-  /* background-color: rgba(29, 161, 242, 0.6); */
   background-color: rgba(29, 161, 242, 0.6);
   font-weight: bolder;
   height: 100%;
   font-size: 0.8em !important;
   text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
+}
+
+.minuetto-playing {
+  background-color: rgba(29, 161, 242, 0.2);
 }
 
 .unselected {
@@ -160,8 +252,6 @@ align-self: auto;
 } */
 button#btn-randomise:active,
 button#play-minuetto:active,
-button#pause-button:active,
-button#pause-button:focus,
 button#playminuetto:focus,
 button#btn-randomise:focus {
   outline: none;
@@ -169,10 +259,18 @@ button#btn-randomise:focus {
   background-color: #df691a;
 }
 
-button#pause-button:hover,
 button#playminuetto:hover,
 button#btn-randomise:hover {
   background-color: #bd5916;
+}
+
+button#btn-randomise:disabled,
+button#play-minuetto:disabled {
+  cursor: default;
+}
+
+button#btn-randomise:disabled:hover {
+  background-color: #df691a;
 }
 
 button.btn:active,
