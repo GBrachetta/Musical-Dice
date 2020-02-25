@@ -185,7 +185,7 @@ $("a").on("click", function(event) {
 const $newMP3 = mp3 => {
   const sound = new Howl({ src: mp3.path }); // Howl
   // $ ELEMENT
-  return $(`<div/>`, {
+  const $element = $(`<div/>`, {
     class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
     text: mp3.name,
     on: {
@@ -194,15 +194,22 @@ const $newMP3 = mp3 => {
         $(this).trigger(sound.playing() ? "stop" : "play");
       },
       play() {
-        $(this).text("Stop").addClass("minuetto-playing");
+        $(this)
+          .text(`Stop ${mp3.name}`)
+          .addClass("minuetto-playing");
         sound.play();
       },
       stop() {
-        $(this).text(mp3.name).removeClass("minuetto-playing");
+        $(this)
+          .text(mp3.name)
+          .removeClass("minuetto-playing");
         sound.stop();
       }
     }
   });
+  // When the sound ends, triggers the $element stop() event
+  sound.on("end", () => $element.trigger("stop"));
+  return $element;
 };
 
 /**
