@@ -1,6 +1,6 @@
 // Constants
 // Defines the array of objects containing all full minuetti
-const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]; // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
 $musicGrid = $("#music-grid"),
 $playButton = $("#play-minuetto"),
 $pauseButton = $("#pause-button"),
@@ -25,9 +25,10 @@ let soundFiles = [];
 let pickedValues = [];
 let arrayOfChoices = [];
 let $allMP3 = [];
+let randomIDs = [];
 
 randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
-$(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
+// $(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
 
 function randomise() {
   $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
@@ -38,14 +39,14 @@ function randomise() {
 
   for (let i = 1; i <= 12; i++) {
     const randomIndex = Math.floor(Math.random() * letters.length);
-    randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
+    randomIDs[i - 1] = letters[randomIndex];
   }
   console.log(randomIDs);
 
   // Make grid cells selected
   randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
 
- defineSong();
+  createSequence();
 }
 
 // Generates grid from user-selected values
@@ -101,29 +102,29 @@ function createSequence(bars) {
   return allHowls;
 }
 
-function defineSong() {
-  let isPlaying = false;
-  if (soundFiles.length) {
-    soundFiles.forEach(sound => {
-      sound.unload();
-    });
-  }
-  soundFiles = createSequence(12);
-  for (i = 0; i < soundFiles.length - 1; ++i) {
-    soundFiles[i].on(
-      "end",
-      (function(i) {
-        return function() {
-          soundFiles[i + 1].play();
-        };
-      })(i)
-    );
-  }
-  soundFiles[i].on("end", function() {
-    isPlaying = false;
-  });
-  handlers(isPlaying, soundFiles);
-}
+// function defineSong() {
+//   let isPlaying = false;
+//   if (soundFiles.length) {
+//     soundFiles.forEach(sound => {
+//       sound.unload();
+//     });
+//   }
+//   soundFiles = createSequence(12);
+//   for (i = 0; i < soundFiles.length - 1; ++i) {
+//     soundFiles[i].on(
+//       "end",
+//       (function(i) {
+//         return function() {
+//           soundFiles[i + 1].play();
+//         };
+//       })(i)
+//     );
+//   }
+//   soundFiles[i].on("end", function() {
+//     isPlaying = false;
+//   });
+//   handlers(isPlaying, soundFiles);
+// }
 
 // btnPlayText.text("Stop");
 // btnPlayText.text("Play Minuetto");
@@ -224,7 +225,7 @@ $(document).ready(function() {
 const $newMP3 = mp3 => {
   const sound = new Howl({ src: mp3.path }); // Howl
   // $ ELEMENT
-  return $(`<div>${mp3.name}`, {
+  return $(`<div/>`, {
     class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
     text: mp3.name,
     on: {
