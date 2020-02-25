@@ -1,15 +1,14 @@
 // Constants
 // Defines the array of objects containing all full minuetti
 const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
-alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
-$musicGrid = $("#music-grid"),
-$playButton = $("#play-minuetto"),
-$pauseButton = $("#pause-button"),
-$randomiseButton = $("#btn-randomise"),
-$checkboxes = $("#checkboxes-minuetti");
+  alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // Allows easy scalability. If a new minuetto is added, just a new letter is needed.
+  $musicGrid = $("#music-grid"),
+  $playButton = $("#play-minuetto"),
+  $pauseButton = $("#pause-button"),
+  $randomiseButton = $("#btn-randomise"),
+  $checkboxes = $("#checkboxes-minuetti");
 // By getting rid of Rando.js we needed an array to get the index in randomisation
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and 
-
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and
 
 const mp3list = alphabet.map(item => ({
   name: `Minuetto ${item}`,
@@ -80,6 +79,26 @@ $(".list-checkbox-item").change(function() {
   $("#music-grid").html(html);
   randomise(); // Calls randomise to allow loading MP3 files
 });
+
+function buildGrid() {
+  letters = $checkboxes
+    .find(":checkbox:checked")
+    .get()
+    .map(el => el.value);
+
+  let html = "";
+  for (let i = 0; i < letters.length; i++) {
+    html += `<div id="music-row-${letters[i]}" class="row no-gutters">`;
+    for (let j = 1; j <= 12; j++) {
+      const columnID = letters[i] + zeroPadd(j);
+      html += `<div class="col-1"><button id="${columnID}" class="btn bar song">${columnID.toUpperCase()}</button></div>`;
+    }
+    html += "</div>";
+  }
+
+  $musicGrid.html(html);
+  randomise(); // Calls randomise to allow loading MP3 files
+}
 
 // Play array of files
 
@@ -259,3 +278,19 @@ const $newMP3 = mp3 => {
 
 $allMP3 = mp3list.map($newMP3); // Populate array of $ elements
 $("#minuetti").append($allMP3); // Append to div
+
+const checkboxesHTML = alphabet.reduce((_html, letter, i) => {
+  console.log(isPlaying);
+  const checkboxID = `checkbox-${i + 1}`;
+  return (_html += `<div class = "col-3 col-md-2 col-lg-1">
+        <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
+        <label for="${checkboxID}">${letter}</label>
+    </div>`);
+}, "");
+
+$checkboxes.html(checkboxesHTML);
+
+$allMP3 = mp3list.map($newMP3); // Populate array of $ elements
+$("#minuetti").append($allMP3); // Append to div
+
+buildGrid();
