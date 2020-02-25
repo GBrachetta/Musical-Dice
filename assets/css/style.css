@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
 
 body {
   margin: 0;
@@ -20,8 +20,11 @@ div.checkbox-tags div {
 
 div.checkbox-tags div label {
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #2b3e50;
+  /* background-color: rgba(255, 255, 255, 0.1);
+  color: #2b3e50; */
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #6b6464;
+
   white-space: nowrap;
   margin: 3px 0px;
   width: 100%;
@@ -76,7 +79,7 @@ div.checkbox-tags div input[type="checkbox"] {
 }
 
 div.checkbox-tags div input[type="checkbox"]:hover + label {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   color: #6b6464;
 }
 
@@ -113,6 +116,16 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
   border: 2px solid #2b3e50;
   font-size: 1rem;
   transition: all 0.35s ease-in-out;
+}
+
+#minuetti .btn-primary:hover {
+  /* border: 0; */
+  border-color: #2b3e50;
+  /* border: none; */
+}
+
+#minuetti .minuetto-playing:hover {
+  border-color: #2b3e50;
 }
 
 #minuetti button {
@@ -152,7 +165,13 @@ a.bar {
 }
 
 .bar:hover:not(.selected) {
-  background-color: #4e5d6c;
+  /* background-color: #4e5d6c; */
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #6b6464;
+}
+
+.bar.active:hover {
+  background-color: #12bbd4;
 }
 
 .bar.selected:hover {
@@ -294,16 +313,36 @@ button.btn:focus {
   box-shadow: none;
 }
 
+button.bar.playing:hover {
+  background-color: rgba(29, 161, 242, 0.8);
+}
+
+.minuetto-playing:hover {
+  background-color: rgba(29, 161, 242, 0.8);
+  /* border: 0; */
+}
+
 .lead {
   font-size: 1em;
 }
 
+.list-links a {
+  color: #df691a;
+  font-weight: 600;
+}
+
+.list-links a:hover {
+  color: #bd5916;
+  transition: all 0.35s ease-in-out;
+}
+
 .footer-copyright {
   font-size: 0.7em;
+  color: rgb(165, 165, 165);
 }
 
 .footer-copyright .my-name {
-  color: #12bbd4;
+  color: #ebebeb;
 }
 
 /*
