@@ -129,51 +129,31 @@ function createSequence() {
 $("#btn-randomise").on("click", randomise); // Randomise new array of files
 
 // FIXME: Need to prevent that, and disable button until the user has selected his minuetti
-function handlers(isPlaying, soundFiles) {
-  $playButton.on("click", function() {
-    if (!isPlaying) {
-      isPlaying = true;
-      soundFiles[0].play();
-      console.count(`Variable isPlaying (value and count): ${isPlaying}`);
-      $(".bar")
-        .attr("disabled", true)
-        .addClass("disabled"); // Disables grid while playing
-      let lengthSong = soundFiles.length - 2;
-      soundFiles[lengthSong].on("end", function() {
-        isPlaying = false;
-        console.count(`Variable isPlaying (value and count): ${isPlaying}`);
-      });
-      // playButton.html("Stop");
-    }
-    $("#play-minuetto")
-      .attr("disabled", true)
-      .css({ cursor: "default" }); // Disables play button while playing
-    let length = soundFiles.length - 2;
-    soundFiles[length].on("end", function() {
-      $("#play-minuetto")
-        .attr("disabled", false)
-        .text("Play Again"); // Restores play button after song
-      $(".bar")
-        .attr("disabled", false)
-        .removeClass("disabled"); // Restores grid after song
-    });
-    // $("#play-minuetto").attr("id", 'pause-button');
-  });
+function togglePlaySequence() {
+  isPlaying = !isPlaying; // Toggles isPlaying 
 
-  $pauseButton.on("click", function() {
-    if (isPlaying) {
-      isPlaying = false;
-      soundFiles.forEach(bar => {
-        bar.stop();
-        $(".bar")
-          .removeClass("playing")
-          .attr("disabled", false)
-          .removeClass("disabled"); // Restores grid when clicked stop
-      });
-      $("#play-minuetto").attr("disabled", false);
-    }
-  });
+  if (isPlaying) {
+    sequence[0].play();
+    $playButton.text("Stop minuetto");
+    // Disables grid while playing
+    $(".bar")
+      .removeClass("playing")
+      .addClass("disabled")
+      .prop("disabled", true);
+  } else {
+    sequence.forEach(bar => bar.stop());
+    $playButton.text("Play minuetto");
+    // Restores grid when clicked stop
+    $(".bar")
+      .removeClass("playing disabled")
+      .prop("disabled", false);
+  }
 }
+
+// Rebuild grid on user-selection
+$checkboxes.on("change", ":checkbox", buildGrid);
+$randomiseButton.on("click", randomise); // Randomise new array of files
+$playButton.on("click", togglePlaySequence); // Play / Stop sequence
 
 // Grid play individual cells
 // Delegates listeners to parent element
