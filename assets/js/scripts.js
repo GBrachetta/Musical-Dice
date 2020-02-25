@@ -194,11 +194,11 @@ const $newMP3 = mp3 => {
         $(this).trigger(sound.playing() ? "stop" : "play");
       },
       play() {
-        $(this).text("Stop");
+        $(this).text("Stop").addClass("minuetto-playing");
         sound.play();
       },
       stop() {
-        $(this).text(mp3.name);
+        $(this).text(mp3.name).removeClass("minuetto-playing");
         sound.stop();
       }
     }
@@ -212,7 +212,6 @@ $allMP3 = mp3list.map($newMP3); // Populate array of $ elements
 $("#minuetti").append($allMP3); // Append to div
 
 const checkboxesHTML = alphabet.reduce((_html, letter, i) => {
-  console.log(isPlaying);
   const checkboxID = `checkbox-${i + 1}`;
   return (_html += `<div class = "col-3 col-md-2 col-lg-1">
         <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
