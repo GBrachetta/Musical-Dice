@@ -173,26 +173,31 @@ function handlers(isPlaying, soundFiles) {
       $("#play-minuetto").attr("disabled", false);
     }
   });
-
-  // Grid play individual cells
-  // FIXME: Not sure this is the best way!
-  $(".bar").on("click", function() {
-    let id = this.id;
-    let barPath = `assets/bars/${id}.mp3`;
-    let cell = new Howl({
-      src: [barPath],
-      volume: 0.3,
-      onload: function() {},
-      onplay: function() {
-        $(`#${id}`).addClass("playing"); // Adds class to show which bit is playing
-      },
-      onend: function() {
-        $(`#${id}`).removeClass("playing"); // Removes class of bit just played
-      }
-    });
-    cell.play();
-  });
 }
+
+// Grid play individual cells
+// Delegates listeners to parent element
+$musicGrid.on("click", ".bar", function() {
+  const $this = $(this);
+  // Handles already playing single bar sound
+  if (single && single.playing()) {
+    single.stop();
+  }
+  // Sets new sound and plays it
+  single = new Howl({
+    src: [`assets/bars/${this.id}.mp3`],
+    onplay: function() {
+      $this.addClass("playing"); // Adds class to show which bit is playing
+    },
+    onstop: function() {
+      $this.removeClass("playing"); // Removes class of bit just played
+    },
+    onend: function() {
+      $this.removeClass("playing"); // Removes class of bit just played
+    }
+  });
+  single.play();
+});
 
 // Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
 $("a").on("click", function(event) {
