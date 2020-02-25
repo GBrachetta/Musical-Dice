@@ -48,13 +48,13 @@ div.checkbox-tags div label::before {
   font-size: 12px;
   padding: 2px 6px 2px 2px;
   content: "\f067";
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label::before {
   content: "\f00c";
-  /* transform: rotate(-360deg); */
-  transition: transform 0.3s ease-in-out;
+  transform: rotate(-360deg);
+  transition: transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
@@ -83,7 +83,7 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
   /* padding: 0 .1rem; */
   border: 2px solid #2b3e50;
   font-size: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 #checkboxes-minuetti label {
@@ -93,6 +93,10 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
 
 .page-footer {
   background-color: #4e5d6c;
+}
+
+.page-footer p{
+  font-size: .9em;
 }
 
 #music {
@@ -120,12 +124,16 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
 
 button.bar {
   padding: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 a.bar {
   padding: 1em;
 }
+
+/* .alert-dark{
+  color: #fff;
+} */
 
 .bar {
   width: 100%;
@@ -331,6 +339,10 @@ Media queries
 
   #checkboxes-minuetti label {
     padding-left: 1em;
+    font-size: 1em;
+  }
+
+  .page-footer p{
     font-size: 1em;
   }
 
