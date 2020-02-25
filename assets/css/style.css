@@ -6,11 +6,9 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.fill {
-  height: 30vh;
-}
 
 /* Checkboxes selection of Minuetti */
+
 div.checkbox-tags {
   list-style: none;
   padding: 1rem;
@@ -21,11 +19,10 @@ div.checkbox-tags div {
 div.checkbox-tags div label {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.1);
-  /* border: 1px solid rgba(139, 139, 139, .3); */
   color: #2b3e50;
-  /* border-radius: 25px; */
   white-space: nowrap;
   margin: 3px 0px;
+  width: 100%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -90,7 +87,7 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
 }
 
 #checkboxes-minuetti label {
-  padding-left: 1em;
+  padding-left: .7em;
   font-size: 1em;
 }
 
@@ -279,6 +276,21 @@ button.btn:focus {
   box-shadow: none;
 }
 
+.lead{
+  font-size: 1em;
+}
+
+.footer-copyright{
+  font-size: .7em;
+}
+
+.footer-copyright .my-name{
+  color: #12bbd4;
+}
+
+/* NOTE
+Media queries
+*/
 @media (min-width: 768px) {
   .social a {
     display: block;
@@ -309,8 +321,21 @@ button.btn:focus {
     font-size: 4rem;
   }
 
+  .lead{
+    font-size: 1.25em;
+  }
+
   .playing {
     font-size: 1.5em !important;
+  }
+
+  #checkboxes-minuetti label {
+    padding-left: 1em;
+    font-size: 1em;
+  }
+
+  .footer-copyright{
+    font-size: 1em;
   }
 }
 
