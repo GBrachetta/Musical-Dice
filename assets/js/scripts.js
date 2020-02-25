@@ -20,7 +20,6 @@ const mp3list = alphabet.map(item => ({
   path: `assets/music/minuetto${item.toUpperCase()}.mp3`
 }));
 
-
 function randomise() {
   $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
   $musicGrid.find(".selected").removeClass("selected");
@@ -30,7 +29,7 @@ function randomise() {
 
   for (let i = 1; i <= 12; i++) {
     const randomIndex = Math.floor(Math.random() * letters.length);
-    randomIDs[i - 1] = letters[randomIndex];
+    randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
   }
   console.log(randomIDs);
 
@@ -39,8 +38,6 @@ function randomise() {
 
   createSequence();
 }
-
-
 
 function buildGrid() {
   // Rebuilds the array of letters only from checked checkboxes
@@ -108,11 +105,9 @@ function createSequence() {
 }
 
 // Event Listeners
-// FIXME: Need to disable button until the user has selected his minuetti
-$("#btn-randomise").on("click", randomise); // Randomise new array of files
 
 function togglePlaySequence() {
-  isPlaying = !isPlaying; // Toggles isPlaying 
+  isPlaying = !isPlaying; // Toggles isPlaying
 
   if (isPlaying) {
     sequence[0].play();
@@ -141,11 +136,13 @@ $playButton.on("click", togglePlaySequence); // Play / Stop sequence
 // Delegates listeners to parent element
 $musicGrid.on("click", ".bar", function() {
   const $this = $(this);
-  // Handles already playing single bar sound
+
+  // Handle already playing single bar sound
   if (single && single.playing()) {
     single.stop();
   }
-  // Sets new sound and plays it
+
+  // Set new sound and play it
   single = new Howl({
     src: [`assets/bars/${this.id}.mp3`],
     onplay: function() {
