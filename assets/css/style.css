@@ -6,11 +6,9 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.fill {
-  height: 30vh;
-}
 
 /* Checkboxes selection of Minuetti */
+
 div.checkbox-tags {
   list-style: none;
   padding: 1rem;
@@ -21,11 +19,10 @@ div.checkbox-tags div {
 div.checkbox-tags div label {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.1);
-  /* border: 1px solid rgba(139, 139, 139, .3); */
   color: #2b3e50;
-  /* border-radius: 25px; */
   white-space: nowrap;
   margin: 3px 0px;
+  width: 100%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -51,13 +48,13 @@ div.checkbox-tags div label::before {
   font-size: 12px;
   padding: 2px 6px 2px 2px;
   content: "\f067";
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label::before {
   content: "\f00c";
-  /* transform: rotate(-360deg); */
-  transition: transform 0.3s ease-in-out;
+  transform: rotate(-360deg);
+  transition: transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
@@ -86,16 +83,20 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
   /* padding: 0 .1rem; */
   border: 2px solid #2b3e50;
   font-size: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 #checkboxes-minuetti label {
-  padding-left: 1em;
+  padding-left: .7em;
   font-size: 1em;
 }
 
 .page-footer {
   background-color: #4e5d6c;
+}
+
+.page-footer p{
+  font-size: .9em;
 }
 
 #music {
@@ -123,12 +124,16 @@ div.checkbox-tags div input[type="checkbox"]:hover + label {
 
 button.bar {
   padding: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 a.bar {
   padding: 1em;
 }
+
+/* .alert-dark{
+  color: #fff;
+} */
 
 .bar {
   width: 100%;
@@ -279,6 +284,21 @@ button.btn:focus {
   box-shadow: none;
 }
 
+.lead{
+  font-size: 1em;
+}
+
+.footer-copyright{
+  font-size: .7em;
+}
+
+.footer-copyright .my-name{
+  color: #12bbd4;
+}
+
+/* NOTE
+Media queries
+*/
 @media (min-width: 768px) {
   .social a {
     display: block;
@@ -309,8 +329,25 @@ button.btn:focus {
     font-size: 4rem;
   }
 
+  .lead{
+    font-size: 1.25em;
+  }
+
   .playing {
     font-size: 1.5em !important;
+  }
+
+  #checkboxes-minuetti label {
+    padding-left: 1em;
+    font-size: 1em;
+  }
+
+  .page-footer p{
+    font-size: 1em;
+  }
+
+  .footer-copyright{
+    font-size: 1em;
   }
 }
 
