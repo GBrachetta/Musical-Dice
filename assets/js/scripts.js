@@ -21,7 +21,6 @@ const mp3list = alphabet.map(item => ({
 }));
 
 randomise(); // Runs to have a valid array on load in case the user clicks "Play Minuetto" before randomising one.
-// $(window).on("load", defineSong); // Defines song on load. Cells in grid don't play before randomising without this.
 
 function randomise() {
   $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
@@ -125,40 +124,10 @@ function createSequence() {
   });
 }
 
-// function defineSong() {
-//   let isPlaying = false;
-//   if (soundFiles.length) {
-//     soundFiles.forEach(sound => {
-//       sound.unload();
-//     });
-//   }
-//   soundFiles = createSequence(12);
-//   for (i = 0; i < soundFiles.length - 1; ++i) {
-//     soundFiles[i].on(
-//       "end",
-//       (function(i) {
-//         return function() {
-//           soundFiles[i + 1].play();
-//         };
-//       })(i)
-//     );
-//   }
-//   soundFiles[i].on("end", function() {
-//     isPlaying = false;
-//   });
-//   handlers(isPlaying, soundFiles);
-// }
-
-// btnPlayText.text("Stop");
-// btnPlayText.text("Play Minuetto");
-
 // Event Listeners
 // FIXME: Need to disable button until the user has selected his minuetti
 $("#btn-randomise").on("click", randomise); // Randomise new array of files
-// Play & Pause event
-// BUG:  There's something wrong here, on each randomise the howls pile up
-// FIXME: Have to make PLAY and STOP buttons just one button dynamically changing
-// FIXME: Currently PLAY is able to play the first randomisation based on the variable declared in line 54
+
 // FIXME: Need to prevent that, and disable button until the user has selected his minuetti
 function handlers(isPlaying, soundFiles) {
   $playButton.on("click", function() {
@@ -281,8 +250,5 @@ const checkboxesHTML = alphabet.reduce((_html, letter, i) => {
 }, "");
 
 $checkboxes.html(checkboxesHTML);
-
-$allMP3 = mp3list.map($newMP3); // Populate array of $ elements
-$("#minuetti").append($allMP3); // Append to div
 
 buildGrid();
