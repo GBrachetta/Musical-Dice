@@ -61,6 +61,7 @@ function buildGrid() {
     $playButton.prop("disabled", noSelection);
     $randomiseButton.prop("disabled", letters.length < 2);
     $musicGrid.toggle(!noSelection);
+    stopAll(); // Stops music if there's music and last remaining label gets deselected
 
     // Does nothing if no ckeckbox was selected (no letters)
     if (noSelection) return; // EXIT FUNCTION HERE!
