@@ -2,370 +2,380 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Musical Dice</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Musical Dice</title>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
-    <a class="navbar-brand" href="#title">Back to top</a>
-  </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
+        <a class="navbar-brand" href="#title">Back to top</a>
+    </nav>
 
-  <!-- Jumbotron Title-->
-  <div id="title" class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-3">Musical Dice</h1>
-      <p class="lead">A new take on Mozart's game</p>
-      <div class="my-2 hr"></div>
-      <a class="mt-4 btn btn-primary btn-lg" href="#game" role="button">Play the game!</a>
-      <div id="guille"></div>
-    </div>
-  </div>
-
-  <!-- History of the game -->
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2 class="my-4 titles">
-          The Original Game
-        </h2>
-        <p class="text-justify">
-          A <em>Musikalisches Würfelspiel</em> ("musical dice game") was a system for using dice to
-          randomly 'generate' music from precomposed options. These 'games' were quite popular throughout
-          Western
-          Europe in the 18th century. Several different games were devised, some that did not require dice,
-          but merely 'choosing a random number.'
-        </p>
-        <p class="text-justify">The earliest example is Johann Philipp Kirnberger's <em>Der allezeit fertige
-            Menuetten- und Polonaisencomponist</em> ("The Ever-Ready Minuet and Polonaise Composer") (1757
-          [1st edition; revised 2nd 1783]). Examples by well known composers include C. P. E. Bach's
-          <em>Einfall, einen
-            doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu
-            wissen</em> ("A method for making six bars of double counterpoint at the octave
-          without knowing the rules") (1758) and Maximilian Stadler's <em>Table pour composer des minuets et
-            des Trios à la infinie; avec deux dez à jouer</em> ("A table for composing minuets and trios to
-          infinity, by playing
-          with two dice") (1780).
-        </p>
-        <p>The way these games work may be understood in analogy to sentence construction:
-        </p>
-        <div class="row justify-content-center mt-5 mb-4">
-          <div class="col-12">
-            <table class="table table-responsive table-striped table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">A</th>
-                  <th scope="col">B</th>
-                  <th scope="col">C</th>
-                  <th scope="col">D</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>The cow</td>
-                  <td>ran</td>
-                  <td>past</td>
-                  <td>the field.</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>The pig</td>
-                  <td>walked</td>
-                  <td>through</td>
-                  <td>the yard.</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>The sheep</td>
-                  <td>ran</td>
-                  <td>into</td>
-                  <td>the marsh.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <!-- Jumbotron Title-->
+    <div id="title" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Musical Dice</h1>
+            <p class="lead">A new take on Mozart's game</p>
+            <div class="my-2 hr"></div>
+            <a class="mt-4 btn btn-primary btn-lg" href="#game" role="button">Play the game!</a>
+            <div id="guille"></div>
         </div>
-        <p class="text-justify">
-          One rolls one die for each word and selects the word from the appropriate column according to the
-          number. Thus if one rolls 1 2 3 1 2 3 one is given, "The pig ran past the marsh." Each progression
-          is essentially the same, there may be more or less choices for different slots, and the choices
-          offered for each slot are slight variations rather than being entirely different.
-        </p>
-        <h2 class="my-4 titles">
-          Mozart's version
-        </h2>
-        <p class="text-justify">
-          The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K.
-          294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been
-          authenticated. The dice rolls randomly selected small sections of music, which would be patched
-          together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161
-          different yet similar waltzes. Some measures have only one possibility no matter what the roll of
-          the dice (measures 8/16) while other measures have a different possibility for each roll (measures
-          1/16).
-        </p>
-        <img src="assets/images/mozart-game.png" alt="Original Rules" class="my-4 img-fluid" />
-        <p class="text-justify">
-          Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be
-          some kind of game or system for constructing music out of two-bar fragments, but contains no
-          instructions and there is no evidence that dice were involved.
-        </p>
-        <p>
-          The titles of the supposed Mozart compositions are:
-        </p>
-        <ul>
-          <li class="text-justify">
-            <em>Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne etwas von der
-              Musik oder Composition zu verstehen</em> ("Instructions for the composition of as many waltzes as one
-            desires with two dice, without understanding anything about music or composition")
-          </li>
-          <li>
-            <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of
-            polonaises")
-          </li>
-        </ul>
-        <h2 class="my-4 titles">
-          My version
-        </h2>
-        <p class="text-justify">
-          For my version I decided to compose 12 pieces of 24 measures in triple time. They all follow the
-          same harmonic pattern, so in other words they could be considered as a theme with 11 variations.
-        </p>
-        <p class="text-justify">
-          Each piece is structured with a part 'A' of 8 measures and a part 'B' of 16 measures.
-        </p>
-        <p class="text-justify">
-          I divided each of the pieces in 12 parts (meaning that each part consists of 2 measures) and composed them in
-          a way that any group of 2 bars can be connected to and followed by any of the 2 following bars from any of the
-          other pieces.
-        </p>
-        <h2 class="my-4 titles">
-          The Rules
-        </h2>
-        <p class="text-justify mb-4">
-          The rules of the game are very simple, and you are free to break them at any time!
-        </p>
-        <ul class="list-group">
-          <li class="list-group-item">Listen to any or all of the twelve original minuetti.</li>
-          <div class="hr"></div>
-          <li class="list-group-item">From the row beneath, select which of the minuetti you would like to include in
-            the randomisation (hint: start with all twelve!)</li>
-          <div class="hr"></div>
-          <li class="list-group-item">Play your randomly generated minuetto, or click on the button to create a new
-            randomisation.</li>
-          <div class="hr"></div>
-          <li class="list-group-item">You can click on the individual cells to listen to the two measures corresponding
-            to that cell.</li>
-          <div class="hr"></div>
-          <li class="list-group-item">Have fun and remember: there are <strong class="millions">8,916,100,448,256</strong> posible combinations, so it's
-            quite unlikely you will hear the same piece ever again!</li>
-        </ul>
-      </div>
     </div>
-  </div>
 
-  <!-- Game -->
-  <!-- Jumbotron Game -->
-  <div class="jumbotron jumbotron-fluid mt-5" id="game">
-    <div class="container">
-      <h2 class="display-4">The Game</h2>
-    </div>
-  </div>
-
-  <!-- Game Grid -->
-
-  <div class="container">
-
-    <p class="text-center lead"><em> Click on the buttons to listen to the 12 original minuetti</em></p>
-    <div id="minuetti" class="row text-center mx-0 py-3 mb-3">
-    </div>
-    <p class="mb-3 lead text-center"><em>Choose below which minuetti you would like to include to randomise from.</em>
-    </p>
-    <div id="checkboxes-minuetti"
-      class="row checkbox-tags justify-content-center mx-0 px-0 pb-0 form-group mb-4 mb-md-5">
-    </div>
-  </div>
-
-  <div id="music" class="container">
-    <p class="text-center lead"><em> Click on randomise to create a new random minuetto from your selection</em></p>
-    <div class="row text-center pt-3 mt-3 mb-4 my-md-5">
-      <div class="col-12">
-        <button id="btn-randomise" class="btn btn-primary btn-lg mb-1">Randomise!</button>
-      </div>
-    </div>
-  </div>
-
-  <section class="my-grid container" id="music-grid"></section>
-  <div class="container">
-    <div class="row text-center my-4 my-md-5">
-      <div id="main-button" class="col-12 mb-3">
-        <button id="play-minuetto" class="btn btn-primary btn-lg">Play Minuetto</button>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Footer -->
-  <footer class="page-footer font-small mdb-color lighten-3 pt-4">
-    <div class="container text-center text-md-left">
-      <div class="row">
-        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-          <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam.</p>
-        </div>
-        <div class="clearfix w-100 d-md-none hr"></div>
-        <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
-          <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
-          <ul class="list-unstyled list-links">
-            <li>
-              <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
-            </li>
-            <li>
-              <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
-            </li>
-            <li>
-              <a href="https://www.brachetta.com/" target="_blank">WEBSITE</a>
-            </li>
-            <li>
-              <a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-        <div class="clearfix w-100 d-md-none hr"></div>
-        <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-          <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
-          <ul class="list-unstyled">
-            <li>
-              <p><i class="fas fa-home mr-3"></i> Waddenweg 149, 2134XL Hoofddorp, The Netherlands</p>
-            </li>
-            <li>
-              <p><i class="fas fa-envelope mr-3"></i> brachetta@me.com</p>
-            </li>
-            <li>
-              <p><i class="fas fa-phone mr-3"></i> + 31 6 51 06 30 02</p>
-            </li>
-          </ul>
-        </div>
-        <div class="clearfix w-100 d-md-none hr"></div>
-        <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
-          <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
-          <a class="btn-floating btn-fb" href="https://www.facebook.com/">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a class="btn-floating btn-tw" href="https://www.twitter.com/">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a class="btn-floating btn-gplus" href="https://www.linkedin.com/">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a class="btn-floating btn-dribbble" href="https://www.instagram.com/">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright text-center py-3">
-      &copy;
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
-      Copyright: <span class="my-name"> Guillermo Brachetta</span>
-    </div>
-  </footer>
-
-  <!-- Modal About Me -->
-  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modal-about-label"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modal-about-label">About me</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h3>Guillermo Brachetta</h3>
-          <div class="row my-3">
-            <div class="col">
-              <img src="assets/images/avatar.png" alt="avatar" class="img-fluid" />
-            </div>
-          </div>
-          <p>I'm a passionate musician.<br />Well, that is true; but it is also true that I am passionate about
-            everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was able to combine
-            two of my passions and obsessions in this app.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Form -->
-  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="modal-contact-Label"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modal-contact-Label">Contact</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+    <!-- History of the game -->
+    <section class="container">
         <div class="row">
-          <div class="col-12 container">
-            <form id="form-contact">
-              <h5 class="my-4">Please fill in the form to get in touch.</h5>
-              <fieldset>
-                <div class="row justify-content-between">
-                  <div class="col-12 form-group">
-                    <label for="inputName">Name</label>
-                    <input type="text" class="form-control" name="from_name" id="inputName" placeholder="Enter Name"
-                      required />
-                  </div>
-                  <div class="col-12">
-                    <label for="inputEmail">Email address</label>
-                    <input type="email" name="from_email" class="form-control" id="inputEmail"
-                      aria-describedby="emailHelp" placeholder="Enter email" required />
-                    <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone
-                      else.</small>
-                  </div>
+            <div class="col">
+                <h2 class="my-4 titles">
+                    The Original Game
+                </h2>
+                <p class="text-justify">
+                    A <em>Musikalisches Würfelspiel</em> ("musical dice game") was a system for using dice to
+                    randomly 'generate' music from precomposed options. These 'games' were quite popular throughout
+                    Western
+                    Europe in the 18th century. Several different games were devised, some that did not require dice,
+                    but merely 'choosing a random number.'
+                </p>
+                <p class="text-justify">The earliest example is Johann Philipp Kirnberger's <em>Der allezeit fertige
+                        Menuetten- und Polonaisencomponist</em> ("The Ever-Ready Minuet and Polonaise Composer") (1757
+                    [1st edition; revised 2nd 1783]). Examples by well known composers include C. P. E. Bach's
+                    <em>Einfall, einen
+                        doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu
+                        wissen</em> ("A method for making six bars of double counterpoint at the octave
+                    without knowing the rules") (1758) and Maximilian Stadler's <em>Table pour composer des minuets et
+                        des Trios à la infinie; avec deux dez à jouer</em> ("A table for composing minuets and trios to
+                    infinity, by playing
+                    with two dice") (1780).
+                </p>
+                <p>The way these games work may be understood in analogy to sentence construction:
+                </p>
+                <div class="row justify-content-center mt-5 mb-4">
+                    <div class="col-12">
+                        <table class="table table-responsive table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">A</th>
+                                    <th scope="col">B</th>
+                                    <th scope="col">C</th>
+                                    <th scope="col">D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>The cow</td>
+                                    <td>ran</td>
+                                    <td>past</td>
+                                    <td>the field.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>The pig</td>
+                                    <td>walked</td>
+                                    <td>through</td>
+                                    <td>the yard.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>The sheep</td>
+                                    <td>ran</td>
+                                    <td>into</td>
+                                    <td>the marsh.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="textArea">Leave your message here</label>
-                  <textarea name="info_request" class="form-control" id="textArea" rows="5" required></textarea>
-                </div>
-                <div class="row my-5 text-center">
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                  </div>
-                </div>
-                <div id="messages"></div>
-              </fieldset>
-            </form>
-          </div>
+                <p class="text-justify">
+                    One rolls one die for each word and selects the word from the appropriate column according to the
+                    number. Thus if one rolls 1 2 3 1 2 3 one is given, "The pig ran past the marsh." Each progression
+                    is essentially the same, there may be more or less choices for different slots, and the choices
+                    offered for each slot are slight variations rather than being entirely different.
+                </p>
+                <h2 class="my-4 titles">
+                    Mozart's version
+                </h2>
+                <p class="text-justify">
+                    The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K.
+                    294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been
+                    authenticated. The dice rolls randomly selected small sections of music, which would be patched
+                    together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161
+                    different yet similar waltzes. Some measures have only one possibility no matter what the roll of
+                    the dice (measures 8/16) while other measures have a different possibility for each roll (measures
+                    1/16).
+                </p>
+                <img src="assets/images/mozart-game.png" alt="Original Rules" class="my-4 img-fluid" />
+                <p class="text-justify">
+                    Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be
+                    some kind of game or system for constructing music out of two-bar fragments, but contains no
+                    instructions and there is no evidence that dice were involved.
+                </p>
+                <p>
+                    The titles of the supposed Mozart compositions are:
+                </p>
+                <ul>
+                    <li class="text-justify">
+                        <em>Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne
+                            etwas von der Musik oder Composition zu verstehen</em> ("Instructions for the composition
+                        ofas many waltzes as one desires with two dice, without understanding anything about music or
+                        composition")
+
+                    </li>
+                    <li>
+                        <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of
+                        polonaises")
+                    </li>
+                </ul>
+                <h2 class="my-4 titles">
+                    My version
+                </h2>
+                <p class="text-justify">
+                    For my version I decided to compose 12 pieces of 24 measures in triple time. They all follow the
+                    same harmonic pattern, so in other words they could be considered as a theme with 11 variations.
+                </p>
+                <p class="text-justify">
+                    Each piece is structured with a part 'A' of 8 measures and a part 'B' of 16 measures.
+                </p>
+                <p class="text-justify">
+                    I divided each of the pieces in 12 parts (meaning that each part consists of 2 measures) and
+                    composed them in a way that any group of 2 bars can be connected to and followed by any of the
+                    2 following bars from any of the other pieces.
+                </p>
+                <h2 class="my-4 titles">
+                    The Rules
+                </h2>
+                <p class="text-justify mb-4">
+                    The rules of the game are very simple, and you are free to break them at any time!
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item">Listen to any or all of the twelve original minuetti.</li>
+                    <div class="hr"></div>
+                    <li class="list-group-item">From the row beneath, select which of the minuetti you would like to
+                        include in the randomisation (hint: start with all twelve!)</li>
+                    <div class="hr"></div>
+                    <li class="list-group-item">Play your randomly generated minuetto, or click on the button to create
+                        a new randomisation.</li>
+                    <div class="hr"></div>
+                    <li class="list-group-item">You can click on the individual cells to listen to the two measures
+                        corresponding to that cell.</li>
+                    <div class="hr"></div>
+                    <li class="list-group-item">Have fun and remember: there are <strong
+                            class="millions">8,916,100,448,256</strong> posible combinations, so it's
+                        quite unlikely you will hear the same piece ever again!</li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Game -->
+    <!-- Jumbotron Game -->
+    <div class="jumbotron jumbotron-fluid mt-5" id="game">
+        <div class="container">
+            <h2 class="display-4">The Game</h2>
+        </div>
     </div>
-  </div>
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-  <script src="assets/js/sendEmail.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"></script>
-  <script src="assets/js/scripts.js"></script>
+
+    <!-- Grid original minuetti -->
+    <div class="container">
+        <p class="text-center lead"><em> Click on the buttons to listen to the 12 original minuetti</em></p>
+        <div id="minuetti" class="row text-center mx-0 py-3 mb-3">
+        </div>
+        <p class="mb-3 lead text-center"><em>Choose below which minuetti you would like to include to randomise
+                from.</em>
+        </p>
+        <div id="checkboxes-minuetti"
+            class="row checkbox-tags justify-content-center mx-0 px-0 pb-0 form-group mb-4 mb-md-5">
+        </div>
+    </div>
+
+    <!-- Randomiser -->
+    <div id="music" class="container">
+        <p class="text-center lead"><em> Click on randomise to create a new random minuetto from your selection</em></p>
+        <div class="row text-center pt-3 mt-3 mb-4 my-md-5">
+            <div class="col-12">
+                <button id="btn-randomise" class="btn btn-primary btn-lg mb-1">Randomise!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Game Grid -->
+    <div class="my-grid container" id="music-grid"></div>
+
+    <!-- Player -->
+    <div class="container">
+        <div class="row text-center my-4 my-md-5">
+            <div id="main-button" class="col-12 mb-3">
+                <button id="play-minuetto" class="btn btn-primary btn-lg">Play Minuetto</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                    <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia fuga, corporis ratione veniam.</p>
+                </div>
+                <div class="clearfix w-100 d-md-none hr"></div>
+                <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+                    <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+                    <ul class="list-unstyled list-links">
+                        <li>
+                            <a href="https://github.com/GBrachetta/" target="_blank">PROJECTS</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#aboutModal">ABOUT ME</a>
+                        </li>
+                        <li>
+                            <a href="https://www.brachetta.com/" target="_blank">WEBSITE</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#formModal">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix w-100 d-md-none hr"></div>
+                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+                    <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-home mr-3"></i> Waddenweg 149, 2134XL Hoofddorp, The Netherlands</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope mr-3"></i> brachetta@me.com</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone mr-3"></i> + 31 6 51 06 30 02</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix w-100 d-md-none hr"></div>
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4 social">
+                    <h5 class="font-weight-bold text-uppercase mb-4">Follow Me</h5>
+                    <a class="btn-floating btn-fb" href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn-floating btn-tw" href="https://www.twitter.com/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn-floating btn-gplus" href="https://www.linkedin.com/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a class="btn-floating btn-dribbble" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            Copyright: <span class="my-name"> Guillermo Brachetta</span>
+        </div>
+    </footer>
+
+    <!-- Modal About Me -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modal-about-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-about-label">About me</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Guillermo Brachetta</h3>
+                    <div class="row my-3">
+                        <div class="col">
+                            <img src="assets/images/avatar.png" alt="avatar" class="img-fluid" />
+                        </div>
+                    </div>
+                    <p>I'm a passionate musician.<br />Well, that is true; but it is also true that I am passionate
+                        about
+                        everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was able
+                        to combine
+                        two of my passions and obsessions in this app.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="modal-contact-Label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-contact-Label">Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-12 container">
+                        <form id="form-contact">
+                            <h5 class="my-4">Please fill in the form to get in touch.</h5>
+                            <fieldset>
+                                <div class="row justify-content-between">
+                                    <div class="col-12 form-group">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" name="from_name" id="inputName"
+                                            placeholder="Enter Name" required />
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputEmail">Email address</label>
+                                        <input type="email" name="from_email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp" placeholder="Enter email" required />
+                                        <small id="emailHelp" class="form-text text-muted">I'll never share your email
+                                            with anyone
+                                            else.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea">Leave your message here</label>
+                                    <textarea name="info_request" class="form-control" id="textArea" rows="5"
+                                        required></textarea>
+                                </div>
+                                <div class="row my-5 text-center">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                    </div>
+                                </div>
+                                <div id="messages"></div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script src="assets/js/sendEmail.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
