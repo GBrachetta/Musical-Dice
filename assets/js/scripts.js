@@ -138,6 +138,7 @@ function stopAll() {
     stopSequence();
     stopSingle();
     $allMP3.forEach($el => $el.trigger("stop"));
+    $(".bar").removeClass("playing"); // if random minuetto is interrupted, removes 'playing' class from grid
 }
 
 /**
