@@ -1,23 +1,27 @@
-// Defines the array of objects containing all full minuetti
+/**
+ * Constants
+ */
 const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
   alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // For randomising array and creating grid
   $musicGrid = $("#music-grid"),
   $playButton = $("#play-minuetto"),
   $pauseButton = $("#pause-button"),
   $randomiseButton = $("#btn-randomise"),
-  $checkboxes = $("#checkboxes-minuetti");
-// By getting rid of Rando.js we needed an array to get the index in randomisation
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]; // For randomising array and creating grid
-let randomIDs = [];
-let sequence = [];
-let $allMP3 = [];
-let isPlaying = false; // Made global to get rid of handlers
-let single = null; // Will handle a single Howler sound on cell click
+  $checkboxes = $("#checkboxes-minuetti"),
+  mp3list = alphabet.map(item => ({
+    name: `Minuetto ${item}`,
+    path: `assets/music/minuetto${item.toUpperCase()}.mp3`
+  })); // Defines the array of objects containing all full minuetti
 
-const mp3list = alphabet.map(item => ({
-  name: `Minuetto ${item}`,
-  path: `assets/music/minuetto${item.toUpperCase()}.mp3`
-}));
+/**
+ * Variables
+ */
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"], // For randomising array and creating grid
+  randomIDs = [],
+  sequence = [],
+  $allMP3 = [],
+  isPlaying = false,
+  single = null; // Will handle a single Howler sound on cell click
 
 /**
  * Generates random selections from selected letters
@@ -35,7 +39,7 @@ function randomise() {
   }
   console.log(randomIDs);
 
-  // Make grid cells selected
+  // Makes grid cells selected
   randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
 
   createSequence();
@@ -53,12 +57,12 @@ function buildGrid() {
 
   const noSelection = letters.length === 0;
 
-  // Hide elements if no letters selected
+  // Hides elements if no letters selected
   $playButton.prop("disabled", noSelection);
   $randomiseButton.prop("disabled", letters.length < 2);
   $musicGrid.toggle(!noSelection);
 
-  // Do nothing if no ckeckbox was selected (no letters)
+  // Does nothing if no ckeckbox was selected (no letters)
   if (noSelection) return; // EXIT FUNCTION HERE!
 
   // else...
@@ -87,7 +91,7 @@ function createSequence() {
     sequence.forEach(sound => sound.unload());
   }
 
-  // Rebuild sequence array with Howler objects
+  // Rebuilds sequence array with Howler objects
   sequence = randomIDs.map((id, i) => {
     return new Howl({
       src: `assets/music/${id}.mp3`,
@@ -112,7 +116,7 @@ function createSequence() {
 }
 
 /**
- * Play sequence
+ * Plays sequence
  */
 function playSequence() {
   stopAll(); // Stop all sounds before playing a sequence
@@ -120,27 +124,36 @@ function playSequence() {
   sequence[0].play();
   $playButton.text("Stop minuetto");
   // Disables grid while playing
-  $(".bar")
+  $(".bar") // can remove these lines now if I want the user to fully interact with all buttons
     .removeClass("playing")
     .addClass("disabled")
     .prop("disabled", true);
 }
 
 /**
- * Stop sequence
+ * Stops all (to be called before playing any sound)
+ */
+function stopAll() {
+  stopSequence();
+  stopSingle();
+  $allMP3.forEach($el => $el.trigger("stop"));
+}
+
+/**
+ * Stops sequence
  */
 function stopSequence() {
   isPlaying = false;
   sequence.forEach(bar => bar.stop());
   $playButton.text("Play minuetto");
   // Restores grid when clicked stop
-  $(".bar")
+  $(".bar") // Can remove if decided to re-enable grid while playing
     .removeClass("playing disabled")
     .prop("disabled", false);
 }
 
 /**
- * Stop single
+ * Stops single
  */
 function stopSingle() {
   // Handle already playing single bar sound
@@ -160,15 +173,6 @@ function togglePlaySequence() {
   } else {
     stopSequence();
   }
-}
-
-/**
- * Stop all (Useful to call before playing any sound)
- */
-function stopAll() {
-  stopSequence();
-  stopSingle();
-  $allMP3.forEach($el => $el.trigger("stop"));
 }
 
 /**
