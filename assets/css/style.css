@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    font-size: 16px;
 }
 
 /* Checkboxes selection of Minuetti up to line 81*/
@@ -23,7 +24,6 @@ div.checkbox-tags div label {
     /* background-color: rgb(255, 255, 255);
     /* background-color: rgba(255, 255, 255, 0.1);
   color: #2b3e50; */
-    background-color: rgb(78, 78, 78);
     background-color: rgba(0, 0, 0, 0.1);
     color: #6b6464;
 
@@ -46,13 +46,13 @@ div.checkbox-tags div label {
 
 div.checkbox-tags div label::before {
     display: inline-block;
-    font-style: normal; 
+    font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 12px;
+    font-size: 10px; /* Size of character in label*/
     padding: 2px 6px 2px 2px;
     content: "\f067";
     transition: transform 0.35s ease-in-out;
@@ -66,7 +66,6 @@ div.checkbox-tags div input[type="checkbox"]:checked + label::before {
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
     /* background-color: #12bbd4; */
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 1);
     color: #fff;
     transition: all 0.2s;
@@ -82,20 +81,18 @@ div.checkbox-tags div input[type="checkbox"] {
 }
 
 div.checkbox-tags div input[type="checkbox"]:hover + label {
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.2);
     color: #6b6464;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.7);
     color: #fff;
 }
 
 #checkboxes-minuetti label {
-    padding-left: 0.7em;
-    font-size: 1em;
+    padding-left: 0.5em;
+    font-size: 0.9em;
 }
 
 /*  */
@@ -176,7 +173,6 @@ a.bar {
 
 .bar:hover:not(.selected) {
     /* background-color: #4e5d6c; */
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.2);
     /* color: #6b6464; */
 }
@@ -186,7 +182,6 @@ a.bar {
 }
 
 .bar.selected:hover {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.8);
 }
 
@@ -210,7 +205,6 @@ a.bar {
 }
 
 .disabled.selected:not(.playing) {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.2);
 }
 
@@ -248,7 +242,6 @@ a.bar {
 }
 
 .hr {
-    border-bottom: 1px solid rgb(0, 0, 0);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -281,24 +274,20 @@ a:hover {
 }
 
 .selected {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.2);
 }
 
 .playing {
     /* background-color: #12bbd4; */
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 1);
     /* font-weight: bolder; */
     height: 100%;
     font-size: 0.8em;
-    text-shadow: 2px 2px 2px rgb(29, 161, 242);
     text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
 }
 
 .minuetto-playing {
     /* background-color: rgba(29, 161, 242, 0.2); */
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 1);
 }
 
@@ -340,12 +329,10 @@ button.btn:focus {
 }
 
 button.bar.playing:hover {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.8);
 }
 
 .minuetto-playing:hover {
-    background-color: rgb(29, 161, 242);
     background-color: rgba(29, 161, 242, 0.8);
     /* border: 0; */
 }
@@ -381,6 +368,21 @@ button.bar.playing:hover {
 /*
 Media queries
 */
+
+@media (min-width: 360px) {
+    #checkboxes-minuetti label {
+        padding-left: 0.7em;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 400px) {
+    #checkboxes-minuetti label {
+        padding-left: 1em;
+        font-size: 1em;
+    }
+}
+
 @media (min-width: 768px) {
     .social a {
         display: block;
@@ -391,6 +393,10 @@ Media queries
     font-size: 2.5rem;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
   } */
+
+    div.checkbox-tags div label::before {
+        font-size: 1rem; /* Size of character in label*/
+    }
 
     .table-dark td {
         /* padding-left: 12px;
@@ -420,8 +426,8 @@ Media queries
     }
 
     #checkboxes-minuetti label {
-        padding-left: 1em;
-        font-size: 1em;
+        padding-left: 1.4em;
+        font-size: 1.2em;
     }
 
     .page-footer p {
@@ -436,5 +442,17 @@ Media queries
 @media (min-width: 1024px) {
     .table-dark td {
         width: 500px;
+    }
+
+    #checkboxes-minuetti label {
+        padding-left: 0.4em;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    #checkboxes-minuetti label {
+        padding-left: 1em;
+        font-size: 1em;
     }
 }
