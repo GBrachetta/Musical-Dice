@@ -112,28 +112,62 @@ function createSequence() {
 }
 
 /**
- * Togglessequence play / sop state
- * Toggles UI elements accordingly
+ * Play sequence
+ */
+function playSequence() {
+  isPlaying = true;
+  sequence[0].play();
+  $playButton.text("Stop minuetto");
+  // Disables grid while playing
+  $(".bar")
+    .removeClass("playing")
+    .addClass("disabled")
+    .prop("disabled", true);
+}
+
+/**
+ * Stop sequence
+ */
+function stopSequence() {
+  isPlaying = false;
+  sequence.forEach(bar => bar.stop());
+  $playButton.text("Play minuetto");
+  // Restores grid when clicked stop
+  $(".bar")
+    .removeClass("playing disabled")
+    .prop("disabled", false);
+}
+
+/**
+ * Stop single
+ */
+function stopSingle() {
+  // Handle already playing single bar sound
+  if (single && single.playing()) {
+    single.stop();
+  }
+}
+
+/**
+ * Toggles sequence play / stop state
  */
 function togglePlaySequence() {
   isPlaying = !isPlaying; // Toggle isPlaying flag
 
   if (isPlaying) {
-    sequence[0].play();
-    $playButton.text("Stop minuetto");
-    // Disables grid while playing
-    $(".bar")
-      .removeClass("playing")
-      .addClass("disabled")
-      .prop("disabled", true);
+    playSequence();
   } else {
-    sequence.forEach(bar => bar.stop());
-    $playButton.text("Play minuetto");
-    // Restores grid when clicked stop
-    $(".bar")
-      .removeClass("playing disabled")
-      .prop("disabled", false);
+    stopSequence();
   }
+}
+
+/**
+ * Stop all (Useful to call before playing any sound)
+ */
+function stopAll() {
+  sequenceStop();
+  singleStop();
+  $allMP3.forEach($el => $el.trigger("stop"));
 }
 
 /**
