@@ -115,6 +115,7 @@ function createSequence() {
  * Play sequence
  */
 function playSequence() {
+  stopAll(); // Stop all sounds before playing a sequence
   isPlaying = true;
   sequence[0].play();
   $playButton.text("Stop minuetto");
@@ -165,8 +166,8 @@ function togglePlaySequence() {
  * Stop all (Useful to call before playing any sound)
  */
 function stopAll() {
-  sequenceStop();
-  singleStop();
+  stopSequence();
+  stopSingle();
   $allMP3.forEach($el => $el.trigger("stop"));
 }
 
@@ -185,9 +186,7 @@ $musicGrid.on("click", ".bar", function() {
   const $this = $(this);
 
   // Handle already playing single bar sound
-  if (single && single.playing()) {
-    single.stop();
-  }
+  stopAll();
 
   // Set new sound and play it
   single = new Howl({
@@ -224,10 +223,10 @@ const $newMP3 = mp3 => {
     text: mp3.name,
     on: {
       click() {
-        $allMP3.forEach($el => $el.not(this).trigger("stop"));
         $(this).trigger(sound.playing() ? "stop" : "play");
       },
       play() {
+        stopAll();
         $(this)
           .text(`Stop ${mp3.name}`)
           .addClass("minuetto-playing");
