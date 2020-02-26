@@ -29,7 +29,7 @@
     </div>
 
     <!-- History of the game -->
-    <div class="container">
+    <section class="container">
         <div class="row">
             <div class="col">
                 <h2 class="my-4 titles">
@@ -123,10 +123,10 @@
                 <ul>
                     <li class="text-justify">
                         <em>Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne
-                            etwas von der
-                            Musik oder Composition zu verstehen</em> ("Instructions for the composition of as many
-                        waltzes as one
-                        desires with two dice, without understanding anything about music or composition")
+                            etwas von der Musik oder Composition zu verstehen</em> ("Instructions for the composition
+                        ofas many waltzes as one desires with two dice, without understanding anything about music or
+                        composition")
+
                     </li>
                     <li>
                         <em>Anleitung zum Componieren von Polonaisen</em> ("Instructions for the composition of
@@ -145,10 +145,8 @@
                 </p>
                 <p class="text-justify">
                     I divided each of the pieces in 12 parts (meaning that each part consists of 2 measures) and
-                    composed them in
-                    a way that any group of 2 bars can be connected to and followed by any of the 2 following bars from
-                    any of the
-                    other pieces.
+                    composed them in a way that any group of 2 bars can be connected to and followed by any of the
+                    2 following bars from any of the other pieces.
                 </p>
                 <h2 class="my-4 titles">
                     The Rules
@@ -160,16 +158,13 @@
                     <li class="list-group-item">Listen to any or all of the twelve original minuetti.</li>
                     <div class="hr"></div>
                     <li class="list-group-item">From the row beneath, select which of the minuetti you would like to
-                        include in
-                        the randomisation (hint: start with all twelve!)</li>
+                        include in the randomisation (hint: start with all twelve!)</li>
                     <div class="hr"></div>
                     <li class="list-group-item">Play your randomly generated minuetto, or click on the button to create
-                        a new
-                        randomisation.</li>
+                        a new randomisation.</li>
                     <div class="hr"></div>
                     <li class="list-group-item">You can click on the individual cells to listen to the two measures
-                        corresponding
-                        to that cell.</li>
+                        corresponding to that cell.</li>
                     <div class="hr"></div>
                     <li class="list-group-item">Have fun and remember: there are <strong
                             class="millions">8,916,100,448,256</strong> posible combinations, so it's
@@ -177,7 +172,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Game -->
     <!-- Jumbotron Game -->
@@ -187,10 +182,8 @@
         </div>
     </div>
 
-    <!-- Game Grid -->
-
+    <!-- Grid original minuetti -->
     <div class="container">
-
         <p class="text-center lead"><em> Click on the buttons to listen to the 12 original minuetti</em></p>
         <div id="minuetti" class="row text-center mx-0 py-3 mb-3">
         </div>
@@ -202,6 +195,7 @@
         </div>
     </div>
 
+    <!-- Randomiser -->
     <div id="music" class="container">
         <p class="text-center lead"><em> Click on randomise to create a new random minuetto from your selection</em></p>
         <div class="row text-center pt-3 mt-3 mb-4 my-md-5">
@@ -211,7 +205,10 @@
         </div>
     </div>
 
-    <section class="my-grid container" id="music-grid"></section>
+    <!-- Dynamic Game Grid -->
+    <div class="my-grid container" id="music-grid"></div>
+
+    <!-- Player -->
     <div class="container">
         <div class="row text-center my-4 my-md-5">
             <div id="main-button" class="col-12 mb-3">
