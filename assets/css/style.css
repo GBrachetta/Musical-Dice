@@ -356,6 +356,11 @@ button.bar.playing:hover {
     outline: none;
 }
 
+footer span {
+    color: #df691a;
+    font-weight: 600;
+}
+
 .footer-copyright {
     font-size: 0.7em;
     color: rgb(165, 165, 165);
@@ -363,6 +368,7 @@ button.bar.playing:hover {
 
 .footer-copyright .my-name {
     color: #ebebeb;
+    /* color: #df691a; */
 }
 
 /*
