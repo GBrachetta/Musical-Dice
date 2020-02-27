@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap");
 
 body {
     margin: 0;
@@ -213,7 +213,7 @@ a.bar {
     background-color: #2b3e50;
 }
 
-.message-style {
+/* .message-style {
     color: #ebebeb;
     padding: 2em;
     margin-bottom: 2em;
@@ -223,7 +223,7 @@ a.bar {
 
 .rulebook {
     padding-left: 0;
-}
+} */
 
 .social a i {
     color: #fff;
