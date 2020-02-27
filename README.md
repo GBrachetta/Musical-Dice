@@ -1,6 +1,6 @@
 # **THE MUSICAL DICE**
 
-![Original Edition](assets/images/rules-original-edition.png)
+![Original Edition](assets/images/mozart-game.png)
 
 ## The Original Idea
 
