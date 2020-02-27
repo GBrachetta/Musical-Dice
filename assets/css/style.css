@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap");
 
 body {
     margin: 0;
@@ -9,7 +9,6 @@ body {
 
 /* Checkboxes selection of Minuetti up to line 81*/
 /* Checkboxes styling addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
-
 div.checkbox-tags {
     list-style: none;
     padding: 1rem;
@@ -21,9 +20,6 @@ div.checkbox-tags div {
 
 div.checkbox-tags div label {
     display: inline-block;
-    /* background-color: rgb(255, 255, 255);
-    /* background-color: rgba(255, 255, 255, 0.1);
-  color: #2b3e50; */
     background-color: rgba(0, 0, 0, 0.1);
     color: #6b6464;
 
@@ -65,15 +61,10 @@ div.checkbox-tags div input[type="checkbox"]:checked + label::before {
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
-    /* background-color: #12bbd4; */
     background-color: rgba(29, 161, 242, 1);
     color: #fff;
     transition: all 0.2s;
 }
-
-/* div.checkbox-tags div input[type="checkbox"] {
-    display: absolute;
-} */
 
 div.checkbox-tags div input[type="checkbox"] {
     position: absolute;
@@ -95,7 +86,6 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
     font-size: 0.9em;
 }
 
-/*  */
 .list-checkbox-item {
     width: 100%;
 }
@@ -119,16 +109,13 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
 
 /* Buttons */
 .individual-minuetto {
-    /* padding: 0 .1rem; */
     border: 2px solid #2b3e50;
     font-size: 1rem;
     transition: all 0.35s ease-in-out;
 }
 
 #minuetti .btn-primary:hover {
-    /* border: 0; */
     border-color: #2b3e50;
-    /* border: none; */
 }
 
 #minuetti .minuetto-playing:hover {
@@ -146,8 +133,6 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
 }
 
 .table-dark td {
-    /* padding-left: 6px;
-  padding-right: 6px; */
     font-size: 0.8em;
 }
 
@@ -160,10 +145,6 @@ a.bar {
     padding: 1em;
 }
 
-/* .alert-dark{
-  color: #fff;
-} */
-
 .bar {
     width: 100%;
     height: 3.5em;
@@ -172,9 +153,7 @@ a.bar {
 }
 
 .bar:hover:not(.selected) {
-    /* background-color: #4e5d6c; */
     background-color: rgba(0, 0, 0, 0.2);
-    /* color: #6b6464; */
 }
 
 .bar.active:hover {
@@ -211,18 +190,6 @@ a.bar {
 .disabled:not(.selected),
 .disabled:not(.selected):hover {
     background-color: #2b3e50;
-}
-
-.message-style {
-    color: #ebebeb;
-    padding: 2em;
-    margin-bottom: 2em;
-    background-color: #4e5d6c;
-    font-weight: 700;
-}
-
-.rulebook {
-    padding-left: 0;
 }
 
 .social a i {
@@ -278,26 +245,19 @@ a:hover {
 }
 
 .playing {
-    /* background-color: #12bbd4; */
     background-color: rgba(29, 161, 242, 1);
-    /* font-weight: bolder; */
     height: 100%;
     font-size: 0.8em;
     text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
 }
 
 .minuetto-playing {
-    /* background-color: rgba(29, 161, 242, 0.2); */
     background-color: rgba(29, 161, 242, 1);
 }
 
 .unselected {
     background-color: #fff;
 }
-
-/* .my-grid div{
-align-self: auto;
-} */
 
 button#btn-randomise:active,
 button#play-minuetto:active,
@@ -334,7 +294,6 @@ button.bar.playing:hover {
 
 .minuetto-playing:hover {
     background-color: rgba(29, 161, 242, 0.8);
-    /* border: 0; */
 }
 
 .lead {
@@ -368,13 +327,11 @@ footer span {
 
 .footer-copyright .my-name {
     color: #ebebeb;
-    /* color: #df691a; */
 }
 
 /*
 Media queries
 */
-
 @media (min-width: 360px) {
     #checkboxes-minuetti label {
         padding-left: 0.7em;
@@ -395,18 +352,11 @@ Media queries
         line-height: 2em;
     }
 
-    /* .titles {
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
-  } */
-
     div.checkbox-tags div label::before {
         font-size: 1rem; /* Size of character in label*/
     }
 
     .table-dark td {
-        /* padding-left: 12px;
-        padding-right: 12px; */
         font-size: 1em;
         width: 200px;
     }
