@@ -106,7 +106,7 @@ function createSequence() {
                     sequence[i + 1].play(); // Play next bar
                 } else {
                     isPlaying = false;
-                    $playButton.text("Play Again"); // Restores play button after song
+                    $playButton.text("Play Again!"); // Restores play button after song
                     $(".bar")
                         .prop("disabled", false)
                         .removeClass("playing disabled"); // Restores grid after song
@@ -124,11 +124,6 @@ function playSequence() {
     isPlaying = true;
     sequence[0].play();
     $playButton.text("Stop minuetto");
-    // Disables grid while playing
-    // $(".bar") // can remove these lines now if I want the user to fully interact with all buttons
-    //     .removeClass("playing")
-    //     .addClass("disabled")
-    //     .prop("disabled", true);
 }
 
 /**
@@ -147,11 +142,7 @@ function stopAll() {
 function stopSequence() {
     isPlaying = false;
     sequence.forEach(bar => bar.stop());
-    $playButton.text("Play minuetto");
-    // Restores grid when clicked stop
-    // $(".bar") // Can remove if decided to re-enable grid while playing
-    //     .removeClass("playing disabled")
-    //     .prop("disabled", false);
+    $playButton.text("Play Minuetto");
 }
 
 /**

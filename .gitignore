@@ -1,2 +1,4 @@
 .jshintrc
 .stylelintrc.json
+jasmine.html
+scriptsSpec.js
