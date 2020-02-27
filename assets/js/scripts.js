@@ -10,7 +10,7 @@ const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with 
     $checkboxes = $("#checkboxes-minuetti"),
     mp3list = alphabet.map(item => ({
         name: `Minuetto ${item}`,
-        path: `assets/music/minuetto${item.toUpperCase()}.mp3`
+        path: `assets/music/full/minuetto${item.toUpperCase()}.mp3`
     })); // Defines the array of objects containing all full minuetti
 
 /**
@@ -95,7 +95,7 @@ function createSequence() {
     // Rebuilds sequence array with Howler objects
     sequence = randomIDs.map((id, i) => {
         return new Howl({
-            src: `assets/music/${id}.mp3`,
+            src: `assets/music/randomiser/${id}.mp3`,
             onplay: function() {
                 $(`#${id}`).addClass("playing"); // Adds class to bar currently playing
             },
@@ -196,7 +196,7 @@ $musicGrid.on("click", ".bar", function() {
 
     // Set new sound and play it
     single = new Howl({
-        src: [`assets/bars/${this.id}.mp3`],
+        src: [`assets/music/cells/${this.id}.mp3`],
         onplay: function() {
             $this.addClass("playing"); // Adds class to show which bit is playing
         },
