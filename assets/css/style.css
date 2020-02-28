@@ -164,6 +164,15 @@ a.bar {
     background-color: rgba(29, 161, 242, 0.8);
 }
 
+.modal-body img {
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-body h3 {
+    text-align: center;
+}
+
 #form-contact {
     margin: 0 2vw;
 }
