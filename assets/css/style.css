@@ -8,7 +8,7 @@ body {
     position: relative;
 }
 
-/* Checkboxes selection of Minuetti up to line 81*/
+/* Checkboxes selection of Minuetti up to line 83 */
 /* Checkboxes styling addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 div.checkbox-tags {
     list-style: none;
@@ -369,6 +369,10 @@ footer span {
     font-weight: 500;
     transition: all 0.55s ease-in-out;
     font-size: 1.1rem;
+}
+
+#my-navbar .nav-link:hover {
+    color: white;
 }
 
 #my-navbar .nav-link.active {

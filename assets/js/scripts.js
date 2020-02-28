@@ -178,7 +178,7 @@ randomiseButton.on("click", randomise);
 playButton.on("click", togglePlaySequence);
 
 /**
- * Grid play individual cells
+ * Grid to play individual cells
  * jQuery .on() method with dynamic handler for .bar elements
  * Delegates listeners to parent element
  * Sets new sound and play it
@@ -202,7 +202,7 @@ musicGrid.on("click", ".bar", function() {
 });
 
 /**
- * Creates uttons to play original minuetti
+ * Creates buttons to play original minuetti
  */
 function newMP3(mp3) {
     const sound = new Howl({ src: mp3.path });
@@ -233,7 +233,7 @@ function newMP3(mp3) {
 }
 
 /**
- * Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+ * Smooth scrolling, adapted from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
  */
 $("a").on("click", function(event) {
     let hash = this.hash;
@@ -244,17 +244,13 @@ $("a").on("click", function(event) {
     });
 });
 
-window.onscroll = function() {
-    scrollFunction();
-};
-
-function scrollFunction() {
+$(window).on("scroll", function() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         $("#btn-to-top").addClass("active");
     } else {
         $("#btn-to-top").removeClass("active");
     }
-}
+});
 
 /**
  * INIT APP
