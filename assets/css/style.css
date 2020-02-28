@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    position: relative;
 }
 
 /* Checkboxes selection of Minuetti up to line 81*/
@@ -356,6 +357,16 @@ Media queries
 }
 
 @media (min-width: 768px) {
+    #my-navbar .nav-link.active {
+        color: white;
+        font-weight: 500;
+        transition: all 0.55s ease-in-out ;
+    }
+
+    h2 {
+        padding-top: 3.5rem;
+    }
+
     .social a {
         display: block;
         line-height: 2em;

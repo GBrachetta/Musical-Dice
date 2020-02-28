@@ -18,7 +18,7 @@ let singleHowl = null;
 
 /**
  *
- * @param {capital} letter
+ * @param {string} letter
  * Creates all objects with all 12 original minuetti
  * Defines the array of objects containing all full minuetti
  */
