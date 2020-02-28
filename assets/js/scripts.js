@@ -1,72 +1,76 @@
 /**
- * Constants
+ * Global variables
  */
-const zeroPadd = n => (n < 10 ? "0" + n : n), // Function to padd a number with '0'
-    alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"], // For randomising array and creating grid
-    $musicGrid = $("#music-grid"),
-    $playButton = $("#play-minuetto"),
-    $pauseButton = $("#pause-button"),
-    $randomiseButton = $("#btn-randomise"),
-    $checkboxes = $("#checkboxes-minuetti"),
-    mp3list = alphabet.map(item => ({
-        name: `Minuetto ${item}`,
-        path: `assets/music/minuetto${item.toUpperCase()}.mp3`
-    })); // Defines the array of objects containing all full minuetti
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
+const musicGrid = $("#music-grid");
+const playButton = $("#play-minuetto");
+const pauseButton = $("#pause-button");
+const randomiseButton = $("#btn-randomise");
+const checkboxes = $("#checkboxes-minuetti");
+const mp3list = originalMinuetti(alphabet);
+
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"];
+let randomIDs = [];
+let sequence = [];
+let allMP3 = [];
+let isPlaying = false;
+let singleHowl = null;
 
 /**
- * Variables
+ *
+ * @param {string} letter
+ * Creates all objects with all 12 original minuetti
+ * Defines the array of objects containing all full minuetti
  */
-let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"], // For randomising array and creating grid
-    randomIDs = [],
-    sequence = [],
-    $allMP3 = [],
-    isPlaying = false,
-    single = null; // Will handle a single Howler sound on cell click
+function originalMinuetti(letter) {
+    return letter.map(item => ({
+        name: `Minuetto ${item}`,
+        path: `assets/music/full/minuetto${item.toUpperCase()}.mp3`
+    }));
+}
+
+/**
+ * @param {number} value
+ */
+function zeroPadd(value) {
+    return value < 10 ? "0" + value : value;
+}
 
 /**
  * Generates random selections from selected letters
+ * Restores play button after new randomisation
  */
 function randomise() {
-    $playButton.prop("disabled", false).text("Play Minuetto"); // Restores play button after new randomisation
-    $musicGrid.find(".selected").removeClass("selected");
-    $(".bar")
-        .removeClass("playing disabled")
-        .prop("disabled", false); // Restores clickalability of grid
-
+    playButton.prop("disabled", false).text("Play Minuetto");
+    musicGrid.find(".selected").removeClass("selected");
+    $(".bar").removeClass("playing");
     for (let i = 1; i <= 12; i++) {
         const randomIndex = Math.floor(Math.random() * letters.length);
         randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
     }
     console.log(randomIDs);
-
-    // Makes grid cells selected
     randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
-
     createSequence();
 }
 
 /**
  * Generates grid from user-selected values
+ * Rebuilds the array of letters only from checked checkboxes
+ * Hides elements if no letters selected
+ * Stops music if there's music and last remaining label gets deselected
  */
 function buildGrid() {
-    // Rebuilds the array of letters only from checked checkboxes
-    letters = $checkboxes
+    letters = checkboxes
         .find(":checkbox:checked")
         .get()
         .map(el => el.value);
 
     const noSelection = letters.length === 0;
-
-    // Hides elements if no letters selected
-    $playButton.prop("disabled", noSelection);
-    $randomiseButton.prop("disabled", letters.length < 2);
-    $musicGrid.toggle(!noSelection);
-    stopAll(); // Stops music if there's music and last remaining label gets deselected
-
-    // Does nothing if no ckeckbox was selected (no letters)
-    if (noSelection) return; // EXIT FUNCTION HERE!
-
-    // else...
+    playButton.prop("disabled", noSelection);
+    randomiseButton.prop("disabled", letters.length < 2);
+    musicGrid.toggle(!noSelection);
+    stopAll();
+    if (noSelection) return;
     let html = "";
     for (let i = 0; i < letters.length; i++) {
         html += `<div id="music-row-${letters[i]}" class="row no-gutters">`;
@@ -76,40 +80,38 @@ function buildGrid() {
         }
         html += "</div>";
     }
-
-    $musicGrid.html(html);
-    randomise(); // Calls randomise to allow loading MP3 files
+    musicGrid.html(html);
+    randomise();
 }
 
 /**
  * Creates a song from random bars
  * Populates sequence variable with Howler Objects
+ * Rebuilds sequence array with Howler objects
+ * Handles all bars but the last one
+ * Plays following bar
  */
 function createSequence() {
     isPlaying = false;
-
     if (sequence.length) {
         sequence.forEach(sound => sound.unload());
     }
-
-    // Rebuilds sequence array with Howler objects
     sequence = randomIDs.map((id, i) => {
         return new Howl({
-            src: `assets/music/${id}.mp3`,
-            onplay: function() {
-                $(`#${id}`).addClass("playing"); // Adds class to bar currently playing
+            src: `assets/music/randomiser/${id}.mp3`,
+            onplay: () => {
+                $(`#${id}`).addClass("playing");
             },
-            onend: function() {
-                $(`#${id}`).removeClass("playing"); // Removes class of bar just played
-                // Handle all bars but the last one
+            onend: () => {
+                $(`#${id}`).removeClass("playing");
                 if (i < randomIDs.length - 1) {
-                    sequence[i + 1].play(); // Play next bar
+                    sequence[i + 1].play();
                 } else {
                     isPlaying = false;
-                    $playButton.text("Play Again"); // Restores play button after song
+                    playButton.text("Play Again!");
                     $(".bar")
                         .prop("disabled", false)
-                        .removeClass("playing disabled"); // Restores grid after song
+                        .removeClass("playing disabled");
                 }
             }
         });
@@ -118,17 +120,13 @@ function createSequence() {
 
 /**
  * Plays sequence
+ * Stop all sounds before playing a sequence
  */
 function playSequence() {
-    stopAll(); // Stop all sounds before playing a sequence
+    stopAll();
     isPlaying = true;
     sequence[0].play();
-    $playButton.text("Stop minuetto");
-    // Disables grid while playing
-    // $(".bar") // can remove these lines now if I want the user to fully interact with all buttons
-    //     .removeClass("playing")
-    //     .addClass("disabled")
-    //     .prop("disabled", true);
+    playButton.text("Stop minuetto");
 }
 
 /**
@@ -137,8 +135,8 @@ function playSequence() {
 function stopAll() {
     stopSequence();
     stopSingle();
-    $allMP3.forEach($el => $el.trigger("stop"));
-    $(".bar").removeClass("playing"); // if random minuetto is interrupted, removes 'playing' class from grid
+    allMP3.forEach(el => el.trigger("stop"));
+    $(".bar").removeClass("playing");
 }
 
 /**
@@ -147,20 +145,16 @@ function stopAll() {
 function stopSequence() {
     isPlaying = false;
     sequence.forEach(bar => bar.stop());
-    $playButton.text("Play minuetto");
-    // Restores grid when clicked stop
-    // $(".bar") // Can remove if decided to re-enable grid while playing
-    //     .removeClass("playing disabled")
-    //     .prop("disabled", false);
+    playButton.text("Play Minuetto");
 }
 
 /**
  * Stops single
+ * Handle already playing single bar sound
  */
 function stopSingle() {
-    // Handle already playing single bar sound
-    if (single && single.playing()) {
-        single.stop();
+    if (singleHowl && singleHowl.playing()) {
+        singleHowl.stop();
     }
 }
 
@@ -168,8 +162,7 @@ function stopSingle() {
  * Toggles sequence play / stop state
  */
 function togglePlaySequence() {
-    isPlaying = !isPlaying; // Toggle isPlaying flag
-
+    isPlaying = !isPlaying;
     if (isPlaying) {
         playSequence();
     } else {
@@ -180,51 +173,40 @@ function togglePlaySequence() {
 /**
  * EVENTS
  */
-// Rebuild grid on user-selection
-$checkboxes.on("change", ":checkbox", buildGrid);
-$randomiseButton.on("click", randomise); // Randomise new array of files
-$playButton.on("click", togglePlaySequence); // Play / Stop sequence
+checkboxes.on("change", ":checkbox", buildGrid);
+randomiseButton.on("click", randomise);
+playButton.on("click", togglePlaySequence);
 
-// Grid play individual cells
-// jQuery .on() method with dynamic handler for .bar elements
-// Delegates listeners to parent element
-$musicGrid.on("click", ".bar", function() {
+/**
+ * Grid to play individual cells
+ * jQuery .on() method with dynamic handler for .bar elements
+ * Delegates listeners to parent element
+ * Sets new sound and play it
+ */
+musicGrid.on("click", ".bar", function() {
     const $this = $(this);
-
-    // Handle already playing single bar sound
     stopAll();
-
-    // Set new sound and play it
-    single = new Howl({
-        src: [`assets/bars/${this.id}.mp3`],
-        onplay: function() {
-            $this.addClass("playing"); // Adds class to show which bit is playing
+    singleHowl = new Howl({
+        src: [`assets/music/cells/${this.id}.mp3`],
+        onplay: () => {
+            $this.addClass("playing");
         },
-        onstop: function() {
-            $this.removeClass("playing"); // Removes class of bit just played
+        onstop: () => {
+            $this.removeClass("playing");
         },
-        onend: function() {
-            $this.removeClass("playing"); // Removes class of bit just played
+        onend: () => {
+            $this.removeClass("playing");
         }
     });
-    single.play();
+    singleHowl.play();
 });
 
-// Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-$("a").on("click", function(event) {
-    let hash = this.hash;
-    if (!hash) return; // Do nothing if no hash. Else... animate
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, function() {
-        window.location.hash = hash;
-    });
-});
-
-// Buttons to preview full minuetti
-const $newMP3 = mp3 => {
-    const sound = new Howl({ src: mp3.path }); // Howl
-    // $ ELEMENT
-    const $element = $(`<div/>`, {
+/**
+ * Creates buttons to play original minuetti
+ */
+function newMP3(mp3) {
+    const sound = new Howl({ src: mp3.path });
+    const element = $(`<div/>`, {
         class: "btn col-6 col-md-3 individual-minuetto btn-primary btn-lg ",
         text: mp3.name,
         on: {
@@ -246,25 +228,45 @@ const $newMP3 = mp3 => {
             }
         }
     });
-    // When the sound ends, triggers the $element stop() event
-    sound.on("end", () => $element.trigger("stop"));
-    return $element;
-};
+    sound.on("end", () => element.trigger("stop"));
+    return element;
+}
 
 /**
- *  INIT APP
+ * Smooth scrolling, adapted from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
  */
-$allMP3 = mp3list.map($newMP3); // Populate array of $ elements
-$("#minuetti").append($allMP3); // Append to div
+$("a").on("click", function(event) {
+    let hash = this.hash;
+    if (!hash) return;
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
+        window.location.hash = hash;
+    });
+});
 
-const checkboxesHTML = alphabet.reduce((_html, letter, i) => {
+$(window).on("scroll", function() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        $("#btn-to-top").addClass("active");
+    } else {
+        $("#btn-to-top").removeClass("active");
+    }
+});
+
+/**
+ * INIT APP
+ * Populates array of $ elements & Appends to div
+ */
+allMP3 = mp3list.map(newMP3);
+$("#minuetti").append(allMP3);
+
+const checkboxesHTML = alphabet.reduce((html, letter, i) => {
     const checkboxID = `checkbox-${i + 1}`;
-    return (_html += `<div class = "col-3 col-md-2 col-lg-1">
-        <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
+    return (html += `<div class = "col-3 col-md-2 col-lg-1">
+        <input type="checkbox" id="${checkboxID}" value="${letter}" checked />
         <label for="${checkboxID}">${letter}</label>
     </div>`);
 }, "");
 
-$checkboxes.html(checkboxesHTML);
+checkboxes.html(checkboxesHTML);
 
 buildGrid();
