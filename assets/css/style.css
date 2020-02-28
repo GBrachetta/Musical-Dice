@@ -339,6 +339,40 @@ footer span {
     color: #ebebeb;
 }
 
+/* Begin provisory method back to top arrow */ 
+a.back-to-top {
+    display: none;
+    width: 40px;
+    height: 30px;
+    text-indent: -9999px;
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(255, 255, 255, 0.1) url("../images/up-arrow-sm.png") no-repeat center 43%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    transition: all .5s ease-in;
+}
+a:hover.back-to-top {
+    background-color: #df691a;
+}
+
+/* End provisory method back to top arrow */ 
+
+
+#my-navbar .nav-link {
+    color: #2b3e50;
+    font-weight: 500;
+    transition: all 0.55s ease-in-out;
+    font-size: 1.1rem;
+}
+
+#my-navbar .nav-link.active {
+    color: white;
+}
+
 /*
 Media queries
 */
@@ -357,11 +391,15 @@ Media queries
 }
 
 @media (min-width: 768px) {
-    #my-navbar .nav-link.active {
-        color: white;
-        font-weight: 500;
-        transition: all 0.55s ease-in-out ;
+    /* Begin provisory method back to top arrow */ 
+
+    a.back-to-top {
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.05) url("../images/up-arrow.png") no-repeat center 43%;
     }
+    /* End provisory method back to top arrow */ 
+
 
     h2 {
         padding-top: 3.5rem;
