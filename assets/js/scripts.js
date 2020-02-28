@@ -262,7 +262,7 @@ $("#minuetti").append(allMP3);
 const checkboxesHTML = alphabet.reduce((html, letter, i) => {
     const checkboxID = `checkbox-${i + 1}`;
     return (html += `<div class = "col-3 col-md-2 col-lg-1">
-        <input type="checkbox" id="${checkboxID}" value="${letter}" checked />
+        <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
         <label for="${checkboxID}">${letter}</label>
     </div>`);
 }, "");
