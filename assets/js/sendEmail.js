@@ -1,4 +1,4 @@
-(function() {
+(() => {
     emailjs.init("user_bXMwDjNNrfAYxbs0D1MYH");
 })();
 let myform = $("form#form-contact");
@@ -15,7 +15,7 @@ myform.submit(function(event) {
     let template_id = "dice_game";
     myform.find("button").text("Sending...");
     emailjs.send(service_id, template_id, params).then(
-        function() {
+        () => {
             myform.find("input").val("");
             myform.find("textarea").val("");
             myform.find("button").text("Submit");
@@ -30,7 +30,7 @@ myform.submit(function(event) {
     let message = document.createTextNode("Your email was successfully sent");
 
     messages.appendChild(message);
-    setTimeout(function() {
+    setTimeout(() => {
         messages.classList.remove("message-style");
         messages.removeChild(message);
     }, 5000);
