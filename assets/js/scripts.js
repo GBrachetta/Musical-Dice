@@ -202,45 +202,6 @@ musicGrid.on("click", ".bar", function() {
 });
 
 /**
- * Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
- */
-$("a").on("click", function(event) {
-    let hash = this.hash;
-    if (!hash) return;
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
-        window.location.hash = hash;
-    });
-});
-
-/**
- * Begin provisory method back to top arrow 
- * from http://html-tuts.com/back-to-top-button-jquery/
- * (transition for the arrow to appear doesn't work when applied color transition CSS)
- */
-$("body").prepend('<a href="#" class="back-to-top">Back to Top</a>');
-
-var amountScrolled = 300;
-
-$(window).scroll(function() {
-    if ($(window).scrollTop() > amountScrolled) {
-        $("a.back-to-top").fadeIn("slow");
-    } else {
-        $("a.back-to-top").fadeOut("slow");
-    }
-});
-
-$("a.back-to-top, a.simple-back-to-top").click(function() {
-    $("html, body").animate(
-        {
-            scrollTop: 0
-        },
-        800
-    );
-    return false;
-});
-
-/**
  * Creates uttons to play original minuetti
  */
 function newMP3(mp3) {
@@ -269,6 +230,30 @@ function newMP3(mp3) {
     });
     sound.on("end", () => element.trigger("stop"));
     return element;
+}
+
+/**
+ * Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+ */
+$("a").on("click", function(event) {
+    let hash = this.hash;
+    if (!hash) return;
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
+        window.location.hash = hash;
+    });
+});
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        $("#btn-to-top").addClass("active");
+    } else {
+        $("#btn-to-top").removeClass("active");
+    }
 }
 
 /**

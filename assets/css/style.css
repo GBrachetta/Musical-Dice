@@ -339,28 +339,30 @@ footer span {
     color: #ebebeb;
 }
 
-/* Begin provisory method back to top arrow */ 
-a.back-to-top {
-    display: none;
-    width: 40px;
-    height: 30px;
-    text-indent: -9999px;
+/* Credit, adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+#btn-to-top {
     position: fixed;
-    z-index: 999;
-    right: 20px;
     bottom: 20px;
-    background: rgba(255, 255, 255, 0.1) url("../images/up-arrow-sm.png") no-repeat center 43%;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    transition: all .5s ease-in;
-}
-a:hover.back-to-top {
-    background-color: #df691a;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #df691a;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.6s ease-in-out 0.2s;
+    font-size: 0.8rem;
 }
 
-/* End provisory method back to top arrow */ 
+#btn-to-top.active {
+    pointer-events: auto;
+    opacity: 0.3;
+}
 
+#btn-to-top.active:hover {
+    opacity: 1;
+}
 
 #my-navbar .nav-link {
     color: #2b3e50;
@@ -391,15 +393,9 @@ Media queries
 }
 
 @media (min-width: 768px) {
-    /* Begin provisory method back to top arrow */ 
-
-    a.back-to-top {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.05) url("../images/up-arrow.png") no-repeat center 43%;
+    #btn-to-top {
+        font-size: 1.2rem;
     }
-    /* End provisory method back to top arrow */ 
-
 
     h2 {
         padding-top: 3.5rem;
