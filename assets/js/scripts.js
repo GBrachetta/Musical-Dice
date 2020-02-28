@@ -18,7 +18,7 @@ let singleHowl = null;
 
 /**
  *
- * @param {capital} letter
+ * @param {string} letter
  * Creates all objects with all 12 original minuetti
  * Defines the array of objects containing all full minuetti
  */
@@ -202,18 +202,6 @@ musicGrid.on("click", ".bar", function() {
 });
 
 /**
- * Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
- */
-$("a").on("click", function(event) {
-    let hash = this.hash;
-    if (!hash) return;
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
-        window.location.hash = hash;
-    });
-});
-
-/**
  * Creates uttons to play original minuetti
  */
 function newMP3(mp3) {
@@ -242,6 +230,30 @@ function newMP3(mp3) {
     });
     sound.on("end", () => element.trigger("stop"));
     return element;
+}
+
+/**
+ * Smooth scrolling, from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+ */
+$("a").on("click", function(event) {
+    let hash = this.hash;
+    if (!hash) return;
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
+        window.location.hash = hash;
+    });
+});
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        $("#btn-to-top").addClass("active");
+    } else {
+        $("#btn-to-top").removeClass("active");
+    }
 }
 
 /**

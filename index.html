@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="The Dice Game: A new take on Mozart's music game">
-	<meta name="keywords"
-		content="music, composition, Mozart, random, randomisation, game, minuetto, piano">
-	<meta name="author" content="Guillermo Brachetta">
+    <meta name="keywords" content="music, composition, Mozart, random, randomisation, game, minuetto, piano">
+    <meta name="author" content="Guillermo Brachetta">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/superhero/bootstrap.min.css" />
@@ -17,10 +16,30 @@
     <title>Musical Dice</title>
 </head>
 
-<body>
-    <!-- Navbar -->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!-- Navbar (Disappear on mobile: unnecessary and cleaner) -->
     <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
-        <a class="navbar-brand" href="#title">Back to top</a>
+
+        <a class="navbar-brand" href="#title">
+            <img src="assets/images/logo.png" alt="">
+        </a>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="my-navbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="#history" class="nav-link">History</a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="#mozart" class="nav-link">Mozart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#rules" class="nav-link">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#game" class="nav-link">Game</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Jumbotron Title-->
@@ -38,7 +57,7 @@
     <section class="container">
         <div class="row">
             <div class="col">
-                <h2 class="my-4 titles">
+                <h2 id="history" class="my-4 titles">
                     The Original Game
                 </h2>
                 <p class="text-justify">
@@ -105,7 +124,7 @@
                     is essentially the same, there may be more or less choices for different slots, and the choices
                     offered for each slot are slight variations rather than being entirely different.
                 </p>
-                <h2 class="my-4 titles">
+                <h2 id="mozart" class="my-4 titles">
                     Mozart's version
                 </h2>
                 <p class="text-justify">
@@ -139,7 +158,7 @@
                         polonaises")
                     </li>
                 </ul>
-                <h2 class="my-4 titles">
+                <h2 id="rules" class="my-4 titles">
                     My version
                 </h2>
                 <p class="text-justify">
@@ -184,7 +203,7 @@
     <!-- Jumbotron Game -->
     <div class="jumbotron jumbotron-fluid mt-5" id="game">
         <div class="container">
-            <h2 class="display-4">The Game</h2>
+            <h3 class="display-4">The Game</h3>
         </div>
     </div>
 
@@ -279,7 +298,8 @@
                     <a target="_blank" class="btn-floating btn-gplus" href="https://www.linkedin.com/" rel="noopener">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a target="_blank" class="btn-floating btn-dribbble" href="https://www.instagram.com/" rel="noopener">
+                    <a target="_blank" class="btn-floating btn-dribbble" href="https://www.instagram.com/"
+                        rel="noopener">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -297,7 +317,7 @@
     <!-- Modal About Me -->
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modal-about-label"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modal-about-label">About me</h5>
@@ -307,11 +327,7 @@
                 </div>
                 <div class="modal-body">
                     <h3>Guillermo Brachetta</h3>
-                    <div class="row my-3">
-                        <div class="col">
-                            <img data-src="assets/images/avatar.png" alt="avatar" class="img-fluid lazyload" />
-                        </div>
-                    </div>
+                    <img data-src="assets/images/avatar.png" alt="avatar" class="img-fluid lazyload my-3" />
                     <p>I'm a passionate musician.<br />Well, that is true; but it is also true that I am passionate
                         about
                         everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was able
@@ -374,6 +390,11 @@
             </div>
         </div>
     </div>
+    <!-- Button back to top -->
+    <a href="#title" id="btn-to-top" class="floating-btn" title="Go to top"
+        aria-label="Go back to top">
+        <i class="fas fa-arrow-circle-up fa-3x" aria-hidden="true"></i>
+    </a>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

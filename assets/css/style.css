@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    position: relative;
 }
 
 /* Checkboxes selection of Minuetti up to line 81*/
@@ -162,6 +163,15 @@ a.bar {
 
 .bar.selected:hover {
     background-color: rgba(29, 161, 242, 0.8);
+}
+
+.modal-body img {
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-body h3 {
+    text-align: center;
 }
 
 #form-contact {
@@ -329,6 +339,42 @@ footer span {
     color: #ebebeb;
 }
 
+/* Credit, adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+#btn-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #df691a;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.6s ease-in-out 0.2s;
+    font-size: 0.8rem;
+}
+
+#btn-to-top.active {
+    pointer-events: auto;
+    opacity: 0.3;
+}
+
+#btn-to-top.active:hover {
+    opacity: 1;
+}
+
+#my-navbar .nav-link {
+    color: #2b3e50;
+    font-weight: 500;
+    transition: all 0.55s ease-in-out;
+    font-size: 1.1rem;
+}
+
+#my-navbar .nav-link.active {
+    color: white;
+}
+
 /*
 Media queries
 */
@@ -347,6 +393,14 @@ Media queries
 }
 
 @media (min-width: 768px) {
+    #btn-to-top {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        padding-top: 3.5rem;
+    }
+
     .social a {
         display: block;
         line-height: 2em;
