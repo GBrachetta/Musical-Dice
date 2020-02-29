@@ -175,6 +175,7 @@ function togglePlaySequence() {
 checkboxes.on("change", ":checkbox", buildGrid);
 randomiseButton.on("click", randomise);
 playButton.on("click", togglePlaySequence);
+$(document).on("click", colapseNavbar);
 
 /**
  * Grid to play individual cells
@@ -250,6 +251,13 @@ $(window).on("scroll", function() {
         $("#btn-to-top").removeClass("active");
     }
 });
+
+/**
+ * Closes expanded navbar when clicked elsewhere
+ */
+function colapseNavbar() {
+    $(".navbar-collapse").collapse("hide");
+}
 
 /**
  * INIT APP
