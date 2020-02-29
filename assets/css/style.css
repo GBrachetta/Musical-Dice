@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 16px;
+    font-size: 100%;
     position: relative;
 }
 
@@ -29,7 +29,7 @@ div.checkbox-tags div label {
     color: #6b6464;
 
     white-space: nowrap;
-    margin: 3px 0;
+    margin: 0.2em 0;
     width: 100%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -44,7 +44,7 @@ div.checkbox-tags div label {
 }
 
 div.checkbox-tags div label {
-    padding: 8px 12px;
+    padding: 0.5em 0.75em;
     cursor: pointer;
 }
 
@@ -56,8 +56,8 @@ div.checkbox-tags div label::before {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 10px; /* Size of character in label*/
-    padding: 2px 6px 2px 2px;
+    font-size: 0.625em; /* Size of character in label*/
+    padding: 0.125em 0.375em 0.125em 0.125em;
     content: "\f067";
     -webkit-transition: -webkit-transform 0.35s ease-in-out;
     -moz-transition: -webkit-transform 0.35s ease-in-out;
@@ -134,7 +134,7 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
 
 /* Buttons */
 .individual-minuetto {
-    border: 2px solid #2b3e50;
+    border: 0.2em solid #2b3e50;
     font-size: 1rem;
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -240,7 +240,7 @@ a.bar {
     font-size: 1em;
     line-height: 2em;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 0.3em;
     background: #2b3e50;
     transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -288,7 +288,7 @@ a:hover {
     background-color: rgba(29, 161, 242, 1);
     height: 100%;
     font-size: 0.8em;
-    text-shadow: 2px 2px 2px rgba(29, 161, 242, 0.8);
+    text-shadow: 0.125em 0.125em 0.125em rgba(29, 161, 242, 0.8);
 }
 
 .minuetto-playing {
@@ -381,8 +381,8 @@ footer span {
 /* Credit, adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
 #btn-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25em;
+    right: 1.25em;
     z-index: 99;
     border: none;
     cursor: pointer;
@@ -440,11 +440,8 @@ footer span {
     box-shadow: none;
 }
 
+#my-navbar .nav-link.active,
 #my-navbar .nav-link:hover {
-    color: white;
-}
-
-#my-navbar .nav-link.active {
     color: white;
 }
 
@@ -481,11 +478,7 @@ Media queries
 
     .table-dark td {
         font-size: 1em;
-        width: 200px;
-    }
-
-    .bar {
-        font-size: 1em;
+        width: 20em;
     }
 
     .display-3 {
@@ -513,25 +506,20 @@ Media queries
         font-size: 1em;
     }
 
-    .footer-copyright {
+    .footer-copyright,
+    .bar {
         font-size: 1em;
     }
 }
 
 @media (min-width: 1024px) {
-    .table-dark td {
-        width: 500px;
-    }
-
     #checkboxes-minuetti label {
         padding-left: 0.4em;
-        font-size: 1em;
     }
 }
 
 @media (min-width: 1200px) {
     #checkboxes-minuetti label {
-        padding-left: 1em;
-        font-size: 1em;
+        padding-left: 0.7em;
     }
 }
