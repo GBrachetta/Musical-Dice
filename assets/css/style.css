@@ -8,6 +8,10 @@ body {
     position: relative;
 }
 
+h2 {
+    padding-top: 3.5rem;
+}
+
 /* Checkboxes selection of Minuetti up to line 83 */
 /* Checkboxes styling addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 div.checkbox-tags {
@@ -357,7 +361,7 @@ footer span {
 
 #btn-to-top.active {
     pointer-events: auto;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 #btn-to-top.active:hover {
@@ -369,6 +373,18 @@ footer span {
     font-weight: 500;
     transition: all 0.55s ease-in-out;
     font-size: 1.1rem;
+}
+
+.navbar-light .navbar-toggler {
+    color: #2b3e50;
+    border-color: #df691a;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 #my-navbar .nav-link:hover {
@@ -399,10 +415,6 @@ Media queries
 @media (min-width: 768px) {
     #btn-to-top {
         font-size: 1.2rem;
-    }
-
-    h2 {
-        padding-top: 3.5rem;
     }
 
     .social a {
