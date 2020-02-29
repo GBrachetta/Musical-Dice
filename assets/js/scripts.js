@@ -235,21 +235,22 @@ function newMP3(mp3) {
 /**
  * Smooth scrolling, adapted from https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
  */
-$("a").on("click", function(event) {
-    let hash = this.hash;
-    if (!hash) return;
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: $(hash).offset().top }, 800, () => {
-        window.location.hash = hash;
-    });
-});
-
 $(window).on("scroll", function() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         $("#btn-to-top").addClass("active");
     } else {
         $("#btn-to-top").removeClass("active");
     }
+});
+
+/**
+ * Navigates to sections, adapted from: https://www.roytuts.com/scroll-to-a-section-having-id-attribute-using-jquery/
+ */
+$("a").on("click", function(event) {
+    event.preventDefault();
+
+    let location = $($(this).attr("href")).offset().top;
+    $("body, html").animate({ scrollTop: location - 50 }, 800);
 });
 
 /**
