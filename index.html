@@ -16,16 +16,17 @@
     <title>Musical Dice</title>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
     <!-- Navbar (Disappear on mobile: unnecessary and cleaner) -->
     <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
 
         <a class="navbar-brand" href="#title">
-            <img src="assets/images/logo.png" alt="">
+            <img src="assets/images/logo.png" alt="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar"
+            aria-controls="my-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+        </button>
         <div class="collapse navbar-collapse flex-grow-1 text-right" id="my-navbar">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
@@ -139,7 +140,7 @@
                     the dice (measures 8/16) while other measures have a different possibility for each roll (measures
                     1/16).
                 </p>
-                <img data-src="assets/images/mozart-game.jpg" alt="Original Rules" class="my-4 img-fluid lazyload" />
+                <img src="assets/images/mozart-game.jpg" alt="Original Rules" class="my-4 img-fluid" />
                 <p class="text-justify">
                     Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be
                     some kind of game or system for constructing music out of two-bar fragments, but contains no
@@ -173,8 +174,8 @@
                 </p>
                 <p class="text-justify">
                     I divided each of the pieces in 12 parts (meaning that each part consists of 2 measures) and
-                    composed them in a way that any group of 2 bars can be connected to and followed by any of the
-                    2 following bars from any of the other pieces.
+                    composed them in a way that any group of 2 measures can be connected to and followed by any of the
+                    2 following measures from any of the other pieces.
                 </p>
                 <h2 id="rules" class="my-4 titles">
                     The Rules
@@ -184,16 +185,16 @@
                 </p>
                 <ul class="list-group">
                     <li class="list-group-item">Listen to any or all of the twelve original minuetti.</li>
-                    <div class="hr"></div>
+                    <li class="hr"></li>
                     <li class="list-group-item">From the row beneath, select which of the minuetti you would like to
                         include in the randomisation (hint: start with all twelve!)</li>
-                    <div class="hr"></div>
+                    <li class="hr"></li>
                     <li class="list-group-item">Play your randomly generated minuetto, or click on the button to create
                         a new randomisation.</li>
-                    <div class="hr"></div>
+                    <li class="hr"></li>
                     <li class="list-group-item">You can click on the individual cells to listen to the two measures
                         corresponding to that cell.</li>
-                    <div class="hr"></div>
+                    <li class="hr"></li>
                     <li class="list-group-item">Have fun and remember: there are <strong
                             class="millions">8,916,100,448,256</strong> posible combinations, so it's
                         quite unlikely you will hear the same piece ever again!</li>
@@ -330,7 +331,7 @@
                 </div>
                 <div class="modal-body">
                     <h3>Guillermo Brachetta</h3>
-                    <img data-src="assets/images/avatar.png" alt="avatar" class="img-fluid lazyload my-3" />
+                    <img src="assets/images/avatar.png" alt="avatar" class="img-fluid my-3" />
                     <p>I'm a passionate musician.<br />Well, that is true; but it is also true that I am passionate
                         about
                         everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was able
@@ -400,7 +401,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="assets/js/lazysizes.min.js" async=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script src="assets/js/sendEmail.js"></script>

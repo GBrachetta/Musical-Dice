@@ -95,6 +95,10 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
     width: 100%;
 }
 
+.list-group li.hr{
+    list-style: none;
+}
+
 /* Footer */
 .page-footer {
     background-color: #4e5d6c;

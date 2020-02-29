@@ -1,6 +1,6 @@
 # **THE MUSICAL DICE**
 
-![Original Edition](assets/images/mozart-game.png)
+![Original Edition](assets/images/mozart-game.jpg)
 
 ## The Original Idea
 
@@ -28,7 +28,7 @@ The way these games work may be understood in analogy to sentence construction.
 | 2   | The pig   | walked | through | the yard.  |
 | 3   | The sheep | ran    | into    | the marsh. |
 
-One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 1 2 3 1 2 3 one is given, "*The pig ran past the marsh.*" Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
+One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 2 3 1 3 one is given, "*The pig ran past the marsh.*" Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
 ### Mozart
 
