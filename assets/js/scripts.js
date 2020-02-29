@@ -246,7 +246,7 @@ $(window).on("scroll", function() {
 /**
  * Navigates to sections, adapted from: https://www.roytuts.com/scroll-to-a-section-having-id-attribute-using-jquery/
  */
-$(".nav-link, .floating-btn").on("click", function(event) {
+$(".nav-link, .floating-btn, .play-game").on("click", function(event) {
     event.preventDefault();
 
     let location = $($(this).attr("href")).offset().top;
