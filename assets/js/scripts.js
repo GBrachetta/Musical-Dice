@@ -18,7 +18,7 @@ let singleHowl = null;
 
 /**
  *
- * @param {string} letter
+ * @param {[string]} letter
  * Creates all objects with all 12 original minuetti
  * Defines the array of objects containing all full minuetti
  */
@@ -48,7 +48,6 @@ function randomise() {
         const randomIndex = Math.floor(Math.random() * letters.length);
         randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
     }
-    console.log(randomIDs);
     randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
     createSequence();
 }
@@ -60,12 +59,12 @@ function randomise() {
  * Stops music if there's music and last remaining label gets deselected
  */
 function buildGrid() {
+    const noSelection = letters.length === 0;
     letters = checkboxes
         .find(":checkbox:checked")
         .get()
-        .map(el => el.value);
+        .map(element => element.value);
 
-    const noSelection = letters.length === 0;
     playButton.prop("disabled", noSelection);
     randomiseButton.prop("disabled", letters.length < 2);
     musicGrid.toggle(!noSelection);
@@ -135,7 +134,7 @@ function playSequence() {
 function stopAll() {
     stopSequence();
     stopSingle();
-    allMP3.forEach(el => el.trigger("stop"));
+    allMP3.forEach(element => element.trigger("stop"));
     $(".bar").removeClass("playing");
 }
 
@@ -262,7 +261,7 @@ $("#minuetti").append(allMP3);
 const checkboxesHTML = alphabet.reduce((html, letter, i) => {
     const checkboxID = `checkbox-${i + 1}`;
     return (html += `<div class = "col-3 col-md-2 col-lg-1">
-        <input type="checkbox" id="${checkboxID}" value="${letter}" checked />
+        <input type="checkbox" id="${checkboxID}" value="${letter.toLowerCase()}" checked />
         <label for="${checkboxID}">${letter}</label>
     </div>`);
 }, "");
