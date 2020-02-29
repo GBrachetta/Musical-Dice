@@ -38,6 +38,7 @@ div.checkbox-tags div label {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
 }
@@ -59,28 +60,29 @@ div.checkbox-tags div label::before {
     padding: 2px 6px 2px 2px;
     content: "\f067";
     -webkit-transition: -webkit-transform 0.35s ease-in-out;
-    transition: -webkit-transform 0.35s ease-in-out;
+    -moz-transition: -webkit-transform 0.35s ease-in-out;
     -o-transition: transform 0.35s ease-in-out;
     transition: transform 0.35s ease-in-out;
-    transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label::before {
     content: "\f00c";
     -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
     -ms-transform: rotate(-360deg);
     transform: rotate(-360deg);
     -webkit-transition: -webkit-transform 0.35s ease-in-out;
-    transition: -webkit-transform 0.35s ease-in-out;
+    -moz-transition: -webkit-transform 0.35s ease-in-out;
     -o-transition: transform 0.35s ease-in-out;
     transition: transform 0.35s ease-in-out;
-    transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
 }
 
 div.checkbox-tags div input[type="checkbox"]:checked + label {
     background-color: rgba(29, 161, 242, 1);
     color: #fff;
     -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
 }
@@ -135,6 +137,7 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
     border: 2px solid #2b3e50;
     font-size: 1rem;
     -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
 }
@@ -164,6 +167,7 @@ div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
 button.bar {
     padding: 0;
     -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
 }
@@ -196,7 +200,7 @@ a.bar {
     margin: 0 auto;
 }
 
-.modal-body h3 {
+.heading-modal {
     text-align: center;
 }
 
@@ -295,27 +299,28 @@ a:hover {
     background-color: #fff;
 }
 
-button#btn-randomise:active,
-button#play-minuetto:active,
-button#playminuetto:focus,
-button#btn-randomise:focus {
+#btn-randomise:active,
+#play-minuetto:active,
+#playminuetto:focus,
+#btn-randomise:focus {
     outline: none;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     background-color: #df691a;
 }
 
-button#playminuetto:hover,
-button#btn-randomise:hover {
+#playminuetto:hover,
+#btn-randomise:hover {
     background-color: #bd5916;
 }
 
-button#btn-randomise:disabled,
-button#play-minuetto:disabled {
+#btn-randomise:disabled,
+#play-minuetto:disabled {
     cursor: default;
 }
 
-button#btn-randomise:disabled:hover {
+#btn-randomise:disabled:hover {
     background-color: #df691a;
 }
 
@@ -323,6 +328,7 @@ button.btn:active,
 button.btn:focus {
     outline: none;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -346,11 +352,13 @@ button.bar.playing:hover {
 .list-links a:hover {
     color: #bd5916;
     -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
 }
 
 .list-links a:focus {
+    -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
@@ -377,12 +385,12 @@ footer span {
     right: 20px;
     z-index: 99;
     border: none;
-    outline: none;
     cursor: pointer;
     color: #df691a;
     opacity: 0;
     background-color: transparent;
     -webkit-transition: all 0.6s ease-in-out 0.2s;
+    -moz-transition: all 0.6s ease-in-out 0.2s;
     -o-transition: all 0.6s ease-in-out 0.2s;
     transition: all 0.6s ease-in-out 0.2s;
     font-size: 0.8rem;
@@ -397,10 +405,16 @@ footer span {
     opacity: 1;
 }
 
+#btn-to-top:focus {
+    outline: none;
+    border: none;
+}
+
 #my-navbar .nav-link {
     color: #2b3e50;
     font-weight: 500;
     -webkit-transition: all 0.55s ease-in-out;
+    -moz-transition: all 0.55s ease-in-out;
     -o-transition: all 0.55s ease-in-out;
     transition: all 0.55s ease-in-out;
     font-size: 1.1rem;
@@ -409,14 +423,20 @@ footer span {
 .navbar-light .navbar-toggler {
     color: #2b3e50;
     border-color: #df691a;
-    outline: none;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
+}
+
+.navbar-light .navbar-toggler:focus {
+    outline: none;
+    border: none;
 }
 
 .navbar-toggler-icon:focus {
     outline: none;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
 }
 
