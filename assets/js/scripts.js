@@ -18,7 +18,7 @@ let singleHowl = null;
 
 /**
  *
- * @param {string} letter
+ * @param {[string]} letter
  * Creates all objects with all 12 original minuetti
  * Defines the array of objects containing all full minuetti
  */
@@ -48,7 +48,6 @@ function randomise() {
         const randomIndex = Math.floor(Math.random() * letters.length);
         randomIDs[i - 1] = letters[randomIndex] + zeroPadd(i);
     }
-    console.log(randomIDs);
     randomIDs.forEach(id => $(`#${id}`).addClass("selected"));
     createSequence();
 }
@@ -60,12 +59,12 @@ function randomise() {
  * Stops music if there's music and last remaining label gets deselected
  */
 function buildGrid() {
+    const noSelection = letters.length === 0;
     letters = checkboxes
         .find(":checkbox:checked")
         .get()
-        .map(el => el.value);
+        .map(element => element.value);
 
-    const noSelection = letters.length === 0;
     playButton.prop("disabled", noSelection);
     randomiseButton.prop("disabled", letters.length < 2);
     musicGrid.toggle(!noSelection);
@@ -135,7 +134,7 @@ function playSequence() {
 function stopAll() {
     stopSequence();
     stopSingle();
-    allMP3.forEach(el => el.trigger("stop"));
+    allMP3.forEach(element => element.trigger("stop"));
     $(".bar").removeClass("playing");
 }
 
@@ -176,6 +175,7 @@ function togglePlaySequence() {
 checkboxes.on("change", ":checkbox", buildGrid);
 randomiseButton.on("click", randomise);
 playButton.on("click", togglePlaySequence);
+$(document).on("click", colapseNavbar);
 
 /**
  * Grid to play individual cells
@@ -251,6 +251,13 @@ $(window).on("scroll", function() {
         $("#btn-to-top").removeClass("active");
     }
 });
+
+/**
+ * Closes expanded navbar when clicked elsewhere
+ */
+function colapseNavbar() {
+    $(".navbar-collapse").collapse("hide");
+}
 
 /**
  * INIT APP
