@@ -52,7 +52,7 @@
 
 ## Historical Background
 
-A *Musikalisches Würfelspiel* (German for "musical dice game") was a system for using dice to randomly 'generate' music from precomposed options. These 'games' were quite popular throughout Western Europe in the 18th century. Several different games were devised, some that did not require dice, but merely 'choosing a random number.'
+A *Musikalisches Würfelspiel* (German for "musical dice game") was a system that used dice to randomly 'generate' music from precomposed options. These 'games' were quite popular throughout Western Europe in the 18th century. Several different games were devised, some that did not require dice, but merely 'choosing a random number.'
 
 The way these games work may be understood in analogy to sentence construction.
 
@@ -62,7 +62,7 @@ The way these games work may be understood in analogy to sentence construction.
 | 2   | The pig   | walked | through | the yard.  |
 | 3   | The sheep | ran    | into    | the marsh. |
 
-One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 2 3 1 3 one is given, "*The pig ran past the marsh.*" Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
+A die is rolled for every column and the result of each roll determines which word in that column is used. For example, rolling 2,3,1,3 would give the expression "*The pig ran past the marsh*". Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
 <a name="my-idea"></a>
 
@@ -92,12 +92,12 @@ This project recreates the old game known in German as *Musikalisches Würfelspi
 "As a user, I would like to ____________ "
 
 - have historical information about the origins of the game.
-- read clear instructions on how play the game.
-- have clear and quick feedback from the app on clicks by mouse, trackpad and tapps.
-- have a clear visual understanding on how the randomisation works and what sound is currently playing.
+- read clear instructions on how to play the game.
+- have clear and quick feedback from the app on clicks by mouse, trackpad and taps.
+- have a clear visual understanding of how the randomisation works and what sound is currently playing.
 - be able to fully interact with all the buttons without having to go to a different button to stop a sound.
-- enjoy the sound of music while combined with mathematical functions.
-- be surprised and amused by unexpected musical turns of random music generation.
+- enjoy the sound of music combined with mathematical functions.
+- be surprised and amused by the unexpected musical turns of random music generation.
 
 <a name="design"></a>
 
@@ -117,7 +117,7 @@ Bootstrap was my framework of choice due to its felixibility in responsiveness.
 ### Color Palette
 
 The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
-It purposedly has a modern approach in order to stress the difference with the aesthetics of the 18th century and thus emphasise the novel approach for the app.
+It has purposefully been given a modern design to contrast with the aesthetics of the 18th century as this emphasizes the novel approach for the app 
 
 ![Color](assets/images/readme/palette.png)
 
@@ -125,14 +125,14 @@ It purposedly has a modern approach in order to stress the difference with the a
 
 ### Fonts
 
-I chose Montserrat as the only font for its excellent legibility in small sizes, due to the fact that a lot of text had to be contained in a limited space, specially in the music grid.
+I chose Montserrat to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there space limitations for the text such as in the music grid.
 I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
 
 <a name="responsivity"></a>
 
 ### Responsivity
 
-This website is fully responsive in all sizes and devices, and making the main music grid reactive and legible in small devices was a challenge which was sorted thanks to a combination of factors: Bootstrap's elasticity, clarity of the font family, clear styling highlighting events and discrete use of colors.
+This website is fully responsive to all sizes and devices. Making the main music grid reactive and legible in small devices was a challenge which was sorted thanks to a combination of factors: Bootstrap's elasticity, clarity of the font family, clear styling highlighting events and discrete use of colors.
 
 <a name="wireframes"></a>
 
@@ -150,7 +150,7 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ### Music Player
 
-- The app alows to play music in different ways, by listening to complete music files, small fragments and (most importantly) random arrays composed from those small fragments.
+- The app allows the user to sample the music in different ways, by listening to complete music files, small fragments and (most importantly) random arrays composed from those small fragments.
 
 ### Wide selection of options
 
@@ -164,7 +164,7 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ## To be implemented
 
-- The possibility to let the user download the resulting randomised piece of music.
+- The possibility for the user to download the resulting randomised piece of music.
 ***
 <a name="technologies-used"></a>
 

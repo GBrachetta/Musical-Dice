@@ -197,7 +197,6 @@ musicGrid.on("click", ".bar", function() {
             $this.removeClass("playing");
         }
     });
-    console.log(singleHowl);
     singleHowl.play();
 });
 
