@@ -4,7 +4,6 @@
 const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const musicGrid = $("#music-grid");
 const playButton = $("#play-minuetto");
-const pauseButton = $("#pause-button");
 const randomiseButton = $("#btn-randomise");
 const checkboxes = $("#checkboxes-minuetti");
 const mp3list = originalMinuetti(alphabet);
@@ -198,6 +197,7 @@ musicGrid.on("click", ".bar", function() {
             $this.removeClass("playing");
         }
     });
+    console.log(singleHowl);
     singleHowl.play();
 });
 
