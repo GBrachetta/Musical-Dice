@@ -5,42 +5,42 @@
 
 # TABLE OF CONTENTS
 
-1. [The Idea](#idea)
-   - [The Original Idea](#idea)
-   - [My Idea](#my-idea)
+1. [**The Idea**](#idea)
+   - [**The Original Idea**](#idea)
+   - [**My Idea**](#my-idea)
 
 2. [UX](#UX)
 
-   - [User Stories](#user-stories)
-   - [Design](#design)
-     - [Framework](#framework)
-     - [Colour Palette](#colour-palette)
-     - [Fonts](#fonts)
-     - [Responsivity](#responsivity)
-   - [Wireframes](#wireframes)
+   - [**User Stories**](#user-stories)
+   - [**Design**](#design)
+     - [**Framework**](#framework)
+     - [**Colour Palette**](#colour-palette)
+     - [**Fonts**](#fonts)
+     - [**Responsivity**](#responsivity)
+   - [**Wireframes**](#wireframes)
 
-3. [Features](#features)
-   - [Features in use](#features)
-   - [To be implemented](#to-be-implemented)
+3. [**Features**](#features)
+   - [**Features in use**](#features)
+   - [**To be implemented**](#to-be-implemented)
 
-4. [Technologies used](#technologies-used)
-   - [Front-End Technologies](#front-end-technologies)
-   - [Other Technologies Used](#other-technologies-used)
+4. [**Technologies used**](#technologies-used)
+   - [**Front-End Technologies**](#front-end-technologies)
+   - [**Other Technologies Used**](#other-technologies-used)
 
-5. [Testing](#testing)
-   - [Validators](#validators)
-   - [Compatibility](#compatibility)
-   - [Known Issues](#known-issues)
+5. [**Testing**](#testing)
+   - [**Validators**](#validators)
+   - [**Compatibility**](#compatibility)
+   - [**Known Issues**](#known-issues)
 
-6. [Deployment](#deployment)
-   - [Local Deployment](#local-deployment)
-   - [Remote Deployment](#remote-deployment)
+6. [**Deployment**](#deployment)
+   - [**Local Deployment**](#local-deployment)
+   - [**Remote Deployment**](#remote-deployment)
 
-7. [Credits](#credits)
-   - [Content](#content)
-   - [Media](#media)
-   - [Code](#code)
-   - [Acknowledgements](#acknowledgements)
+7. [**Credits**](#credits)
+   - [**Content**](#content)
+   - [**Media**](#media)
+   - [**Code**](#code)
+   - [**Acknowledgements**](#acknowledgements)
 
 ***
 
@@ -97,7 +97,7 @@ This project recreates the old game known in German as *Musikalisches Würfelspi
 - have a clear visual understanding on how the randomisation works and what sound is currently playing.
 - be able to fully interact with all the buttons without having to go to a different button to stop a sound.
 - enjoy the sound of music while combined with mathematical functions.
-- be surprised and amused by unexpected musical turn of random music generation.
+- be surprised and amused by unexpected musical turns of random music generation.
 
 <a name="design"></a>
 
@@ -179,7 +179,7 @@ This website is fully responsive in all sizes and devices, and making the main m
 - ![test](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
 - ![test](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
 - ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=8b7355&logo=howler.js) Howler.js: used to access and deal with all audio elements in an efficient way, ensuring portability on all platforms.
-- ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=green&logo=emailjs) email.js: to send emails through my contact form.
+- ![test](https://img.shields.io/static/v1?label=Emailjs&message=2.3.2&color=green&logo=emailjs) email.js: to send emails through my contact form.
 
 <a name="other-technologies-used"></a>
 
@@ -202,13 +202,17 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 - HTML
   - [W3C HTML Validator](https://validator.w3.org/)
+    - No warnings or errors reported.
 
 - CSS
   - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - No errors found.
   - [CSS Lint](http://csslint.net/)
+    - No errors found.
 
 - JavaScript
   - [JSHint](https://jshint.com/)
+    - No errors found.
 
 <a name="compatibility"></a>
 
@@ -228,13 +232,33 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ## Local
 
+This project can be ran locally by going to this [Repository link](https://github.com/GBrachetta/Musical-Dice) and clicking on the Clone or Download button and copying the link provided.
+
+![image](assets/images/readme/cloning.png)
+
+In your IDE, open a Terminal window and change to the directory where you want to clone this project and type Git clone "your copied link".
+
+After pressing Enter the project will be created and cloned locally.
+
+Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
+
 <a name="remote-deployment"></a>
 
 ## Remote
 
-<a name="credits"></a>
+The live version of this website is hosted on GitHub Pages and will update as new commits occur.
+
+The method used to deploy this website was as follows:
+
+1. In GitHub, navigated to my repository.
+2. Under my repository, clicked "Settings".
+3. Under the "GitHub Pages" section, used the Source drop-down menu and selected a publishing source, in this case Master Branch .
+4. The website was immediately published and a green tab appeared with a link to the live website.
+5. The link obtained is the one displaying at the top of this document.
+
 
 ***
+<a name="credits"></a>
 
 # CREDITS
 
@@ -242,17 +266,31 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ## Content
 
+- [Mozart Dice Game](https://mozart.vician.cz/) served as trigger and inspiration to build a more dynamic and modern version of the game.
+
 <a name="media"></a>
 
 ## Media
+
+- All the music for this app was composed and edited by me.
+- Logo designed after a die by me on Adobe Illustrator.
 
 <a name="code"></a>
 
 ## Code
 
+This app wouldn't have seen the light without the help of, amongst others:
+
+- [Stack Overflow](https://stackoverflow.com/) #1 place to find answers of all kinds.
+- [W3Schools](https://www.w3schools.com/) Another extremelly complete source of information.
+
 <a name="acknowledgements"></a>
 
 ## Acknowledgements
+
+- [Simen Dehlin](https://github.com/Eventyret), mentor and patient counselor.
+- [Roko Buljan](https://github.com/rokobuljan), for his invaluable help and sympathy.
+- [Tim Nelson](https://github.com/TravelTimN), for great help in several moments of the process.
 
 ***
 
