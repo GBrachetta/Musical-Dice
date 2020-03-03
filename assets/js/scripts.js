@@ -4,7 +4,6 @@
 const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const musicGrid = $("#music-grid");
 const playButton = $("#play-minuetto");
-const pauseButton = $("#pause-button");
 const randomiseButton = $("#btn-randomise");
 const checkboxes = $("#checkboxes-minuetti");
 const mp3list = originalMinuetti(alphabet);
@@ -198,6 +197,7 @@ musicGrid.on("click", ".bar", function() {
             $this.removeClass("playing");
         }
     });
+    console.log(singleHowl);
     singleHowl.play();
 });
 
@@ -246,7 +246,7 @@ $(window).on("scroll", function() {
 /**
  * Navigates to sections, adapted from: https://www.roytuts.com/scroll-to-a-section-having-id-attribute-using-jquery/
  */
-$(".nav-link, .floating-btn, .play-game").on("click", function(event) {
+$(".scrolling-link").on("click", function(event) {
     event.preventDefault();
 
     let location = $($(this).attr("href")).offset().top;

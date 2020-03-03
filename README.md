@@ -1,24 +1,58 @@
+
+# [**THE MUSICAL DICE**](https://gbrachetta.github.io/Musical-Dice/)
+
+![Original Edition](assets/images/readme/mozart-game-small.png)
+
+# TABLE OF CONTENTS
+
+1. [**The Idea**](#idea)
+   - [**The Original Idea**](#idea)
+   - [**My Idea**](#my-idea)
+
+2. [UX](#UX)
+
+   - [**User Stories**](#user-stories)
+   - [**Design**](#design)
+     - [**Framework**](#framework)
+     - [**Colour Palette**](#colour-palette)
+     - [**Fonts**](#fonts)
+     - [**Responsivity**](#responsivity)
+   - [**Wireframes**](#wireframes)
+
+3. [**Features**](#features)
+   - [**Features in use**](#features)
+   - [**To be implemented**](#to-be-implemented)
+
+4. [**Technologies used**](#technologies-used)
+   - [**Front-End Technologies**](#front-end-technologies)
+   - [**Other Technologies Used**](#other-technologies-used)
+
+5. [**Testing**](#testing)
+   - [**Validators**](#validators)
+   - [**Compatibility**](#compatibility)
+   - [**Known Issues**](#known-issues)
+
+6. [**Deployment**](#deployment)
+   - [**Local Deployment**](#local-deployment)
+   - [**Remote Deployment**](#remote-deployment)
+
+7. [**Credits**](#credits)
+   - [**Content**](#content)
+   - [**Media**](#media)
+   - [**Code**](#code)
+   - [**Acknowledgements**](#acknowledgements)
+
+***
+
 # **THE MUSICAL DICE**
 
-![Original Edition](assets/images/mozart-game.jpg)
+<a name="idea"></a>
 
-## The Original Idea
+# The Original Idea
 
-### Historical Background
+## Historical Background
 
 A *Musikalisches Würfelspiel* (German for "musical dice game") was a system for using dice to randomly 'generate' music from precomposed options. These 'games' were quite popular throughout Western Europe in the 18th century. Several different games were devised, some that did not require dice, but merely 'choosing a random number.'
-
-The earliest example is Johann Philipp Kirnberger's Der allezeit fertige Menuetten- und Polonaisencomponist (German for "The Ever-Ready Minuet and Polonaise Composer") (1757 [1st edition; revised 2nd 1783]). Examples by well known composers include C. P. E. Bach's Einfall, einen doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu wissen (German for "A method for making six bars of double counterpoint at the octave without knowing the rules") (1758) and Maximilian Stadler's Table pour composer des minuets et des Trios à la infinie; avec deux dez à jouer (French for "A table for composing minuets and trios to infinity, by playing with two dice") (1780).
-
-In the early 20th century the Kaleidacousticon System, using arbitrarily combinable playing cards, was unsuccessfully marketed in the Boston area as a parlour game.
-
-### Aesthetics
-
-According to Lawrence Zbikowski:
-> "In truth, chance played little part in the success of the music produced by such games. Instead, what was required of the compilers was a little knowledge about how to put the game together and an understanding of the formal design of waltzes, etc."
-
-According to Stephen Hedges:
-> "The 'galant' middle class in Europe was playing with mathematics. In this atmosphere of investigation and cataloguing, a systematic device that would seem to make it possible for anyone to write music was practically guaranteed popularity.
 
 The way these games work may be understood in analogy to sentence construction.
 
@@ -30,66 +64,234 @@ The way these games work may be understood in analogy to sentence construction.
 
 One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 2 3 1 3 one is given, "*The pig ran past the marsh.*" Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
-### Mozart
-
-The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K. 294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been authenticated. The dice rolls randomly selected small sections of music, which would be patched together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161 different yet similar waltzes.
-Some measures have only one possibility no matter what the roll of the dice (measures 8/16) while other measures have a different possibility for each roll (measures 1/16).
-
-Mozart's manuscript, written in 1787, consisting of 176 one-bar fragments of music, appears to be some kind of game or system for constructing music out of two-bar fragments, but contains no instructions and there is no evidence that dice were involved.
-
-The titles of the supposed Mozart compositions are:
-
-- *Anleitung zum Componieren von Walzern so viele man will vermittelst zweier Würfel, ohne etwas von der Musik oder Composition zu verstehen* ("Instructions for the composition of as many waltzes as one desires with two dice, without understanding anything about music or composition")
-- *Anleitung zum Componieren von Polonaisen* ("Instructions for the composition of polonaises")
-
-### Other Versions
-
-Robert Xavier Rodríguez composed his Musical Dice Game for string orchestra based on Mozart's K. 516f.
-
-The attribution of Joseph Haydn's *Gioco filarmonico o sia maniera facile per comporre un infinito numero de minuetti e trio anche senza sapere il contrappunto* ("The game of harmony, or an easy method for composing an infinite number of minuet and trios, without any knowledge of counterpoint") has also not been authenticated.
+<a name="my-idea"></a>
 
 ## My Idea
 
-### Ideal Outcome
+- Fragments are 2 bars long rather than 1.
+- All the music was composed by me.
 
-Ideally my version would have:
+![table](./assets/images/readme/table.png)
 
-- A landing page, containing:
-  - Presentation and Historical Background
-  - Explanation of the game
-- The game page, containing:
-  - The game itself, including:
-    - A button to randomize the result
-    - If possible, the option for the user to freely choose the musical fragments
-    - A button to download the resulting MP3 file using an API to merge the selected MP3 fragments (and perhaps some fallback format) **OR**
-    - A button to download the resulting MIDI file using an API to merge the selected MIDI fragments.
-    - A button to download the resulting music score using an api to merge different PDF files into one file **OR**
-    - A button to download the resulting music score using Lilypond as the on-the-fly compiler
-- A contact page
-  - A form to get in touch and send comments or requests
+(Selected in blue an example of a possible outcome)
 
-I plan to make some alterations to the original game and they might include:
+Any end of any of the columns works musically well with the beginning of the following column, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
 
-- Fragments will be 2 bars long rather than 1
-- Music will be composed and performed (in case of managing to use an MP3 merger API) by me as well.
+<a name="UX"></a>
 
-![table](./assets/imgsREADME/table.png)
+***
 
-(Selected  in blue an example of a possible outcome)
+# UX
 
-Any end of any of the columns works well with the beginning of the following column musically, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
+This project recreates the old game known in German as *Musikalisches Würfelspiel* in a modern and minimalistic way.
 
-### Loose Ideas and resources to investigate
+<a name="user-stories"></a>
 
-- [Lilypond](http://lilypond.org/index.html) could be used to dynamically create the score. Lilypond is opensource and compiles a music score by entering text.
-- Midi [API](https://www.keithmcmillen.com/blog/making-music-in-the-browser-web-midi-api/) to merge Midi files.
-- MP3 merger [API](https://github.com/jackedgson/crunker)
-- [Chuck](https://chuck.cs.princeton.edu/), music programming language.
-- PDF merger APIs:
-  - [Convertapi](https://www.convertapi.com/pdf-to-merge)
-  - [Cloudconvert](https://cloudconvert.com/api/v1/mergepdf)
-  - [PDFMerge](https://pdfmerge.smartsfile.com/api.html)
+## User Stories
 
-### Wireframes (in progress and subject to change)
+"As a user, I would like to ____________ "
 
-![Index.html](./wireframes/index.png
+- have historical information about the origins of the game.
+- read clear instructions on how play the game.
+- have clear and quick feedback from the app on clicks by mouse, trackpad and tapps.
+- have a clear visual understanding on how the randomisation works and what sound is currently playing.
+- be able to fully interact with all the buttons without having to go to a different button to stop a sound.
+- enjoy the sound of music while combined with mathematical functions.
+- be surprised and amused by unexpected musical turns of random music generation.
+
+<a name="design"></a>
+
+## Design
+
+Due to the large quantity of buttons needed to recreate the game, bootstrap has been used to guarantee responsiveness. 
+Relative units were used throughout CSS rules to ensure the app would fit all scenarios while staying clearly legible.
+
+<a name="framework"></a>
+
+### Framework
+
+Bootstrap was my framework of choice due to its felixibility in responsiveness.
+
+<a name="colour-palette"></a>
+
+### Color Palette
+
+The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
+It purposedly has a modern approach in order to stress the difference with the aesthetics of the 18th century and thus emphasise the novel approach for the app.
+
+![Color](assets/images/readme/palette.png)
+
+<a name="fonts"></a>
+
+### Fonts
+
+I chose Montserrat as the only font for its excellent legibility in small sizes, due to the fact that a lot of text had to be contained in a limited space, specially in the music grid.
+I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
+
+<a name="responsivity"></a>
+
+### Responsivity
+
+This website is fully responsive in all sizes and devices, and making the main music grid reactive and legible in small devices was a challenge which was sorted thanks to a combination of factors: Bootstrap's elasticity, clarity of the font family, clear styling highlighting events and discrete use of colors.
+
+<a name="wireframes"></a>
+
+## Wireframes
+
+![Index.html](wireframes/index.png)
+
+
+***
+<a name="features"></a>
+
+# FEATURES
+
+## Features in Use
+
+### Music Player
+
+- The app alows to play music in different ways, by listening to complete music files, small fragments and (most importantly) random arrays composed from those small fragments.
+
+### Wide selection of options
+
+- From listening to defined MP3 files to letting the user choose which pieces to include or exclude from the game.
+
+### Visual feedback
+
+- The app always gives clear feedback about what is being played and how to interact with it.
+
+<a name="to-be-implemented"></a>
+
+## To be implemented
+
+- The possibility to let the user download the resulting randomised piece of music.
+***
+<a name="technologies-used"></a>
+
+# TECHNOLOGIES USED
+
+<a name="front-end-technologies"></a>
+
+## Front-end Technologies
+
+- ![test](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
+- ![test](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS3: Used in addition to Bootstrap to style the elements of the app.
+- ![test](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
+- ![test](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
+- ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=8b7355&logo=howler.js) Howler.js: used to access and deal with all audio elements in an efficient way, ensuring portability on all platforms.
+- ![test](https://img.shields.io/static/v1?label=Emailjs&message=2.3.2&color=green&logo=emailjs) email.js: to send emails through my contact form.
+
+<a name="other-technologies-used"></a>
+
+## Other Technologies
+
+- ![test](https://img.shields.io/static/v1?label=VSCode&message=1.42.1&color=informational&logo=visual-studio) Visual Studio Code: my IDE of choice for all my projects.
+- ![test](https://img.shields.io/static/v1?label=GitHub&message=GBrachetta&color=black&logo=github)  GitHub: My remote storage for this project.
+- ![test](https://img.shields.io/static/v1?label=Balsamiq&message=3.5.17&color=ff2800&logo=balsamiq) Balsamiq: to create the wireframes of this project.
+- ![test](https://img.shields.io/static/v1?label=Audacity&message=2.3.3&color=0000ee&logo=audacity) Audacity: to trim, edit and manipulate all music files.
+
+
+***
+<a name="testing"></a>
+
+# TESTING
+
+<a name="validators"></a>
+
+## Validators
+
+- HTML
+  - [W3C HTML Validator](https://validator.w3.org/)
+    - No warnings or errors reported.
+
+- CSS
+  - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - No errors found.
+  - [CSS Lint](http://csslint.net/)
+    - No errors found.
+
+- JavaScript
+  - [JSHint](https://jshint.com/)
+    - No errors found.
+
+<a name="compatibility"></a>
+
+## Compatibility
+
+<a name="known-issues"></a>
+
+## Known Issues
+
+<a name="deployment"></a>
+
+***
+
+# DEPLOYMENT
+
+<a name="local-deployment"></a>
+
+## Local
+
+This project can be ran locally by going to this [Repository link](https://github.com/GBrachetta/Musical-Dice) and clicking on the Clone or Download button and copying the link provided.
+
+![image](assets/images/readme/cloning.png)
+
+In your IDE, open a Terminal window and change to the directory where you want to clone this project and type Git clone "your copied link".
+
+After pressing Enter the project will be created and cloned locally.
+
+Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
+
+<a name="remote-deployment"></a>
+
+## Remote
+
+The live version of this website is hosted on GitHub Pages and will update as new commits occur.
+
+The method used to deploy this website was as follows:
+
+1. In GitHub, navigated to my repository.
+2. Under my repository, clicked "Settings".
+3. Under the "GitHub Pages" section, used the Source drop-down menu and selected a publishing source, in this case Master Branch .
+4. The website was immediately published and a green tab appeared with a link to the live website.
+5. The link obtained is the one displaying at the top of this document.
+
+
+***
+<a name="credits"></a>
+
+# CREDITS
+
+<a name="content"></a>
+
+## Content
+
+- [Mozart Dice Game](https://mozart.vician.cz/) served as trigger and inspiration to build a more dynamic and modern version of the game.
+
+<a name="media"></a>
+
+## Media
+
+- All the music for this app was composed and edited by me.
+- Logo designed after a die by me on Adobe Illustrator.
+
+<a name="code"></a>
+
+## Code
+
+This app wouldn't have seen the light without the help of, amongst others:
+
+- [Stack Overflow](https://stackoverflow.com/) #1 place to find answers of all kinds.
+- [W3Schools](https://www.w3schools.com/) Another extremelly complete source of information.
+
+<a name="acknowledgements"></a>
+
+## Acknowledgements
+
+- [Simen Dehlin](https://github.com/Eventyret), mentor and patient counselor.
+- [Roko Buljan](https://github.com/rokobuljan), for his invaluable help and sympathy.
+- [Tim Nelson](https://github.com/TravelTimN), for great help in several moments of the process.
+
+***
+
+#### Back to [top](#top)
