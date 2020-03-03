@@ -1,10 +1,56 @@
+
+# [**THE MUSICAL DICE**](https://gbrachetta.github.io/Musical-Dice/)
+
+![Original Edition](assets/images/readme/mozart-game-small.png)
+
+# TABLE OF CONTENTS
+
+1. [The Idea](#idea)
+   - [The Original Idea](#idea)
+   - [My Idea](#my-idea)
+
+2. [UX](#UX)
+
+   - [User Stories](#user-stories)
+   - [Design](#design)
+     - [Framework](#framework)
+     - [Colour Palette](#colour-palette)
+     - [Fonts](#fonts)
+     - [Responsivity](#responsivity)
+   - [Wireframes](#wireframes)
+
+3. [FEATURES](#features)
+   - [Features in use](#features)
+   - [To be implemented](#to-be-implemented)
+
+4. [Technologies used](#technologies-used)
+   - [Front-End Technologies](#front-end-technologies)
+   - [Other Technologies Used](#other-technologies-used)
+
+5. [Testing](#testing)
+   - [Validators](#validators)
+   - [Compatibility](#compatibility)
+   - [Known Issues](#known-issues)
+
+6. [Deployment](#deployment)
+   - [Local Deployment](#local-deployment)
+   - [Remote Deployment](#remote-deployment)
+
+7. [Credits](#credits)
+   - [Content](#content)
+   - [Media](#media)
+   - [Code](#code)
+   - [Acknowledgements](#acknowledgements)
+
+***
+
 # **THE MUSICAL DICE**
 
-![Original Edition](assets/images/mozart-game.jpg)
+<a name="idea"></a>
 
-## The Original Idea
+# The Original Idea
 
-### Historical Background
+## Historical Background
 
 A *Musikalisches Würfelspiel* (German for "musical dice game") was a system for using dice to randomly 'generate' music from precomposed options. These 'games' were quite popular throughout Western Europe in the 18th century. Several different games were devised, some that did not require dice, but merely 'choosing a random number.'
 
@@ -18,17 +64,174 @@ The way these games work may be understood in analogy to sentence construction.
 
 One rolls one die for each word and selects the word from the appropriate column according to the number. Thus if one rolls 2 3 1 3 one is given, "*The pig ran past the marsh.*" Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
+<a name="my-idea"></a>
+
 ## My Idea
 
 - Fragments are 2 bars long rather than 1.
 - All the music was composed by me.
 
-![table](./assets/imgsREADME/table.png)
+![table](./assets/images/readme/table.png)
 
 (Selected in blue an example of a possible outcome)
 
 Any end of any of the columns works musically well with the beginning of the following column, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
 
-### Wireframes
+<a name="UX"></a>
 
-![Index.html](./wireframes/index.png
+***
+
+# UX
+
+This project recreates the old game known in German as *Musikalisches Würfelspiel* in a modern and minimalistic way.
+
+<a name="user-stories"></a>
+
+## User Stories
+
+"As a user, I would like to ____________ "
+
+- have historical information about the origins of the game.
+- read clear instructions on how play the game.
+- have clear and quick feedback from the app on clicks by mouse, trackpad and tapps.
+- have a clear visual understanding on how the randomisation works and what sound is currently playing.
+- be able to fully interact with all the buttons without having to go to a different button to stop a sound.
+- enjoy the sound of music while combined with mathematical functions.
+- be surprised and amused by unexpected musical turn of random music generation.
+
+<a name="design"></a>
+
+## Design
+
+Due to the large quantity of buttons needed to recreate the game, bootstrap has been used to guarantee responsiveness. 
+Relative units were used throughout CSS rules to ensure the app would fit all scenarios while staying clearly legible.
+
+<a name="framework"></a>
+
+### Framework
+
+Bootstrap was the framework of choice due to its felixibility in responsiveness.
+
+<a name="colour-palette"></a>
+
+### Colour Palette
+
+The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
+It purposedly has a modern approach in order to stress the difference with the aesthetics of the 18th century and thus emphasise the novel approach for the app.
+
+![Color](assets/images/readme/palette.png)
+
+<a name="fonts"></a>
+
+### Fonts
+
+I chose Montserrat as the only font for its excellent legibility in small sizes, due to the fact that a lot of text had to be contained in a limited space, specially in the music grid.
+I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
+
+<a name="responsivity"></a>
+
+### Responsivity
+
+This website is fully responsive in all sizes and devices, and making the main music grid reactive and legible in small devices was a challenge which was sorted thanks to a combination of factors: Bootstrap's elasticity, clarity of the font family, clear styling highlighting events and discrete use of colors.
+
+<a name="wireframes"></a>
+
+## Wireframes
+
+![Index.html](wireframes/index.png)
+
+
+***
+<a name="features"></a>
+
+# FEATURES
+
+## Features in Use
+
+### Music Player
+
+- The app alows to play music in different ways, by listening to complete music files, small fragments and (most importantly) random arrays composed from those small fragments.
+
+### Wide selection of options
+
+- From listening to defined MP3 files to letting the user choose which pieces to include or exclude from the game.
+
+### Visual feedback
+
+- The app always gives clear feedback about what is being played and how to interact with it.
+
+<a name="to-be-implemented"></a>
+
+## To be implemented
+
+<a name="technologies-used"></a>
+
+***
+
+# TECHNOLOGIES USED
+
+<a name="front-end-technologies"></a>
+
+## Front-end Technologies
+
+<a name="other-technologies-used"></a>
+
+## Other Technologies
+
+<a name="testing"></a>
+
+***
+
+# TESTING
+
+<a name="validators"></a>
+
+## Validators
+
+<a name="compatibility"></a>
+
+## Compatibility
+
+<a name="known-issues"></a>
+
+## Known Issues
+
+<a name="deployment"></a>
+
+***
+
+# DEPLOYMENT
+
+<a name="local-deployment"></a>
+
+## Local
+
+<a name="remote-deployment"></a>
+
+## Remote
+
+<a name="credits"></a>
+
+***
+
+# CREDITS
+
+<a name="content"></a>
+
+## Content
+
+<a name="media"></a>
+
+## Media
+
+<a name="code"></a>
+
+## Code
+
+<a name="acknowledgements"></a>
+
+## Acknowledgements
+
+***
+
+#### Back to [top](#top)
