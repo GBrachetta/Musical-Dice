@@ -19,7 +19,7 @@
      - [Responsivity](#responsivity)
    - [Wireframes](#wireframes)
 
-3. [FEATURES](#features)
+3. [Features](#features)
    - [Features in use](#features)
    - [To be implemented](#to-be-implemented)
 
@@ -110,11 +110,11 @@ Relative units were used throughout CSS rules to ensure the app would fit all sc
 
 ### Framework
 
-Bootstrap was the framework of choice due to its felixibility in responsiveness.
+Bootstrap was my framework of choice due to its felixibility in responsiveness.
 
 <a name="colour-palette"></a>
 
-### Colour Palette
+### Color Palette
 
 The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
 It purposedly has a modern approach in order to stress the difference with the aesthetics of the 18th century and thus emphasise the novel approach for the app.
@@ -164,9 +164,9 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ## To be implemented
 
-<a name="technologies-used"></a>
-
+- The possibility to let the user download the resulting randomised piece of music.
 ***
+<a name="technologies-used"></a>
 
 # TECHNOLOGIES USED
 
@@ -174,19 +174,41 @@ This website is fully responsive in all sizes and devices, and making the main m
 
 ## Front-end Technologies
 
+- ![test](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
+- ![test](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS3: Used in addition to Bootstrap to style the elements of the app.
+- ![test](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
+- ![test](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
+- ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=8b7355&logo=howler.js) Howler.js: used to access and deal with all audio elements in an efficient way, ensuring portability on all platforms.
+- ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=green&logo=emailjs) email.js: to send emails through my contact form.
+
 <a name="other-technologies-used"></a>
 
 ## Other Technologies
 
-<a name="testing"></a>
+- ![test](https://img.shields.io/static/v1?label=VSCode&message=1.42.1&color=informational&logo=visual-studio) Visual Studio Code: my IDE of choice for all my projects.
+- ![test](https://img.shields.io/static/v1?label=GitHub&message=GBrachetta&color=black&logo=github)  GitHub: My remote storage for this project.
+- ![test](https://img.shields.io/static/v1?label=Balsamiq&message=3.5.17&color=ff2800&logo=balsamiq) Balsamiq: to create the wireframes of this project.
+- ![test](https://img.shields.io/static/v1?label=Audacity&message=2.3.3&color=0000ee&logo=audacity) Audacity: to trim, edit and manipulate all music files.
+
 
 ***
+<a name="testing"></a>
 
 # TESTING
 
 <a name="validators"></a>
 
 ## Validators
+
+- HTML
+  - [W3C HTML Validator](https://validator.w3.org/)
+
+- CSS
+  - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - [CSS Lint](http://csslint.net/)
+
+- JavaScript
+  - [JSHint](https://jshint.com/)
 
 <a name="compatibility"></a>
 
