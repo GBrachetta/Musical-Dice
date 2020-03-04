@@ -12,6 +12,11 @@ h2 {
     padding-top: 1rem;
 }
 
+/* Warning will only  display on IE */
+#warning {
+    display: none;
+}
+
 /* Checkboxes selection of Minuetti up to line 83 */
 /* Checkboxes styling addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 div.checkbox-tags {
@@ -521,5 +526,33 @@ Media queries
 @media (min-width: 1200px) {
     #checkboxes-minuetti label {
         padding-left: 0.7em;
+    }
+}
+/* Warnings display on Internet Explorer only */
+@media screen\0 {
+    #warning {
+        display: block;
+        background-color: #df691a;
+        padding: 2em;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .warning-title {
+        font-size: 2em;
+    }
+}
+
+@media screen\9 {
+    #warning {
+        display: block;
+        background-color: #df691a;
+        padding: 2em;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .warning-title {
+        font-size: 2em;
     }
 }
