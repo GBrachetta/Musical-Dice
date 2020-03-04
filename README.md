@@ -232,6 +232,25 @@ The following browsers were tested:
   - Safari
   - Chrome
   - Firefox
+
+These were the manual tests performed:
+
+- Navigating the page shouldn't reload the page
+- There's never the necessity of pressing the back-button
+- All external links open in a new tab
+- Navigation works as expected, without reloading the page
+- Pressing any of the music buttons has a purpose, and doing so stops any other or the current sound, except the buttons of the grid, which hace a length of 2 seconds and for which that's unnecessary.
+- Scrolling is smooth accross all browsers.
+- Modals open and close as expected.
+- The floating button works correctly.
+- The contact form has required fields and works correctly.
+- Menu (when collapsed) after opening, it closes correctly on all browsers when clicking on a link or outside of it.
+- Randomisation works smoothly.
+- There are no console errors.
+- There's no overflow.
+- Meny spy works as expected.
+- Navigation never breaks.
+- Clicking on the logo brings to the top without reloading the page.
   
 <a name="compatibility"></a>
 
@@ -241,6 +260,8 @@ Internet Explorer is not compatible with the JavaScript used in this app. The pr
 <a name="known-issues"></a>
 
 ## Known Issues
+
+Besides not performing on Internet Explorer (see above), there are no known issues.
 
 ***
 <a name="deployment"></a>
