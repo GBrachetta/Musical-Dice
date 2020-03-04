@@ -9,7 +9,7 @@
    - [**The Original Idea**](#idea)
    - [**My Idea**](#my-idea)
 
-2. [UX](#UX)
+2. [**UX**](#UX)
 
    - [**User Stories**](#user-stories)
    - [**Design**](#design)
@@ -29,6 +29,7 @@
 
 5. [**Testing**](#testing)
    - [**Validators**](#validators)
+   - [**Manual Tests**](#manual-tests)
    - [**Compatibility**](#compatibility)
    - [**Known Issues**](#known-issues)
 
@@ -117,7 +118,7 @@ Bootstrap was my framework of choice due to its felixibility in responsiveness.
 ### Color Palette
 
 The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
-It has purposefully been given a modern design to contrast with the aesthetics of the 18th century as this emphasizes the novel approach for the app 
+It has purposefully been given a modern design to contrast with the aesthetics of the 18th century as this emphasizes the novel approach for the app.
 
 ![Color](assets/images/readme/palette.png)
 
@@ -214,17 +215,35 @@ This website is fully responsive to all sizes and devices. Making the main music
   - [JSHint](https://jshint.com/)
     - No errors found.
 
+<a name="manual-tests"></a>
+
+## Manual Tests
+
+Several manual tests were performed to ensure the best possible user experience.
+This app is fully compatible with all browsers tested except the ones mentioned in the **Compatibility** section, in both desktop and mobile environments.
+The following browsers were tested:
+
+- Desktop
+  - Chrome (v. 80.0.3987.132)
+  - Firefox (v. 73.0.1)
+  - Safari (v. 13.0.5)
+  - Opera (v. 67.0.3575.53)
+- Mobile
+  - Safari
+  - Chrome
+  - Firefox
+  
 <a name="compatibility"></a>
 
 ## Compatibility
 
+Internet Explorer is not compatible with the JavaScript used in this app. The problem has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.
 <a name="known-issues"></a>
 
 ## Known Issues
 
-<a name="deployment"></a>
-
 ***
+<a name="deployment"></a>
 
 # DEPLOYMENT
 
@@ -284,6 +303,8 @@ This app wouldn't have seen the light without the help of, amongst others:
 - [Stack Overflow](https://stackoverflow.com/) #1 place to find answers of all kinds.
 - [W3Schools](https://www.w3schools.com/) Another extremelly complete source of information.
 
+All code that helped and was adapted to serve the purposes of this website has been properly marked as such in the comments.
+
 <a name="acknowledgements"></a>
 
 ## Acknowledgements
@@ -291,6 +312,7 @@ This app wouldn't have seen the light without the help of, amongst others:
 - [Simen Dehlin](https://github.com/Eventyret), mentor and patient counselor.
 - [Roko Buljan](https://github.com/rokobuljan), for his invaluable help and sympathy.
 - [Tim Nelson](https://github.com/TravelTimN), for great help in several moments of the process.
+- [Fran](https://github.com/fdeboo), for proofreading and being there making it all more enjoyable.
 
 ***
 
