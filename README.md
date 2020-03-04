@@ -139,9 +139,13 @@ This website is fully responsive to all sizes and devices. Making the main music
 
 ## Wireframes
 
+### Page wireframe
+
 ![Index.html](wireframes/index.png)
 
+### Grid wireframe (detail)
 
+![grid](wireframes/grid.png)
 ***
 <a name="features"></a>
 
@@ -333,7 +337,7 @@ All code that helped and was adapted to serve the purposes of this website has b
 - [Simen Dehlin](https://github.com/Eventyret), mentor and patient counselor.
 - [Roko Buljan](https://github.com/rokobuljan), for his invaluable help and sympathy.
 - [Tim Nelson](https://github.com/TravelTimN), for great help in several moments of the process.
-- [Fran](https://github.com/fdeboo), for proofreading and being there making it all more enjoyable.
+- [Fran](https://github.com/fdeboo), for proofreading and being there making it all the more enjoyable.
 
 ***
 
