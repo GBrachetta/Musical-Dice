@@ -311,6 +311,7 @@ The method used to deploy this website was as follows:
 ## Content
 
 - [Mozart Dice Game](https://mozart.vician.cz/) served as trigger and inspiration to build a more dynamic and modern version of the game.
+- [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) was used for historical information about the original game.
 
 <a name="media"></a>
 

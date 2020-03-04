@@ -17,9 +17,9 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="60">
-    <!-- Navbar (Disappear on mobile: unnecessary and cleaner) -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
 
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
         <a class="navbar-brand scrolling-link" href="#title">
             <img src="assets/images/logo.png" alt="logo">
         </a>
@@ -31,7 +31,6 @@
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
                     <a href="#title" class="scrolling-link nav-link">Top</a>
-
                 </li>
                 <li class="nav-item">
                     <a href="#mozart" class="scrolling-link nav-link">Mozart</a>
@@ -65,22 +64,19 @@
                     The Original Game
                 </h2>
                 <p class="text-justify">
-                    A <em>Musikalisches Würfelspiel</em> ("musical dice game") was a system for using dice to
-                    randomly 'generate' music from precomposed options. These 'games' were quite popular throughout
-                    Western
+                    A <em>Musikalisches Würfelspiel</em> ("musical dice game") was a system that used dice to randomly
+                    'generate' music from precomposed options. These 'games' were quite popular throughout Western
                     Europe in the 18th century. Several different games were devised, some that did not require dice,
                     but merely 'choosing a random number.'
                 </p>
                 <p class="text-justify">The earliest example is Johann Philipp Kirnberger's <em>Der allezeit fertige
                         Menuetten- und Polonaisencomponist</em> ("The Ever-Ready Minuet and Polonaise Composer") (1757
                     [1st edition; revised 2nd 1783]). Examples by well known composers include C. P. E. Bach's
-                    <em>Einfall, einen
-                        doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu
-                        wissen</em> ("A method for making six bars of double counterpoint at the octave
-                    without knowing the rules") (1758) and Maximilian Stadler's <em>Table pour composer des minuets et
-                        des Trios à la infinie; avec deux dez à jouer</em> ("A table for composing minuets and trios to
-                    infinity, by playing
-                    with two dice") (1780).
+                    <em>Einfall, einen doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln
+                        davon zu wissen</em> ("A method for making six bars of double counterpoint at the octave without
+                    knowing the rules") (1758) and Maximilian Stadler's <em>Table pour composer des minuets et des Trios
+                        à la infinie; avec deux dez à jouer</em> ("A table for composing minuets and trios to infinity,
+                    by playing with two dice") (1780).
                 </p>
                 <p>The way these games work may be understood in analogy to sentence construction:
                 </p>
@@ -123,10 +119,10 @@
                     </div>
                 </div>
                 <p class="text-justify">
-                    One rolls one die for each word and selects the word from the appropriate column according to the
-                    number. Thus if one rolls 2, 3, 1 and 3 one is given, "The pig ran past the marsh." Each progression
-                    is essentially the same, there may be more or less choices for different slots, and the choices
-                    offered for each slot are slight variations rather than being entirely different.
+                    A die is rolled for every column and the result of each roll determines which word in that column is
+                    used. For example, rolling 2,3,1,3 would give the expression "The pig ran past the marsh". Each
+                    progression is essentially the same, there may be more or less choices for different slots, and the
+                    choices offered for each slot are slight variations rather than being entirely different.
                 </p>
                 <h2 id="mozart" class="my-4 titles">
                     Mozart's version
@@ -135,10 +131,10 @@
                     The most well-known was published in 1792, by Mozart's publisher Nikolaus Simrock in Berlin (K.
                     294dK3 or K. 516fK6). The game was attributed to Mozart, but this attribution has not been
                     authenticated. The dice rolls randomly selected small sections of music, which would be patched
-                    together to create a musical piece. This game is capable of producing 1116 = 45.949.729.863.572.161
-                    different yet similar waltzes. Some measures have only one possibility no matter what the roll of
-                    the dice (measures 8/16) while other measures have a different possibility for each roll (measures
-                    1/16).
+                    together to create a musical piece. This game is capable of producing 11 ^ 16 =
+                    45.949.729.863.572.161 different yet similar waltzes. Some measures have only one possibility no
+                    matter what the roll of the dice (measures 8/16) while other measures have a different possibility
+                    for each roll (measures 1/16).
                 </p>
                 <img src="assets/images/mozart-game.jpg" alt="Original Rules" class="my-4 img-fluid" />
                 <p class="text-justify">
@@ -251,8 +247,6 @@
         </div>
     </div>
 
-
-
     <!-- Footer -->
     <footer class="page-footer font-small mdb-color lighten-3 pt-4">
         <div class="container text-center text-md-left">
@@ -338,10 +332,8 @@
                     <h3 class="heading-modal">Guillermo Brachetta</h3>
                     <img src="assets/images/avatar.png" alt="avatar" class="img-fluid my-3" />
                     <p>I'm a passionate musician.<br />Well, that is true; but it is also true that I am passionate
-                        about
-                        everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was able
-                        to combine
-                        two of my passions and obsessions in this app.</p>
+                        about everything I do. It is music, for sure, and it is coding as well.<br />Fortunatelly I was
+                        able to combine two of my passions and obsessions in this app.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -377,8 +369,7 @@
                                         <input type="email" name="from_email" class="form-control" id="inputEmail"
                                             aria-describedby="emailHelp" placeholder="Enter email" required />
                                         <small id="emailHelp" class="form-text text-muted">I'll never share your email
-                                            with anyone
-                                            else.</small>
+                                            with anyone else.</small>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -399,10 +390,12 @@
             </div>
         </div>
     </div>
+
     <!-- Button back to top -->
     <a href="#title" id="btn-to-top" class="scrolling-link floating-btn" title="Go to top" aria-label="Go back to top">
         <i class="fas fa-arrow-circle-up fa-3x" aria-hidden="true"></i>
     </a>
+    
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
