@@ -182,20 +182,22 @@ This website is fully responsive to all sizes and devices. Making the main music
 <a name="front-end-technologies"></a>
 ## Front-end Technologies
 
-- ![test](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
-- ![test](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS3: Used in addition to Bootstrap to style the elements of the app.
-- ![test](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
-- ![test](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
-- ![test](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=8b7355&logo=howler.js) Howler.js: used to access and deal with all audio elements in an efficient way, ensuring portability on all platforms.
-- ![test](https://img.shields.io/static/v1?label=Emailjs&message=2.3.2&color=green&logo=emailjs) email.js: to send emails through my contact form.
+- ![html](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
+- ![css](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS3: Used in addition to Bootstrap to style the elements of the app.
+- ![bootstrap](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
+- ![javascript](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
+- ![jquery](https://img.shields.io/static/v1?label=jQuery&message=3.4.1&color=0769ad&logo=jquery) jQuery, to access and manipulate the DOM.
+- ![howler](https://img.shields.io/static/v1?label=Howler.js&message=AudioLibrary&color=8b7355&logo=howler.js) Howler.js: used to access and deal with all audio elements in an efficient way, ensuring portability on all platforms.
+- ![emailjs](https://img.shields.io/static/v1?label=Emailjs&message=2.3.2&color=green&logo=emailjs) email.js: to send emails through my contact form.
+- ![fontawesome](https://img.shields.io/static/v1?label=Fontawesome&message=2.3.2&color=339af0&logo=font-awesome) Font Awesome, for all icons.
 
 <a name="other-technologies-used"></a>
 ## Other Technologies
 
-- ![test](https://img.shields.io/static/v1?label=VSCode&message=1.42.1&color=informational&logo=visual-studio) Visual Studio Code: my IDE of choice for all my projects.
-- ![test](https://img.shields.io/static/v1?label=GitHub&message=GBrachetta&color=black&logo=github)  GitHub: My remote storage for this project.
-- ![test](https://img.shields.io/static/v1?label=Balsamiq&message=3.5.17&color=ff2800&logo=balsamiq) Balsamiq: to create the wireframes of this project.
-- ![test](https://img.shields.io/static/v1?label=Audacity&message=2.3.3&color=0000ee&logo=audacity) Audacity: to trim, edit and manipulate all music files.
+- ![vscode](https://img.shields.io/static/v1?label=VSCode&message=1.42.1&color=informational&logo=visual-studio) Visual Studio Code: my IDE of choice for all my projects.
+- ![github](https://img.shields.io/static/v1?label=GitHub&message=GBrachetta&color=black&logo=github)  GitHub: My remote storage for this project.
+- ![balsamiq](https://img.shields.io/static/v1?label=Balsamiq&message=3.5.17&color=ff2800&logo=balsamiq) Balsamiq: to create the wireframes of this project.
+- ![audacity](https://img.shields.io/static/v1?label=Audacity&message=2.3.3&color=0000ee&logo=audacity) Audacity: to trim, edit and manipulate all music files.
 
 
 ***
@@ -236,13 +238,13 @@ The following browsers were tested:
   - Chrome
   - Firefox
 
-These were the manual tests performed:
+These were the manual tests performed and passed:
 
 - Navigating the page shouldn't reload the page
-- There's never the necessity of pressing the back-button
+- There's never the necessity of pressing the go-back button
 - All external links open in a new tab
 - Navigation works as expected, without reloading the page
-- Pressing any of the music buttons has a purpose, and doing so stops any other or the current sound, except the buttons of the grid, which hace a length of 2 seconds and for which that's unnecessary.
+- Pressing any of the music buttons has a purpose, and doing so stops any other or the current sound, except the buttons of the grid, which have a length of 2 seconds and for which that's unnecessary.
 - Scrolling is smooth accross all browsers.
 - Modals open and close as expected.
 - The floating button works correctly.
@@ -258,7 +260,7 @@ These were the manual tests performed:
 <a name="compatibility"></a>
 ## Compatibility
 
-Internet Explorer is not compatible with the JavaScript used in this app. The problem has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.
+Internet Explorer is not compatible with the JavaScript used in this app. The issue has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.
 
 <a name="known-issues"></a>
 ## Known Issues
@@ -276,7 +278,7 @@ This project can be ran locally by going to this [Repository link](https://githu
 
 ![image](assets/images/readme/cloning.png)
 
-In your IDE, open a Terminal window and change to the directory where you want to clone this project and type Git clone "your copied link".
+In your IDE, open a Terminal window and change to the directory where you want to clone this project and type `Git clone "your copied link"`.
 
 After pressing Enter the project will be created and cloned locally.
 
@@ -291,7 +293,7 @@ The method used to deploy this website was as follows:
 
 1. In GitHub, navigated to my repository.
 2. Under my repository, clicked "Settings".
-3. Under the "GitHub Pages" section, used the Source drop-down menu and selected a publishing source, in this case Master Branch .
+3. Under the "GitHub Pages" section, used the Source drop-down menu and selected a publishing source, in this case the Master Branch .
 4. The website was immediately published and a green tab appeared with a link to the live website.
 5. The link obtained is the one displaying at the top of this document.
 
@@ -304,7 +306,7 @@ The method used to deploy this website was as follows:
 ## Content
 
 - [Mozart Dice Game](https://mozart.vician.cz/) served as trigger and inspiration to build a more dynamic and modern version of the game.
-- [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) was used for historical information about the original game.
+- [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) (Wikipedia article) was used for historical information about the original game.
 
 <a name="media"></a>
 ## Media

@@ -338,6 +338,10 @@ button.bar.playing:hover {
     font-size: 1em;
 }
 
+.paragraphs {
+    text-align: none;
+}
+
 .list-links a {
     color: #df691a;
     font-weight: 600;
@@ -485,6 +489,10 @@ Media queries
     .lead {
         font-size: 1.25em;
     }
+
+.paragraphs {
+    text-align: justify;
+}
 
     .playing {
         font-size: 1.5em;
