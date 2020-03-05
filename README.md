@@ -1,4 +1,3 @@
-
 # [**THE MUSICAL DICE**](https://gbrachetta.github.io/Musical-Dice/)
 
 ![Original Edition](assets/images/readme/mozart-game-small.png)
@@ -48,7 +47,6 @@
 # **THE MUSICAL DICE**
 
 <a name="idea"></a>
-
 # The Original Idea
 
 ## Historical Background
@@ -66,7 +64,6 @@ The way these games work may be understood in analogy to sentence construction.
 A die is rolled for every column and the result of each roll determines which word in that column is used. For example, rolling 2,3,1,3 would give the expression "*The pig ran past the marsh*". Each progression is essentially the same, there may be more or less choices for different slots, and the choices offered for each slot are slight variations rather than being entirely different.
 
 <a name="my-idea"></a>
-
 ## My Idea
 
 - Fragments are 2 bars long rather than 1.
@@ -78,16 +75,15 @@ A die is rolled for every column and the result of each roll determines which wo
 
 Any end of any of the columns works musically well with the beginning of the following column, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
 
-<a name="UX"></a>
 
 ***
 
+<a name="UX"></a>
 # UX
 
 This project recreates the old game known in German as *Musikalisches Würfelspiel* in a modern and minimalistic way.
 
 <a name="user-stories"></a>
-
 ## User Stories
 
 "As a user, I would like to ____________ "
@@ -101,20 +97,17 @@ This project recreates the old game known in German as *Musikalisches Würfelspi
 - be surprised and amused by the unexpected musical turns of random music generation.
 
 <a name="design"></a>
-
 ## Design
 
 Due to the large quantity of buttons needed to recreate the game, bootstrap has been used to guarantee responsiveness. 
 Relative units were used throughout CSS rules to ensure the app would fit all scenarios while staying clearly legible.
 
 <a name="framework"></a>
-
 ### Framework
 
 Bootstrap was my framework of choice due to its felixibility in responsiveness.
 
 <a name="colour-palette"></a>
-
 ### Color Palette
 
 The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
@@ -123,14 +116,12 @@ It has purposefully been given a modern design to contrast with the aesthetics o
 ![Color](assets/images/readme/palette.png)
 
 <a name="fonts"></a>
-
 ### Fonts
 
 I chose Montserrat to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there space limitations for the text such as in the music grid.
 I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
 
 <a name="responsivity"></a>
-
 ### Responsivity
 
 This website is fully responsive to all sizes and devices. Making the main music grid reactive and legible in small devices was a challenge which was sorted thanks to a combination of factors: Bootstrap's elasticity, clarity of the font family, clear styling highlighting events and discrete use of colors.
@@ -166,17 +157,15 @@ This website is fully responsive to all sizes and devices. Making the main music
 - The app always gives clear feedback about what is being played and how to interact with it.
 
 <a name="to-be-implemented"></a>
-
 ## To be implemented
 
 - The possibility for the user to download the resulting randomised piece of music.
+- Record the music on an acoustical instrument rather than using midi sounds.
 ***
 <a name="technologies-used"></a>
-
 # TECHNOLOGIES USED
 
 <a name="front-end-technologies"></a>
-
 ## Front-end Technologies
 
 - ![test](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
@@ -187,7 +176,6 @@ This website is fully responsive to all sizes and devices. Making the main music
 - ![test](https://img.shields.io/static/v1?label=Emailjs&message=2.3.2&color=green&logo=emailjs) email.js: to send emails through my contact form.
 
 <a name="other-technologies-used"></a>
-
 ## Other Technologies
 
 - ![test](https://img.shields.io/static/v1?label=VSCode&message=1.42.1&color=informational&logo=visual-studio) Visual Studio Code: my IDE of choice for all my projects.
@@ -198,11 +186,9 @@ This website is fully responsive to all sizes and devices. Making the main music
 
 ***
 <a name="testing"></a>
-
 # TESTING
 
 <a name="validators"></a>
-
 ## Validators
 
 - HTML
@@ -220,7 +206,6 @@ This website is fully responsive to all sizes and devices. Making the main music
     - No errors found.
 
 <a name="manual-tests"></a>
-
 ## Manual Tests
 
 Several manual tests were performed to ensure the best possible user experience.
@@ -257,23 +242,20 @@ These were the manual tests performed:
 - Clicking on the logo brings to the top without reloading the page.
   
 <a name="compatibility"></a>
-
 ## Compatibility
 
 Internet Explorer is not compatible with the JavaScript used in this app. The problem has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.
-<a name="known-issues"></a>
 
+<a name="known-issues"></a>
 ## Known Issues
 
 Besides not performing on Internet Explorer (see above), there are no known issues.
 
 ***
 <a name="deployment"></a>
-
 # DEPLOYMENT
 
 <a name="local-deployment"></a>
-
 ## Local
 
 This project can be ran locally by going to this [Repository link](https://github.com/GBrachetta/Musical-Dice) and clicking on the Clone or Download button and copying the link provided.
@@ -287,7 +269,6 @@ After pressing Enter the project will be created and cloned locally.
 Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
 
 <a name="remote-deployment"></a>
-
 ## Remote
 
 The live version of this website is hosted on GitHub Pages and will update as new commits occur.
@@ -303,25 +284,21 @@ The method used to deploy this website was as follows:
 
 ***
 <a name="credits"></a>
-
 # CREDITS
 
 <a name="content"></a>
-
 ## Content
 
 - [Mozart Dice Game](https://mozart.vician.cz/) served as trigger and inspiration to build a more dynamic and modern version of the game.
 - [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) was used for historical information about the original game.
 
 <a name="media"></a>
-
 ## Media
 
 - All the music for this app was composed and edited by me.
 - Logo designed after a die by me on Adobe Illustrator.
 
 <a name="code"></a>
-
 ## Code
 
 This app wouldn't have seen the light without the help of, amongst others:
@@ -332,7 +309,6 @@ This app wouldn't have seen the light without the help of, amongst others:
 All code that helped and was adapted to serve the purposes of this website has been properly marked as such in the comments.
 
 <a name="acknowledgements"></a>
-
 ## Acknowledgements
 
 - [Simen Dehlin](https://github.com/Eventyret), mentor and patient counselor.
