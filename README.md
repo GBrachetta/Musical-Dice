@@ -2,11 +2,14 @@
 
 ![Original Edition](assets/images/readme/mozart-game-small.png)
 
+Go [here](https://gbrachetta.github.io/Musical-Dice/) for the live version.
+
 # TABLE OF CONTENTS
 
 1. [**The Idea**](#idea)
    - [**The Original Idea**](#idea)
    - [**My Idea**](#my-idea)
+   - [**Target Audience**](#target)
 
 2. [**UX**](#UX)
 
@@ -75,13 +78,18 @@ A die is rolled for every column and the result of each roll determines which wo
 
 Any end of any of the columns works musically well with the beginning of the following column, so each throw of the dice will create a different piece of music every time (albeit harmonically similar).
 
+<a name="target"></a>
+## Target Audience
 
+The target audience for this website is music lovers, musicians and people interested in music generation, but it's not limited to those. The app can be enjoyed by casual public as well as it requires no deep understanding of music in order to produce immediate musical feedback. 
 ***
 
 <a name="UX"></a>
 # UX
 
 This project recreates the old game known in German as *Musikalisches Würfelspiel* in a modern and minimalistic way.
+
+While there are a couple somewhat similar implementations available, this project makes use of Howler.js to deal with media files thus making it ready for the modern web, **including mobile platforms**. These other attempts don't perform well (or at all) on mobile, which accounts for over 54% of the total web traffic.
 
 <a name="user-stories"></a>
 ## User Stories
@@ -237,7 +245,7 @@ These were the manual tests performed:
 - Randomisation works smoothly.
 - There are no console errors.
 - There's no overflow.
-- Meny spy works as expected.
+- Menu spy works as expected.
 - Navigation never breaks.
 - Clicking on the logo brings to the top without reloading the page.
   
