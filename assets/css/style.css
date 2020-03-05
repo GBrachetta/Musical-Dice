@@ -450,7 +450,8 @@ Media queries
 
 @media (min-width: 440px) {
     #checkboxes-minuetti label {
-        padding-left: 1.6em;
+        padding-left: 1.4em;
+        font-size: 1.2em;
     }
 }
 
@@ -490,8 +491,7 @@ Media queries
     }
 
     #checkboxes-minuetti label {
-        padding-left: 1.4em;
-        font-size: 1.2em;
+        padding-left: 1.2em;
     }
 
     .page-footer p {
@@ -504,9 +504,9 @@ Media queries
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
     #checkboxes-minuetti label {
-        padding-left: 0.4em;
+        padding-left: 0.2em;
     }
 }
 

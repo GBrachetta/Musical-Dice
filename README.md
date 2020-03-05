@@ -164,6 +164,12 @@ This website is fully responsive to all sizes and devices. Making the main music
 
 - The app always gives clear feedback about what is being played and how to interact with it.
 
+### Easy navigation
+
+- Navigation is intuitive, clear and always available. 
+- All the content is displayed in a single page and scrolling through the different sections is highlighted by the spy on the navbar.
+- On scrolling down, a transparent floating arroy appearing hints the user for a quick shortcut to go back to the top of the page.
+
 <a name="to-be-implemented"></a>
 ## To be implemented
 
