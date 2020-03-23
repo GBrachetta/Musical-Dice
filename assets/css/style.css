@@ -12,11 +12,6 @@ h2 {
     padding-top: 1rem;
 }
 
-/* Warning will only  display on IE */
-#warning {
-    display: none;
-}
-
 /* Checkboxes addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 .checkbox-tags {
     list-style: none;
@@ -231,7 +226,6 @@ a.bar {
     width: 2em;
     height: 2em;
     border-radius: 50%;
-    /* font-size: 1em; */
     line-height: 2em;
     text-align: center;
     margin-top: 0.3em;
@@ -293,10 +287,8 @@ a:hover {
     background-color: #fff;
 }
 
-#btn-randomise:active,
-#play-minuetto:active,
-#playminuetto:focus,
-#btn-randomise:focus {
+.main-action-buttons:active,
+.main-action-buttons:focus {
     outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -304,18 +296,8 @@ a:hover {
     background-color: #df691a;
 }
 
-#playminuetto:hover,
-#btn-randomise:hover {
+.main-action-buttons:hover {
     background-color: #bd5916;
-}
-
-#btn-randomise:disabled,
-#play-minuetto:disabled {
-    cursor: default;
-}
-
-#btn-randomise:disabled:hover {
-    background-color: #df691a;
 }
 
 button.btn:active,
@@ -519,7 +501,12 @@ Media queries
         padding-left: 0.7em;
     }
 }
-/* Warnings display on Internet Explorer only */
+
+/* Warning will only display on IE */
+#warning {
+    display: none;
+}
+
 @media screen\0 {
     #warning {
         display: block;
