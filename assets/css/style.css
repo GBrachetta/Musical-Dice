@@ -515,6 +515,17 @@ Media queries
         text-align: center;
     }
 
+    #warning span{
+        color: #fff;
+        font-weight: 600;
+        transition: all .3s ease-in-out;
+
+    }
+
+    #warning span:hover{
+        color: #4e5d6c;
+    }
+
     .warning-title {
         font-size: 2em;
     }
