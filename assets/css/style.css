@@ -204,7 +204,7 @@ a.bar {
 }
 
 .millions {
-    color: #df691a;
+    font-weight: 600;
 }
 
 .disabled {
@@ -345,7 +345,6 @@ button.bar.playing:hover {
 }
 
 footer span {
-    color: #df691a;
     font-weight: 600;
 }
 
