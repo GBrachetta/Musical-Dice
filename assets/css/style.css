@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 100%;
+    font-size: 16px;
     position: relative;
 }
 
@@ -342,10 +342,6 @@ button.bar.playing:hover {
     font-size: 1.25rem;
 }
 
-.paragraphs {
-    text-align: none;
-}
-
 .list-links a {
     color: #df691a;
     font-weight: 600;
@@ -444,7 +440,7 @@ footer span {
 
 #my-navbar .nav-link.active,
 #my-navbar .nav-link:hover {
-    color: white;
+    color: #fff;
 }
 
 /*
@@ -493,10 +489,6 @@ Media queries
     .lead {
         font-size: 1.25em;
     }
-
-.paragraphs {
-    text-align: justify;
-}
 
     .playing {
         font-size: 1.5em;
