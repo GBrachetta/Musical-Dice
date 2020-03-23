@@ -7,9 +7,9 @@ const playButton = $("#play-minuetto");
 const randomiseButton = $("#btn-randomise");
 const checkboxes = $("#checkboxes-minuetti");
 const mp3list = originalMinuetti(alphabet);
+const randomIDs = [];
 
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"];
-let randomIDs = [];
 let sequence = [];
 let allMP3 = [];
 let isPlaying = false;
