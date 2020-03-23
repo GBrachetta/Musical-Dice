@@ -27,7 +27,7 @@ h2 {
     display: inline;
 }
 
-.checkbox-tags div label {
+.checkbox-tags label {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.1);
     color: #6b6464;
@@ -46,12 +46,12 @@ h2 {
     transition: all 0.2s;
 }
 
-.checkbox-tags div label {
+.checkbox-tags label {
     padding: 0.5em 0.75em;
     cursor: pointer;
 }
 
-.checkbox-tags div label::before {
+.checkbox-tags label::before {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -68,7 +68,7 @@ h2 {
     transition: transform 0.35s ease-in-out;
 }
 
-.checkbox-tags div input[type="checkbox"]:checked + label::before {
+.checkbox-tags input[type="checkbox"]:checked + label::before {
     content: "\f00c";
     -webkit-transform: rotate(-360deg);
     -moz-transform: rotate(-360deg);
@@ -81,7 +81,7 @@ h2 {
     transition: transform 0.35s ease-in-out;
 }
 
-.checkbox-tags div input[type="checkbox"]:checked + label {
+.checkbox-tags input[type="checkbox"]:checked + label {
     background-color: rgba(29, 161, 242, 1);
     color: #fff;
     -webkit-transition: all 0.2s;
@@ -90,17 +90,17 @@ h2 {
     transition: all 0.2s;
 }
 
-.checkbox-tags div input[type="checkbox"] {
+.checkbox-tags input[type="checkbox"] {
     position: absolute;
     opacity: 0;
 }
 
-.checkbox-tags div input[type="checkbox"]:hover + label {
+.checkbox-tags input[type="checkbox"]:hover + label {
     background-color: rgba(0, 0, 0, 0.2);
     color: #6b6464;
 }
 
-.checkbox-tags div input[type="checkbox"]:checked:hover + label {
+.checkbox-tags input[type="checkbox"]:checked:hover + label {
     background-color: rgba(29, 161, 242, 0.7);
     color: #fff;
 }
@@ -338,7 +338,7 @@ button.bar.playing:hover {
     font-size: 1em;
 }
 
-.font-weight-bold{
+.font-weight-bold {
     font-size: 1.25rem;
 }
 
@@ -469,7 +469,7 @@ Media queries
         line-height: 2em;
     }
 
-    .checkbox-tags div label::before {
+    .checkbox-tags label::before {
         font-size: 1rem;
     }
 
