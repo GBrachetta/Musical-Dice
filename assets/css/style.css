@@ -18,16 +18,16 @@ h2 {
 }
 
 /* Checkboxes addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
-div.checkbox-tags {
+.checkbox-tags {
     list-style: none;
     padding: 1rem;
 }
 
-div.checkbox-tags div {
+.checkbox-tags div {
     display: inline;
 }
 
-div.checkbox-tags div label {
+.checkbox-tags div label {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.1);
     color: #6b6464;
@@ -46,12 +46,12 @@ div.checkbox-tags div label {
     transition: all 0.2s;
 }
 
-div.checkbox-tags div label {
+.checkbox-tags div label {
     padding: 0.5em 0.75em;
     cursor: pointer;
 }
 
-div.checkbox-tags div label::before {
+.checkbox-tags div label::before {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -68,7 +68,7 @@ div.checkbox-tags div label::before {
     transition: transform 0.35s ease-in-out;
 }
 
-div.checkbox-tags div input[type="checkbox"]:checked + label::before {
+.checkbox-tags div input[type="checkbox"]:checked + label::before {
     content: "\f00c";
     -webkit-transform: rotate(-360deg);
     -moz-transform: rotate(-360deg);
@@ -81,7 +81,7 @@ div.checkbox-tags div input[type="checkbox"]:checked + label::before {
     transition: transform 0.35s ease-in-out;
 }
 
-div.checkbox-tags div input[type="checkbox"]:checked + label {
+.checkbox-tags div input[type="checkbox"]:checked + label {
     background-color: rgba(29, 161, 242, 1);
     color: #fff;
     -webkit-transition: all 0.2s;
@@ -90,17 +90,17 @@ div.checkbox-tags div input[type="checkbox"]:checked + label {
     transition: all 0.2s;
 }
 
-div.checkbox-tags div input[type="checkbox"] {
+.checkbox-tags div input[type="checkbox"] {
     position: absolute;
     opacity: 0;
 }
 
-div.checkbox-tags div input[type="checkbox"]:hover + label {
+.checkbox-tags div input[type="checkbox"]:hover + label {
     background-color: rgba(0, 0, 0, 0.2);
     color: #6b6464;
 }
 
-div.checkbox-tags div input[type="checkbox"]:checked:hover + label {
+.checkbox-tags div input[type="checkbox"]:checked:hover + label {
     background-color: rgba(29, 161, 242, 0.7);
     color: #fff;
 }
@@ -469,7 +469,7 @@ Media queries
         line-height: 2em;
     }
 
-    div.checkbox-tags div label::before {
+    .checkbox-tags div label::before {
         font-size: 1rem;
     }
 
