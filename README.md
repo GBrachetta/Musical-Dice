@@ -254,6 +254,7 @@ These were the manual tests performed **and passed**:
 - Modals open and close as expected.
 - The floating button works correctly.
 - The contact form has required fields (they validate) and works correctly sending emails.
+- Sending an email provides the user feedback on email sent. Feedback disappears after a couple seconds.
 - Menu (when collapsed) after opening, closes correctly on all browsers when clicking on a link or outside of it.
 - Randomisation works smoothly and doesn't crash.
 - Repeatedly and quickly pressing the buttons doesn't break the app
