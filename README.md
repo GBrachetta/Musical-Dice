@@ -219,9 +219,7 @@ This website is fully responsive to all sizes and devices. Making the main music
   - No warnings or errors reported.
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-  - 2 flags about "Unrecognized media". These are about the method successfully used to detect IE browsers in order to display a warning message.
-  This hack is used as documented [here](https://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/ ) and works as expected as a media query for all versions of Internet Explorer.
-  Despite being flagged in the validator I decided to use it due to its good functionality.
+  - No warnings or errors reported.
 
 - [CSS Lint](http://csslint.net/)
   - No errors found.
@@ -277,6 +275,10 @@ These were the manual tests performed **and passed**:
 ## Known Issues
 
 Besides not performing on Internet Explorer (see above), there are no known issues.
+
+**The method originally used to detect IE browsers can be found [here](https://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/).
+Although this method worked perfectly, it made the CSS validator complain.
+After further investigation I implemented the current method as described [here](https://paper-leaf.com/blog/2014/09/targeting-ie-10-11-browsers-css/ ) which displays the proper warnings on IE without throwing a validation error (Status: *Solved*).** 
 
 ***
 <a name="deployment"></a>
