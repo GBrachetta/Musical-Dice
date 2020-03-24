@@ -16,10 +16,9 @@ let isPlaying = false;
 let singleHowl = null;
 
 /**
- *
- * @param {[string]} letter
  * Creates all objects with all 12 original minuetti
  * Defines the array of objects containing all full minuetti
+ * @param {[String]} letter
  */
 function originalMinuetti(letter) {
     return letter.map(item => ({
@@ -29,7 +28,8 @@ function originalMinuetti(letter) {
 }
 
 /**
- * @param {number} value
+ * Pads 0 for correct filename formatting
+ * @param {Number} value
  */
 function zeroPadd(value) {
     return value < 10 ? "0" + value : value;

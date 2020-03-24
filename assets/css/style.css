@@ -204,7 +204,7 @@ a.bar {
 }
 
 .millions {
-    color: #df691a;
+    font-weight: 600;
 }
 
 .disabled {
@@ -345,7 +345,6 @@ button.bar.playing:hover {
 }
 
 footer span {
-    color: #df691a;
     font-weight: 600;
 }
 
@@ -514,6 +513,17 @@ Media queries
         padding: 2em;
         font-weight: 600;
         text-align: center;
+    }
+
+    #warning span{
+        color: #fff;
+        font-weight: 600;
+        transition: all .3s ease-in-out;
+
+    }
+
+    #warning span:hover{
+        color: #4e5d6c;
     }
 
     .warning-title {

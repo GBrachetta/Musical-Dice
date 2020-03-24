@@ -103,6 +103,13 @@ While there are a couple somewhat similar implementations available, this projec
 - be able to fully interact with all the buttons without having to go to a different button to stop a sound.
 - enjoy the sound of music combined with mathematical functions.
 - be surprised and amused by the unexpected musical turns of random music generation.
+- understand the logical thinking behind the game.
+- be able to hear to all original pieces before fragmented and randomised.
+- have the possibility to play each individual fragment in the grid.
+- be able to get in touch with the developer by sending him an email.
+- easily find ways to follow further projects by the developer.
+- be able to get in touch with the developer in different ways.
+- be offered an alternative to play the game in case I arrived at the app with Internet Explorer.
 
 <a name="design"></a>
 ## Design
@@ -126,7 +133,7 @@ It has purposefully been given a modern design to contrast with the aesthetics o
 <a name="fonts"></a>
 ### Fonts
 
-I chose Montserrat to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there space limitations for the text such as in the music grid.
+I chose [Montserrat](https://fonts.google.com/specimen/Montserrat) to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there space limitations for the text such as in the music grid.
 I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
 
 <a name="responsivity"></a>
@@ -182,8 +189,8 @@ This website is fully responsive to all sizes and devices. Making the main music
 <a name="front-end-technologies"></a>
 ## Front-end Technologies
 
-- ![html](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML5: Used for markup.
-- ![css](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS3: Used in addition to Bootstrap to style the elements of the app.
+- ![html](https://img.shields.io/static/v1?label=HTML&message=5&color=red&logo=html5)  HTML: Used for markup.
+- ![css](https://img.shields.io/static/v1?label=CSS&message=3&color=blue&logo=css3) CSS: Used to style the elements of the app.
 - ![bootstrap](https://img.shields.io/static/v1?label=Bootstrap&message=4.4&color=blueviolet&logo=bootstrap) Bootstrap: to make use of its grid system and responsiveness.
 - ![javascript](https://img.shields.io/static/v1?label=JavaScript&message=ES6&color=yellow&logo=javascript) JavaScript: Used for the functionality of the app.
 - ![jquery](https://img.shields.io/static/v1?label=jQuery&message=3.4.1&color=0769ad&logo=jquery) jQuery, to access and manipulate the DOM.
@@ -207,19 +214,17 @@ This website is fully responsive to all sizes and devices. Making the main music
 <a name="validators"></a>
 ## Validators
 
-- HTML
-  - [W3C HTML Validator](https://validator.w3.org/)
-    - No warnings or errors reported.
 
-- CSS
-  - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-    - No errors found.
-  - [CSS Lint](http://csslint.net/)
-    - No errors found.
+- [W3C HTML Validator](https://validator.w3.org/)
+  - No warnings or errors reported.
 
-- JavaScript
-  - [JSHint](https://jshint.com/)
-    - No errors found.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - No errors found.
+- [CSS Lint](http://csslint.net/)
+  - No errors found.
+
+- [JSHint](https://jshint.com/)
+  - No errors found.
 
 <a name="manual-tests"></a>
 ## Manual Tests
@@ -240,27 +245,28 @@ The following browsers were tested:
 
 These were the manual tests performed and passed:
 
-- Navigating the page shouldn't reload the page
 - There's never the necessity of pressing the go-back button
 - All external links open in a new tab
 - Navigation works as expected, without reloading the page
-- Pressing any of the music buttons has a purpose, and doing so stops any other or the current sound, except the buttons of the grid, which have a length of 2 seconds and for which that's unnecessary.
+- Pressing any of the music buttons has a purpose, and doing so stops any other or the current sounds, except the buttons of the grid, which have a length of 2 seconds and for which that's unnecessary.
 - Scrolling is smooth accross all browsers.
 - Modals open and close as expected.
 - The floating button works correctly.
-- The contact form has required fields and works correctly.
-- Menu (when collapsed) after opening, it closes correctly on all browsers when clicking on a link or outside of it.
-- Randomisation works smoothly.
+- The contact form has required fields (they validate) and works correctly sending emails.
+- Menu (when collapsed) after opening, closes correctly on all browsers when clicking on a link or outside of it.
+- Randomisation works smoothly and doesn't crash.
+- Connections between randomly connected fragments play seamlessly, making the resulting randomised piece play as one mp3 file 
 - There are no console errors.
 - There's no overflow.
 - Menu spy works as expected.
 - Navigation never breaks.
 - Clicking on the logo brings to the top without reloading the page.
+- Using **Internet Explorer** will make a warning appear telling the user to use a different browser for this application, and giving them the correspongind links to download them.
   
 <a name="compatibility"></a>
 ## Compatibility
 
-Internet Explorer is not compatible with the JavaScript used in this app. The issue has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.
+**Internet Explorer is not compatible with the JavaScript used in this app. The issue has been handled by warning Internet Explorer users to choose another browser to ensure compatibility.**
 
 <a name="known-issues"></a>
 ## Known Issues
@@ -272,7 +278,7 @@ Besides not performing on Internet Explorer (see above), there are no known issu
 # DEPLOYMENT
 
 <a name="local-deployment"></a>
-## Local
+## Local Development
 
 This project can be ran locally by going to this [Repository link](https://github.com/GBrachetta/Musical-Dice) and clicking on the Clone or Download button and copying the link provided.
 
@@ -285,16 +291,16 @@ After pressing Enter the project will be created and cloned locally.
 Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
 
 <a name="remote-deployment"></a>
-## Remote
+## Live Version
 
-The live version of this website is hosted on GitHub Pages and will update as new commits occur.
+The live version of this website is hosted on [GitHub Pages](https://gbrachetta.github.io/Musical-Dice/) and will update as new commits occur.
 
 The method used to deploy this website was as follows:
 
-1. In GitHub, navigated to my repository.
-2. Under my repository, clicked "Settings".
-3. Under the "GitHub Pages" section, used the Source drop-down menu and selected a publishing source, in this case the Master Branch .
-4. The website was immediately published and a green tab appeared with a link to the live website.
+1. In **GitHub**, navigated to my repository.
+2. Under my repository, clicked **"Settings"**.
+3. Under the **"GitHub Pages"** section, used the Source drop-down menu and selected a publishing source, in this case the Master Branch .
+4. The website was immediately published and a green tab appeared with a link to the **live website**.
 5. The link obtained is the one displaying at the top of this document.
 
 
