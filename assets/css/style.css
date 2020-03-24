@@ -147,7 +147,7 @@ body {
     font-size: 0.8em;
 }
 
-/* Styles the grid populated by JS*/
+/* Styles the grid populated by JS */
 .bar {
     width: 100%;
     height: 3.5em;
@@ -195,6 +195,7 @@ body {
     font-size: 2em;
 }
 
+/* Styles social media icons */
 .fab {
     color: #fff;
     width: 2em;
