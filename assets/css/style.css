@@ -492,6 +492,8 @@ a:hover {
 
 /* Warning will only display on IE */
 /* This method flags in the CSS validator but it's effective detecting IE browsers */
+/* This is a hack which produces the expected result. More information here: */
+/* https://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/ */
 @media screen\0 {
     #warning {
         display: block;
@@ -527,6 +529,20 @@ a:hover {
         padding: 2em;
         font-weight: 600;
         text-align: center;
+    }
+
+    #warning span {
+        color: #fff;
+        font-weight: 600;
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out;
+    }
+
+    #warning span:hover {
+        color: #4e5d6c;
+        font-size: 1.1em;
     }
 
     .warning-title {
