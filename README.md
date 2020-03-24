@@ -36,8 +36,8 @@ Go [here](https://gbrachetta.github.io/Musical-Dice/) for the live version.
    - [**Known Issues**](#known-issues)
 
 6. [**Deployment**](#deployment)
-   - [**Local Deployment**](#local-deployment)
-   - [**Remote Deployment**](#remote-deployment)
+   - [**Local Development**](#local-deployment)
+   - [**Live Version**](#remote-deployment)
 
 7. [**Credits**](#credits)
    - [**Content**](#content)
@@ -105,7 +105,7 @@ While there are a couple somewhat similar implementations available, this projec
 - be surprised and amused by the unexpected musical turns of random music generation.
 - understand the logical thinking behind the game.
 - be able to hear to all original pieces before fragmented and randomised.
-- have the possibility to play each individual fragment in the grid.
+- have the possibility to play each individual fragment in the grid in order to understand how the randomisation works.
 - be able to get in touch with the developer by sending him an email.
 - easily find ways to follow further projects by the developer.
 - be able to get in touch with the developer in different ways.
@@ -133,7 +133,7 @@ It has purposefully been given a modern design to contrast with the aesthetics o
 <a name="fonts"></a>
 ### Fonts
 
-I chose [Montserrat](https://fonts.google.com/specimen/Montserrat) to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there space limitations for the text such as in the music grid.
+I chose [Montserrat](https://fonts.google.com/specimen/Montserrat) to be the only font in this project because of its excellent legibility in smaller font sizes. This was important where there are space limitations for the text such as in the music grid.
 I also didn't want that the choice of a more ornamental font, or multiple fonts, could as a result deviate the attention from the more important elements of the app.
 
 <a name="responsivity"></a>
@@ -219,7 +219,8 @@ This website is fully responsive to all sizes and devices. Making the main music
   - No warnings or errors reported.
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-  - No errors found.
+  - 2 flags about "Unrecognized media". These are about the method successfully used to detect IE browsers in order to display a warning message.
+
 - [CSS Lint](http://csslint.net/)
   - No errors found.
 
@@ -229,7 +230,7 @@ This website is fully responsive to all sizes and devices. Making the main music
 <a name="manual-tests"></a>
 ## Manual Tests
 
-Several manual tests were performed to ensure the best possible user experience.
+Multiple manual tests were performed to ensure the best possible user experience.
 This app is fully compatible with all browsers tested except the ones mentioned in the **Compatibility** section, in both desktop and mobile environments.
 The following browsers were tested:
 
@@ -243,7 +244,7 @@ The following browsers were tested:
   - Chrome
   - Firefox
 
-These were the manual tests performed and passed:
+These were the manual tests performed **and passed**:
 
 - There's never the necessity of pressing the go-back button
 - All external links open in a new tab
@@ -255,7 +256,8 @@ These were the manual tests performed and passed:
 - The contact form has required fields (they validate) and works correctly sending emails.
 - Menu (when collapsed) after opening, closes correctly on all browsers when clicking on a link or outside of it.
 - Randomisation works smoothly and doesn't crash.
-- Connections between randomly connected fragments play seamlessly, making the resulting randomised piece play as one mp3 file 
+- Repeatedly and quickly pressing the buttons doesn't break the app
+- Connections between randomly connected fragments play seamlessly, making the resulting randomised piece play as one mp3 file.
 - There are no console errors.
 - There's no overflow.
 - Menu spy works as expected.
