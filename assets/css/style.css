@@ -172,6 +172,7 @@ body {
     background-color: rgba(29, 161, 242, 0.8);
 }
 
+/* Styles the modals */
 .modal-body img {
     display: block;
     margin: 0 auto;
@@ -194,24 +195,6 @@ body {
     font-size: 2em;
 }
 
-.millions {
-    font-weight: 600;
-}
-
-.disabled {
-    opacity: 1;
-    cursor: default;
-}
-
-.disabled.selected:not(.playing) {
-    background-color: rgba(29, 161, 242, 0.2);
-}
-
-.disabled:not(.selected),
-.disabled:not(.selected):hover {
-    background-color: #2b3e50;
-}
-
 .fab {
     color: #fff;
     width: 2em;
@@ -225,11 +208,6 @@ body {
     -moz-transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
-}
-
-/* hr class to style divs rather than using hr tags */
-.hr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .fa-twitter:hover {
@@ -248,6 +226,11 @@ body {
     background: #e95950;
 }
 
+/* hr class to style divs rather than using hr tags */
+.hr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .list-unstyled li {
     margin-bottom: 1rem;
 }
@@ -260,6 +243,7 @@ a:hover {
     padding: 4rem 2rem;
 }
 
+/* Styles the different buttons depending on events */
 .selected {
     background-color: rgba(29, 161, 242, 0.2);
 }
@@ -273,6 +257,10 @@ a:hover {
 
 .minuetto-playing {
     background-color: rgba(29, 161, 242, 1);
+}
+
+.minuetto-playing:hover {
+    background-color: rgba(29, 161, 242, 0.8);
 }
 
 .unselected {
@@ -292,19 +280,15 @@ a:hover {
     background-color: #bd5916;
 }
 
-button.btn:active,
-button.btn:focus {
+.btn:active,
+.btn:focus {
     outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
 
-button.bar.playing:hover {
-    background-color: rgba(29, 161, 242, 0.8);
-}
-
-.minuetto-playing:hover {
+.bar.playing:hover {
     background-color: rgba(29, 161, 242, 0.8);
 }
 
@@ -316,6 +300,7 @@ button.bar.playing:hover {
     font-size: 1.25rem;
 }
 
+/* Styles links in the "About" section */
 .list-links a {
     color: #df691a;
     font-weight: 600;
@@ -336,7 +321,7 @@ button.bar.playing:hover {
     outline: none;
 }
 
-footer span {
+.span-bold {
     font-weight: 600;
 }
 
@@ -349,7 +334,7 @@ footer span {
     color: #ebebeb;
 }
 
-/* Credit: adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+/* Floating button credit: adapted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
 #btn-to-top {
     position: fixed;
     bottom: 1.25em;
@@ -380,6 +365,7 @@ footer span {
     border: none;
 }
 
+/* Navbar Styling */
 #my-navbar .nav-link {
     color: #2b3e50;
     font-weight: 500;
@@ -415,9 +401,7 @@ footer span {
     color: #fff;
 }
 
-/*
-Media queries
-*/
+/* Media queries */
 @media (min-width: 360px) {
     #checkboxes-minuetti label {
         padding-left: 1em;
