@@ -8,11 +8,12 @@ body {
     position: relative;
 }
 
-h2 {
-    padding-top: 1rem;
+/* Warning hidden in browsers other than IE */
+#warning {
+    display: none;
 }
 
-/* Checkboxes addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
+/* Checkboxes styling and animations addapted to this app from a Pen by Adam Quinlan (https://codepen.io/quinlo/pens/) */
 .checkbox-tags {
     list-style: none;
     padding: 1rem;
@@ -121,14 +122,7 @@ h2 {
     font-size: 0.9em;
 }
 
-#music {
-    display: block;
-}
-
-#table {
-    margin: 0 auto;
-}
-
+/* Styles the grid with the buttons to play original minuetti */
 .individual-minuetto {
     border: 0.2em solid #2b3e50;
     font-size: 1rem;
@@ -138,14 +132,13 @@ h2 {
     transition: all 0.35s ease-in-out;
 }
 
-#minuetti .btn-primary:hover {
+/* Styles classes added by JS */
+.btn-primary:hover,
+.minuetto-playing:hover {
     border-color: #2b3e50;
 }
 
-#minuetti .minuetto-playing:hover {
-    border-color: #2b3e50;
-}
-
+/* Information presented here best suited for a table */
 .table-responsive {
     display: inline-table;
 }
@@ -154,23 +147,17 @@ h2 {
     font-size: 0.8em;
 }
 
-button.bar {
-    padding: 0;
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-}
-
-a.bar {
-    padding: 1em;
-}
-
+/* Styles the grid populated by JS*/
 .bar {
     width: 100%;
     height: 3.5em;
     background-color: #2b3e50;
     font-size: 0.7em;
+    padding: 0;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 .bar:hover:not(.selected) {
@@ -203,6 +190,10 @@ a.bar {
     font-size: 2.5rem;
 }
 
+.titles {
+    font-size: 2em;
+}
+
 .millions {
     font-weight: 600;
 }
@@ -221,7 +212,7 @@ a.bar {
     background-color: #2b3e50;
 }
 
-.social a i {
+.fab {
     color: #fff;
     width: 2em;
     height: 2em;
@@ -236,6 +227,7 @@ a.bar {
     -o-transition: all 0.35s ease-in-out;
 }
 
+/* hr class to style divs rather than using hr tags */
 .hr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -376,7 +368,6 @@ footer span {
 }
 
 #btn-to-top.active {
-    pointer-events: auto;
     opacity: 0.4;
 }
 
@@ -502,9 +493,7 @@ Media queries
 }
 
 /* Warning will only display on IE */
-#warning {
-    display: none;
-}
+/* This method flags in the CSS validator but it's effective detecting IE browsers */
 
 @media screen\0 {
     #warning {
@@ -515,14 +504,16 @@ Media queries
         text-align: center;
     }
 
-    #warning span{
+    #warning span {
         color: #fff;
         font-weight: 600;
-        transition: all .3s ease-in-out;
-
+        -webkit-transition: all 0.35s ease-in-out;
+        -moz-transition: all 0.35s ease-in-out;
+        -o-transition: all 0.35s ease-in-out;
+        transition: all 0.35s ease-in-out;
     }
 
-    #warning span:hover{
+    #warning span:hover {
         color: #4e5d6c;
         font-size: 1.1em;
     }
