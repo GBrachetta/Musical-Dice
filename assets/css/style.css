@@ -524,6 +524,7 @@ Media queries
 
     #warning span:hover{
         color: #4e5d6c;
+        font-size: 1.1em;
     }
 
     .warning-title {
