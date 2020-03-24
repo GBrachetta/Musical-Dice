@@ -186,6 +186,7 @@ body {
     margin: 0 2vw;
 }
 
+/* Titles and Subtitles */
 .display-3,
 .display-4 {
     font-size: 2.5rem;
@@ -232,16 +233,19 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Links in About in the footer */
 .list-unstyled li {
     margin-bottom: 1rem;
 }
 
+/* Prevents underlining in hovered links */
 a:hover {
     text-decoration: none;
 }
 
+/* Pads vertically both jumbotrons */
 .jumbotron {
-    padding: 4rem 2rem;
+    padding: 4rem 0;
 }
 
 /* Styles the different buttons depending on events */
@@ -293,6 +297,14 @@ a:hover {
     background-color: rgba(29, 161, 242, 0.8);
 }
 
+/* Styles the feedback message after sending an email */
+.message-style {
+    padding-bottom: 3rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Styles and overrides Bootstrap's lead class */
 .lead {
     font-size: 1em;
 }
@@ -421,6 +433,7 @@ a:hover {
         font-size: 1.2rem;
     }
 
+    /* Styles social icons vertically on larger screens */
     .social a {
         display: block;
         line-height: 2em;
@@ -479,7 +492,6 @@ a:hover {
 
 /* Warning will only display on IE */
 /* This method flags in the CSS validator but it's effective detecting IE browsers */
-
 @media screen\0 {
     #warning {
         display: block;
