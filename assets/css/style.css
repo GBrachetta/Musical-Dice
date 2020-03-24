@@ -494,7 +494,8 @@ a:hover {
 /* This method flags in the CSS validator but it's effective detecting IE browsers */
 /* This is a hack which produces the expected result. More information here: */
 /* https://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/ */
-@media screen\0 {
+/* @media screen\0 { */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
     #warning {
         display: block;
         background-color: #df691a;
@@ -522,7 +523,7 @@ a:hover {
     }
 }
 
-@media screen\9 {
+/* @media screen\9 {
     #warning {
         display: block;
         background-color: #df691a;
@@ -548,4 +549,4 @@ a:hover {
     .warning-title {
         font-size: 2em;
     }
-}
+} */
