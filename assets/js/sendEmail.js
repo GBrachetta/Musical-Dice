@@ -20,7 +20,7 @@ myform.submit(event => {
             myform.find("textarea").val("");
             myform.find("button").text("Submit");
         },
-        (err) => {
+        err => {
             alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
             myform.find("button").text("Submit");
         }
