@@ -1,6 +1,6 @@
 # [**THE MUSICAL DICE**](https://gbrachetta.github.io/Musical-Dice/)
 
-![Original Edition](assets/images/readme/mozart-game-small.png)
+![Original Edition](wireframes/readme/mozart-game-small.png)
 
 Go [here](https://gbrachetta.github.io/Musical-Dice/) for the live version.
 
@@ -72,7 +72,7 @@ A die is rolled for every column and the result of each roll determines which wo
 - Fragments are 2 bars long rather than 1.
 - All the music was composed by me.
 
-![table](./assets/images/readme/table.png)
+![table](wireframes/readme/table.png)
 
 (Selected in blue an example of a possible outcome)
 
@@ -128,7 +128,7 @@ Bootstrap was my framework of choice due to its felixibility in responsiveness.
 The Color Palette was chosen with complementary hues in mind for contrast and positive visual impact.
 It has purposefully been given a modern design to contrast with the aesthetics of the 18th century as this emphasizes the novel approach for the app.
 
-![Color](assets/images/readme/palette.png)
+![Color](wireframes/readme/palette.png)
 
 <a name="fonts"></a>
 ### Fonts
@@ -284,7 +284,7 @@ Besides not performing on Internet Explorer (see above), there are no known issu
 
 This project can be ran locally by going to this [Repository link](https://github.com/GBrachetta/Musical-Dice) and clicking on the Clone or Download button and copying the link provided.
 
-![image](assets/images/readme/cloning.png)
+![image](wireframes/readme/cloning.png)
 
 In your IDE, open a Terminal window and change to the directory where you want to clone this project and type `Git clone "your copied link"`.
 
